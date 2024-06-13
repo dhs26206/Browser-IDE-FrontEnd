@@ -1,6 +1,6 @@
 import { useState } from "react";
 import Editor from "@monaco-editor/react";
-import NavBar from "./NavBar";
+import NavBarLang from "./NavBarLang";
 const Editor1 = () => {
     const [code, setCode] = useState("def funct(arr,n):\n\t#Enter Code Here And return Integer");
     const handleChange = (value, event) => {
@@ -20,7 +20,7 @@ const Editor1 = () => {
     
     return (
         <div className="flex flex-wrap ">
-        <NavBar Language={Language} Theme={Theme} />
+        <NavBarLang Language={Language} Theme={Theme} />
         <div className="z-0 w-full relative">
         <Editor
         height="90vh"

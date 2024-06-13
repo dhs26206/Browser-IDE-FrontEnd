@@ -1,7 +1,7 @@
 import React, { useState } from 'react';
 // import './Dropdown.css'; // Include CSS for styling
 
-const Dropdown = ({ title, items, onSelect }) => {
+const Dropdown = ({ title, items, onSelect,clickable }) => {
     const [isOpen, setIsOpen] = useState(false);
     const [selectedItem, setSelectedItem] = useState(title);
 
@@ -11,6 +11,10 @@ const Dropdown = ({ title, items, onSelect }) => {
 
     const handleSelect = (item) => {
         setSelectedItem(item);
+        if(clickable){
+            // Open in New Tab
+            Window.open(`/${item}`,'_blank')
+        }
         setIsOpen(false);
         onSelect(item);
     };
@@ -23,7 +27,7 @@ const Dropdown = ({ title, items, onSelect }) => {
             {isOpen && (
                 <div className="dropdown-menu ">
                     {items.map((item, index) => (
-                        <div key={index} onClick={() => handleSelect(item)} className="dropdown-item">
+                        <div key={index} onClick={() => handleSelect(item)} className={`dropdown-item ${clickable?'cursor-pointer':''} `}>
                             {item}
                         </div>
                     ))}

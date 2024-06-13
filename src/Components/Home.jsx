@@ -1,7 +1,10 @@
-
+import NavBar from "./NavBar";
 
 const Home=()=>{
     return(
+        <div>
+         <NavBar/>
+        
         <div className="bg-[#102542] w-screen h-screen">
             <div className="flex justify-center items-center w-full h-full">
                     <div className="flex flex-wrap gap-5 ">
@@ -27,6 +30,7 @@ const Home=()=>{
                     </div>
             </div>
 
+        </div>
         </div>
     )
 }
