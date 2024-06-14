@@ -19,7 +19,7 @@ const Editor1 = () => {
     }
     
     return (
-        <div className="flex flex-wrap ">
+        <div className="w-full h-screen flex flex-wrap ">
         <NavBarLang Language={Language} Theme={Theme} />
         <div className="z-0 w-full relative">
         <Editor

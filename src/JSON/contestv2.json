@@ -1,0 +1,19 @@
+[
+   { 
+        "contest_id":"fophet-ebneor-blfdebnl",
+        "contest_name":"Contest-1",
+        "start_time":1718391134372,
+        "end_time":1718391134372,
+        "no_of_problems":3,
+        "max_score":100
+    },
+    { 
+        "contest_id":"jdgwgr-ejher-fbekgek",
+        "contest_name":"Contest-2",
+        "start_time":1718391134372,
+        "end_time":1718391134372,
+        "no_of_problems":2,
+        "max_score":150
+    }
+    
+]
