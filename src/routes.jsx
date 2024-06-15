@@ -1,6 +1,6 @@
-import Editor1 from './Components/Editor.jsx';
+;
 import Home from './Components/Home.jsx'
-import Contest from './Components/Contest.jsx';
+import Contest from './Components/Contest-Editor/Contest.jsx';
 const routes = [
     { path: '/contest', element: <Contest/> },
     { path: '/', element: <Home /> },

@@ -23,7 +23,7 @@ const Editor1 = () => {
         <NavBarLang Language={Language} Theme={Theme} />
         <div className="z-0 w-full relative">
         <Editor
-        height="90vh"
+        height="96vh"
         language={lang}
         defaultLanguage={lang}
         onChange={handleChange}
