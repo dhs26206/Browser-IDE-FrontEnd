@@ -35,12 +35,12 @@ const Contest = () => {
     return (
       <div className="w-screen h-screen">
         <ContestNavBar />
-        <div className="w-full h-full flex container">
+        <div className="w-full h-full flex-wrap sm:w-full md:flex-nowrap flex container">
           <div className="h-full" style={{ width: `${leftWidth}%` }}>
             <Question />
           </div>
           <div
-            className="w-2 bg-slate-500 cursor-ew-resize"
+            className="w-1 bg-slate-500 cursor-ew-resize"
             onMouseDown={handleMouseDown}
           ></div>
           <div className="h-full flex-grow0" style={{ width: `${100-leftWidth}%` }} >

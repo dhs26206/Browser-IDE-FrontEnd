@@ -1,7 +1,7 @@
 import Example from "./Example";
 const Question=()=>{
     return(
-        <div className="w-full h-screen bg-slate-900 overflow-scroll">
+        <div className="w-full h-screen bg-slate-900 overflow-scroll scrollbar-thumb">
             <div className="border-b-2 border-slate-500 p-5 mx-4">
                 <div className=" font-extrabold text-xl">
                     Armstrong Number
