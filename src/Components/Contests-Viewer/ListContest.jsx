@@ -8,7 +8,7 @@ const ListContest=({list})=>{
         useEffect(() => {
           const timer = setInterval(() => {
             setNow(Date.now());
-          }, 150000);}) // Check every second
+          }, 1000);}) // Check every second
     const DateTime= ({date})=> {
         // console.log(date)
         let options = { timeZone: 'Asia/Kolkata', year: 'numeric', month: 'short', day: '2-digit', hour: '2-digit', minute: '2-digit', hour12: true };

@@ -71,3 +71,23 @@ button:focus-visible {
     background-color: #f9f9f9;
   }
 }
+
+.element {
+  scrollbar-width: thin; /* Thin scrollbar */
+  scrollbar-color: #888 #222; /* Scrollbar thumb and track color */
+}
+
+/* Chrome, Safari, and Edge scrollbar styles */
+.element::-webkit-scrollbar {
+  width: 8px; /* Width of the scrollbar */
+}
+
+.element::-webkit-scrollbar-track {
+  background: #222; /* Track color */
+}
+
+.element::-webkit-scrollbar-thumb {
+  background-color: #888; /* Scrollbar thumb color */
+  border-radius: 10px; /* Roundness of the scrollbar thumb */
+  border: 2px solid #222; /* Padding around scrollbar thumb */
+}

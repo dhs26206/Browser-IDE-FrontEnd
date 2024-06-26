@@ -14,7 +14,7 @@ const NavBar=()=>{
       }
       const choice=["Practice","LeaderBoard","About","ContactUs","Login"]
     return(
-        <div className="h-[12%] min-h-16 w-screen flex items-center">
+        <div className="h-full min-h-16 w-screen flex items-center">
             <div className="w-screen h-full items-center flex  md:justify-center">
             <div style={divStyle} className="w-screen h-full items-center flex justify-between">
                 <img className={`  w-64 h-14 pl-5`} src="logo.png" alt="" />

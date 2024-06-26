@@ -7,13 +7,13 @@ const ContestLayout=()=>{
     // console.log('Imported JSON data in ParentComponent:', list); // Log the data to check import
     return(
         <div className="w-screen flex flex-wrap h-screen bg-[#102542]">
-            <div className="w-screen h-[15%] ">
+            <div className="w-screen h-[10%] backdrop-blur-lg ">
                 <NavBar/>
             </div>
-            <div className="w-full h-[30%]">
+            <div className="w-full h-[35%]">
                 <Dino/>
             </div>
-            <div className="w-full h-[55%] overflow-scroll flex flex-wrap md:flex-nowrap justify-center">
+            <div className="w-full h-[55%] overflow-scroll element flex flex-wrap md:flex-nowrap justify-center">
                 <div className="w-full md:w-[25%]"></div>
                 <div className="w-full md:w-[50%]">
                     <ListContest list={list}/>
