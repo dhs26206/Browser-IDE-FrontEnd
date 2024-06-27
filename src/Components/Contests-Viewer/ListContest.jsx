@@ -1,8 +1,13 @@
 import { useEffect, useState } from "react";
+import { useNavigate } from "react-router-dom";
 // import list1 from '../../JSON/listContest.json';
 
 const ListContest=({list})=>{
     // console.log(list)
+    const navigate=useNavigate();
+    const handleNavigateContest=(id)=>{
+        navigate(`/contest/${id}`)
+    }
     const [now, setNow] = useState(Date.now());
     // console.log('Imported JSON data in ParentComponent:', list1); // Log the data to check import
         useEffect(() => {
@@ -33,7 +38,7 @@ const ListContest=({list})=>{
                         </div>
                         <div className="w-1/2 flex justify-end h-[90%] items-center">
                             <div>
-                                <button className={`rounded-md px-7 py-4 text-white ${isContestEnded || !isContestActive? 'bg-gray-400 cursor-not-allowed': 'bg-blue-500 hover:bg-blue-700'} `}>
+                                <button onClick={handleNavigateContest(item.contest_id)} className={`rounded-md px-7 py-4 text-white ${isContestEnded || !isContestActive? 'bg-gray-400 cursor-not-allowed': 'bg-blue-500 hover:bg-blue-700'} `}>
                                     Participate Now</button>
                             </div>
                         </div>

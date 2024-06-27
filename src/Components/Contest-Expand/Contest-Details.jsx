@@ -13,6 +13,7 @@ const ContestDetails=({contest_id,total_questions,max_score,start_time,end_time}
     }, [end_time]);
     function getLeft(end_time){
         let difference=end_time-Date.now();
+        
         const days = Math.floor(difference / (1000 * 60 * 60 * 24));
        const hours = Math.floor((difference % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
        const minutes = Math.floor((difference % (1000 * 60 * 60)) / (1000 * 60));

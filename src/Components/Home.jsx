@@ -5,12 +5,16 @@ const Home=()=>{
     const navigate = useNavigate();
 
   const handleNavigate = () => {
-    navigate('/dev');
+    navigate('/contestList');
+  };
+  const handleNavigateSignUp = () => {
+    navigate('/signup');
   };
     return(
-        <div className="h-screen">
+        <div className="h-screen w-screen overflow-scroll">
+            <div className="w-full h-[12%]">
          <NavBar/>
-        
+         </div>
         <div className="bg-[#102542] w-screen h-[88%]">
             <div className="flex justify-center items-center w-full h-full">
                     <div className="flex flex-wrap gap-5 ">
@@ -22,7 +26,7 @@ const Home=()=>{
                         </div>
                         <div className="flex justify-center w-full h-min gap-10 mt-5">
                             <div className="md:w-52">
-                            <button className="bg-[#4D9DE0] w-full  font-bold rounded-md border-1 border-white hover:bg-inherit">Sign Up</button>
+                            <button onClick={handleNavigateSignUp} className="bg-[#4D9DE0] w-full  font-bold rounded-md border-1 border-white hover:bg-inherit">Sign Up</button>
                             </div>
                             <div className="md:w-52">
                             <button onClick={handleNavigate} className="bg-[#f3ca40] w-full  font-bold rounded-md border-1 border-white hover:bg-inherit">See Contests</button>
@@ -38,6 +42,7 @@ const Home=()=>{
 
         </div>
         </div>
+        
     )
 }
 

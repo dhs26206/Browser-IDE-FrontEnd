@@ -1,6 +1,10 @@
-import { useState } from "react"
+import { useState,useNavigate } from "react"
 
 const QuestionList=({contests})=>{
+    const navigate=useNavigate();
+    const handleNavigateContest=(id)=>{
+        navigate(`/question/${id}`)
+    }
     const[contestActive,setContestActive]=useState(true)
     return(
         <div  className="w-full h-full md:pb-10">
@@ -17,7 +21,7 @@ const QuestionList=({contests})=>{
                         </div>
                         <div className="w-1/2 flex justify-end h-[90%] items-center">
                             <div>
-                                <button className={`rounded-md px-7 py-4 text-white ${!contestActive? 'bg-gray-400 cursor-not-allowed': 'bg-blue-500 hover:bg-blue-700'} `}>
+                                <button onClick={handleNavigateContest(item.id)} className={`rounded-md px-7 py-4 text-white ${!contestActive? 'bg-gray-400 cursor-not-allowed': 'bg-blue-500 hover:bg-blue-700'} `}>
                                     Solve</button>
                             </div>
                         </div>
