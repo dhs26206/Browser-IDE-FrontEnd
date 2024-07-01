@@ -1,11 +1,16 @@
-import { useState,useNavigate } from "react"
+import { useState} from "react"
+import { useNavigate } from "react-router-dom";
+
 
 const QuestionList=({contests})=>{
     const navigate=useNavigate();
     const handleNavigateContest=(id)=>{
-        navigate(`/question/${id}`)
+        console.log(`Navigating to ${id}`);
+        navigate(`/problem/${id}`)
     }
     const[contestActive,setContestActive]=useState(true)
+    console.log("component rendered")
+    
     return(
         <div  className="w-full h-full md:pb-10">
             <div className="flex flex-wrap gap-8 border-b-2  border-slate-600">
@@ -21,7 +26,7 @@ const QuestionList=({contests})=>{
                         </div>
                         <div className="w-1/2 flex justify-end h-[90%] items-center">
                             <div>
-                                <button onClick={handleNavigateContest(item.id)} className={`rounded-md px-7 py-4 text-white ${!contestActive? 'bg-gray-400 cursor-not-allowed': 'bg-blue-500 hover:bg-blue-700'} `}>
+                                <button onClick={()=>handleNavigateContest(item.id)} className={`rounded-md px-7 py-4 text-white ${!contestActive? 'bg-gray-400 cursor-not-allowed': 'bg-blue-500 hover:bg-blue-700'} `}>
                                     Solve</button>
                             </div>
                         </div>

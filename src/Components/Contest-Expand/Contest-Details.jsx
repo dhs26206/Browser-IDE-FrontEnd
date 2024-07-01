@@ -2,6 +2,7 @@ import { useEffect, useState } from "react"
 
 
 const ContestDetails=({contest_id,total_questions,max_score,start_time,end_time})=>{
+    // console.log(contest_id)
     const[timeLeft,setTimeLeft]=useState(getLeft(end_time));
     const[user_score,set_user_score]=useState(0);
     useEffect(() => {

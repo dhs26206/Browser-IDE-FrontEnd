@@ -1,0 +1,28 @@
+/* For Firefox */
+* {
+    scrollbar-width: thin; /* "auto" or "thin" */
+    scrollbar-color: lightgray transparent; /* thumb color and track color */
+  }
+  
+  /* For WebKit Browsers (Chrome, Safari, etc.) */
+  *::-webkit-scrollbar {
+    width: 4px; /* width of the scrollbar */
+    height: 4px; /* height of the scrollbar for horizontal scrolling */
+  }
+  
+  *::-webkit-scrollbar-track {
+    background: transparent; /* transparent track */
+  }
+  
+  *::-webkit-scrollbar-thumb {
+    background-color: lightgray; /* color of the thumb */
+    border-radius: 10px; /* roundness of the thumb */
+    /* adds some space around the thumb */
+  }
+
+  
+  /* Optional: Ensure scrollbars do not affect layout */
+  body {
+    overflow: overlay; /* Allows the scrollbar to overlay content */
+  }
+  

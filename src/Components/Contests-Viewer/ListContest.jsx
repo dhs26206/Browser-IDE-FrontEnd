@@ -38,7 +38,7 @@ const ListContest=({list})=>{
                         </div>
                         <div className="w-1/2 flex justify-end h-[90%] items-center">
                             <div>
-                                <button onClick={handleNavigateContest(item.contest_id)} className={`rounded-md px-7 py-4 text-white ${isContestEnded || !isContestActive? 'bg-gray-400 cursor-not-allowed': 'bg-blue-500 hover:bg-blue-700'} `}>
+                                <button onClick={()=>handleNavigateContest(item.contest_id)} className={`rounded-md px-7 py-4 text-white ${isContestEnded || !isContestActive? 'bg-gray-400 cursor-not-allowed': 'bg-blue-500 hover:bg-blue-700'} `}>
                                     Participate Now</button>
                             </div>
                         </div>

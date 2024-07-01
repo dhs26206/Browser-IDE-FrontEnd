@@ -12,7 +12,7 @@ const  ContestExpand=()=>{
             </div>
             <div className="w-full h-[35%]">
                 <div className="w-full h-[90%]">
-                <ContestDetails {...contests}/>
+                <ContestDetails {...contests.contests[0]}/>
                 </div>
             </div>
             <div className="w-full h-[55%] flex justify-center overflow-scroll">
