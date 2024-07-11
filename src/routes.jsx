@@ -1,5 +1,5 @@
 ;
-import Home from './Components/Home.jsx'
+import Home from './Components/Home/Home.jsx'
 import Contest from './Components/Contest-Editor/Contest.jsx';
 import ContestLayout from './Components/Contests-Viewer/ContestLayout.jsx'
 // import ListContest from './Components/Contest-Viewer/ListContest.jsx';

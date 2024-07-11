@@ -1,6 +1,7 @@
 import { useNavigate } from "react-router-dom";
-import NavBar from "./NavBar";
-
+import NavBar from "../NavBar";
+import Whatwedo from "./what-we-do";
+import Keyfeatures from "./key-features";
 const Home=()=>{
     const navigate = useNavigate();
 
@@ -15,7 +16,7 @@ const Home=()=>{
             <div className="w-full h-[12%]">
          <NavBar/>
          </div>
-        <div className="bg-[#102542] w-screen h-[88%]">
+        <div className="bg-[#102542] w-screen h-[88%] shadow-md">
             <div className="flex justify-center items-center w-full h-full">
                     <div className="flex flex-wrap gap-5 ">
                         <div className="w-full font-bold px-4 text-3xl md:p-0 md:text-5xl  text-[#F7F0F5] text-center italic  " >                
@@ -41,6 +42,18 @@ const Home=()=>{
             </div>
 
         </div>
+            <div className="w-full h-[85%] z-0 relative shadow-lg rounded-sm">
+                <div className="blur-sm h-full -z-10 filter bg-[#4D9DE0] w-full absolute"></div>
+                <div className="z-10  h-full w-full absolute">
+                    <Whatwedo/>
+                </div>
+            </div>
+            <div className="w-full h-[90%] z-0 relative shadow-lg rounded-sm">
+                <div className="blur-sm h-full -z-10 filter bg-[#f3ca40] w-full absolute"></div>
+                <div className="z-10  h-full w-full absolute">
+                    <Keyfeatures/>
+                </div>
+            </div>
         </div>
         
     )
