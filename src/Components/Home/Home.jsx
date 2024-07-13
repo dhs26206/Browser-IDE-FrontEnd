@@ -2,6 +2,8 @@ import { useNavigate } from "react-router-dom";
 import NavBar from "../NavBar";
 import Whatwedo from "./what-we-do";
 import Keyfeatures from "./key-features";
+import Team from "./Team";
+
 const Home=()=>{
     const navigate = useNavigate();
 
@@ -52,6 +54,13 @@ const Home=()=>{
                 <div className="blur-sm h-full -z-10 filter bg-[#f3ca40] w-full absolute"></div>
                 <div className="z-10  h-full w-full absolute">
                     <Keyfeatures/>
+                </div>
+            </div>
+            
+            <div className="w-full h-[85%] z-0 relative shadow-lg rounded-sm">
+                <div className="blur-sm h-full -z-10 filter bg-[#D81E5B] w-full absolute"></div>
+                <div className="z-10  h-full w-full absolute">
+                    <Team/>
                 </div>
             </div>
         </div>
