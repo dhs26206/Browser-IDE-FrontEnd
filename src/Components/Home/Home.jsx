@@ -3,6 +3,8 @@ import NavBar from "../NavBar";
 import Whatwedo from "./what-we-do";
 import Keyfeatures from "./key-features";
 import Team from "./Team";
+import Contribute from "./Contribute";
+import Footer from "./Footer";
 
 const Home=()=>{
     const navigate = useNavigate();
@@ -61,6 +63,18 @@ const Home=()=>{
                 <div className="blur-sm h-full -z-10 filter bg-[#D81E5B] w-full absolute"></div>
                 <div className="z-10  h-full w-full absolute">
                     <Team/>
+                </div>
+            </div>
+            <div className="w-full h-[85%] z-0 relative shadow-lg rounded-sm">
+                <div className="blur-sm h-full -z-10 filter bg-[#1E152A] w-full absolute"></div>
+                <div className="z-10  h-full w-full absolute">
+                    <Contribute/>
+                </div>
+            </div>
+            <div className="w-full h-[55%] z-0 relative shadow-lg rounded-sm">
+                <div className="blur-sm h-full -z-10 filter bg-[#000000] w-full absolute"></div>
+                <div className="z-10  h-full w-full absolute">
+                    <Footer/>
                 </div>
             </div>
         </div>

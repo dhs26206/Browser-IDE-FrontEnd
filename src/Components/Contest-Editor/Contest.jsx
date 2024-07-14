@@ -40,7 +40,7 @@ const Contest = () => {
             <Question />
           </div>
           <div
-            className="w-1 hidden md:visible bg-slate-500 cursor-ew-resize"
+            className="w-1 hidden md:flex bg-slate-500 cursor-ew-resize"
             onMouseDown={handleMouseDown}
           ></div>
           <div className="h-[80%] md:h-full flex-grow0" style={{ width: window.innerWidth >= 1024 ? `calc(100% - ${leftWidth}% - 1%)` : '100%' }} >
