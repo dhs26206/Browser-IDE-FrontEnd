@@ -35,15 +35,15 @@ const Contest = () => {
     return (
       <div className="w-screen h-screen">
         <ContestNavBar />
-        <div className="w-full h-full flex-wrap sm:w-full md:flex-nowrap flex container">
-          <div className="h-full" style={{ width: `${leftWidth}%` }}>
+        <div className="w-full h-full  sm:w-full flex-wrap gap-5 md:gap-0 md:flex-nowrap flex container overflow-y-scroll">
+          <div className="h-[80%] md:h-full " style={{ width: window.innerWidth >= 1024 ? `${leftWidth}%`:'100%' }}>
             <Question />
           </div>
           <div
-            className="w-1 bg-slate-500 cursor-ew-resize"
+            className="w-1 hidden md:visible bg-slate-500 cursor-ew-resize"
             onMouseDown={handleMouseDown}
           ></div>
-          <div className="h-full flex-grow0" style={{ width: `${100-leftWidth}%` }} >
+          <div className="h-[80%] md:h-full flex-grow0" style={{ width: window.innerWidth >= 1024 ? `calc(100% - ${leftWidth}% - 1%)` : '100%' }} >
             <Editor1 />
           </div>
         </div>
