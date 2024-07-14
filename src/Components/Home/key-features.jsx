@@ -3,10 +3,10 @@
 function Keyfeatures(){
     return(
         <div className="flex w-full h-full flex-wrap ">
-            <div className="h-[25%] w-full flex items-center justify-center"><span className="text-white text-6xl shadow-lg font-extrabold">Key Features</span></div>
-            <div className="h-[75%] w-full flex flex-wrap justify-around" >
-                <div className="h-full flex  md:w-1/6 justify-center items-center">
-                    <div className="flex flex-wrap h-[80%] w-[85%]">
+            <div className="h-[15%] w-full flex items-center justify-center"><span className="text-white text-4xl md:text-6xl shadow-lg font-extrabold">Key Features</span></div>
+            <div className="h-[85%] w-full flex flex-wrap justify-around" >
+                <div className="h-1/4 md:h-full flex w-full md:w-1/6 justify-center items-center">
+                    <div className="flex flex-wrap h-full md:h-[80%] w-[85%]">
                         <div className="h-[35%] w-full flex items-center justify-center">
                             <img className="h-full" src="https://d3oknbjxzqnj9i.cloudfront.net/cdn/codepng.png" alt="" />
                         </div>
@@ -16,7 +16,7 @@ function Keyfeatures(){
                         </div>
                     </div>
                 </div>
-                <div className="h-full flex  md:w-1/6 justify-center items-center">
+                <div className=" h-1/4 md:h-full flex w-full md:w-1/6 justify-center items-center">
                     <div className="flex flex-wrap h-[80%] w-[85%] ">
                         <div className="h-[35%] w-full flex items-center justify-center">
                             <img className="h-full" src="https://d3oknbjxzqnj9i.cloudfront.net/cdn/vscodepngcrop.png" alt="" />
@@ -27,7 +27,7 @@ function Keyfeatures(){
                         </div>
                     </div>
                 </div>
-                <div className="h-full flex  md:w-1/6 justify-center items-center">
+                <div className=" h-1/4 md:h-full flex w-full md:w-1/6 justify-center items-center">
                     <div className="flex flex-wrap h-[80%] w-[85%]">
                         <div className="h-[35%] w-full flex items-center justify-center">
                             <img className="h-full" src="https://d3oknbjxzqnj9i.cloudfront.net/cdn/set1.png" alt="" />
@@ -38,7 +38,7 @@ function Keyfeatures(){
                         </div>
                     </div>
                 </div>
-                <div className="h-full flex  md:w-1/6 justify-center items-center">
+                <div className=" h-1/4 md:h-full flex w-full md:w-1/6 justify-center items-center">
                     <div className="flex flex-wrap h-[80%] w-[85%]">
                         <div className="h-[35%] w-full flex items-center justify-center">
                             <img  className="h-full" src="https://d3oknbjxzqnj9i.cloudfront.net/cdn/open11.png" alt="" />

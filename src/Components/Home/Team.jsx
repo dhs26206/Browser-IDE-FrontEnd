@@ -14,10 +14,10 @@ const teamMembers = [
 const Team = () => {
   return (
     <div className=" h-full w-full flex flex-wrap items-center justify-center">
-      <div className="w-[75%] h-[60%]">
+      <div className="md:w-[75%] h-full w-full md:h-[60%]">
       <div className="intro h-[35%] w-full">
-        <h2>We are ashleel coders</h2>
-        <h1>We have a <span className=" italic">Talented</span>  Team</h1>
+        <span className="font-semibold">We are ashleel coders</span>
+        <div className="text-4xl">We have a <span className=" italic">Talented</span>  Team</div>
         <p>
        "Asleel Coders" is an innovative tech community focused on leveraging cutting-edge programming and software development techniques
         </p>
