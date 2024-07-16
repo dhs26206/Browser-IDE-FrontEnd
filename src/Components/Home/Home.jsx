@@ -16,10 +16,10 @@ const Home=()=>{
     navigate('/signup');
   };
     return(
-        <div className="h-screen w-screen overflow-scroll">
+        <div className="h-screen w-screen overflow-y-scroll overflow-x-hidden">
             <div className="w-full h-[12%]">
-         <NavBar/>
-         </div>
+            <NavBar/>
+            </div>
         <div className="bg-[#102542] w-screen h-[88%] shadow-md">
             <div className="flex justify-center items-center w-full h-full">
                     <div className="flex flex-wrap gap-5 ">
