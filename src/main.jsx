@@ -4,12 +4,14 @@ import App from './App.jsx'
 import './index.css'
 // import Editor from '@monaco-editor/react';
 import './scrollbar.css'
+// Import the functions you need from the SDKs you need
+import { initializeApp } from "firebase/app";
+import { getMessaging, getToken } from "firebase/messaging";
 
-// const [code,setCOde] = useState("def funct(arr,n):\n\t#Enter Code Here And return Integer")
-// const HandleChange = (value, event) => {
-//   setCOde(value)
-//   console.log(value)
-// }
+// TODO: Add SDKs for Firebase products that you want to use
+// https://firebase.google.com/docs/web/setup#available-libraries
+
+// Your web app's Firebase configuration
 
 ReactDOM.createRoot(document.getElementById('root')).render(
   <React.StrictMode>

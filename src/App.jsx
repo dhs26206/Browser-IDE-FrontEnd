@@ -5,8 +5,13 @@
 import { BrowserRouter as Router, Route, Routes } from 'react-router-dom';
 // import Layout from './components/Layout';
 import routes from './routes';
+import { useEffect } from 'react';
+import { requestPermission } from './NotificationService';
 
 function App() {
+  useEffect(()=>{
+    requestPermission()
+  },[])
   return (
     <Router>
       <Routes>
