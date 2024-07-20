@@ -15,12 +15,17 @@ export const ContestForm=()=>{
     const handleSecurity=(item)=>{
         set_Security_State(item);
     }
+    const handleQuestionChoose=()=>{
+        let url="http://localhost:5173/QChoose"
+        const features = 'width=600,height=400,top=100,left=100,menubar=no,toolbar=no,location=no,status=no';
+        window.open(url, '_blank', features)
+    }
     return(
-        <div className="pl-5 h-full w-full bg-blue-950">
+        <div className="pl-5 h-full w-full bg-blue-950 overflow-x-scroll">
             <div className="w-full h-1/5 text-5xl flex items-center ">
                 Create Contest
             </div>
-            <div className="w-full h-4/5 pl-5 flex flex-col gap-5 overflow-x-scroll">
+            <div className="w-full h-5/6 pl-5 flex flex-col gap-5 overflow-x-scroll">
                 <div className="w-1/2 h-1/5 ">
                     <div className="w-full h-1/2 text-3xl">Contest's Name:</div>
                     <div className="w-full h-1/2">
@@ -56,6 +61,9 @@ export const ContestForm=()=>{
                         {/* <input className="w-4/5 h-[70%] rounded-sm text-[#aba0a0] bg-black border-2 border-gray-600 placeholder:pl-4 placeholder:text-[#646363] placeholder:text-sm" placeholder="Enter Contest Name" type="text" /> */}
                         <Dropdown title={'Strict'} items={Security} onSelect={handleSecurity} clickable={false}/>
                     </div>
+                </div>
+                <div>
+                    <button onClick={()=>handleQuestionChoose()} className="bg-orange-700 text-white border-2 border-black hover:bg-orange-600" type="button">Choose Question</button>
                 </div>
 
                 
