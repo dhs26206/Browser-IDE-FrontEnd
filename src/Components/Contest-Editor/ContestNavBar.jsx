@@ -13,7 +13,7 @@ const ContestNavBar=()=>{
       }
       const choice=["Practice","LeaderBoard","About","ContactUs","Login"]
     return(
-        <div className="w-screen  bg-slate-900">
+        <div className="w-screen h-full bg-slate-900">
             
             <div id="OnlyLogo " className="flex  w-full  justify-evenly border-b-8 border-slate-500">
                 <div className="w-1/3 flex gap-3 items-center justify-start  ">
