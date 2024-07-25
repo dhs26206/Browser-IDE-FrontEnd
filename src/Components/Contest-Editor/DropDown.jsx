@@ -20,7 +20,7 @@ const Dropdown = ({ title, items, onSelect,clickable }) => {
     };
 
     return (
-        <div className="dropdown  bg-slate-700 border-2 cursor-pointer border-white rounded-r-md mt-1 px-1 ">
+        <div className="dropdown z-10 relative  bg-slate-700 border-2 cursor-pointer border-white rounded-r-md mt-1 px-1 ">
             <div onClick={toggleDropdown} className="dropdown-toggle">
                 {selectedItem}
             </div>

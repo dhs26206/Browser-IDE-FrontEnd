@@ -21,7 +21,7 @@ const Editor1 = () => {
     return (
         <div className="w-full h-full flex flex-wrap ">
         <div className="w-full h-[7%]"><NavBarLang Language={Language} Theme={Theme} /> </div>
-            <div className="z-0 w-full h-[93%] ">
+            <div className="z-0 w-full h-[93%]  ">
             <Editor
             height="100%"
             language={lang}
