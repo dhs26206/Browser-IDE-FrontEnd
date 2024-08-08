@@ -5,10 +5,10 @@
 // import david from './david.png'
 // import ayush from './ayush.jpg'
 const teamMembers = [
-  { name: 'Manpreet', role: 'Backend', image: 'https://folder.ddks.live/team-img1.png' },
-  { name: 'Gaurav', role: 'Backend', image: 'https://folder.ddks.live/team-img2.png' },
-  { name: 'Dhruv', role: 'Frontend', image: 'https://folder.ddks.live/team-img3.png' },
-  {name:'Ayush',role:'Frontend',image:'https://folder.ddks.live/avatar-2.png'},
+  { name: 'Manpreet', role: 'Backend', image: 'https://cdn.ddks.live/cdn/team-img1.png' },
+  { name: 'Gaurav', role: 'Backend', image: 'https://cdn.ddks.live/cdn/team-img2.png' },
+  { name: 'Dhruv', role: 'Frontend', image: 'https://cdn.ddks.live/cdn/team-img3.png' },
+  {name:'Ayush',role:'Frontend',image:'https://cdn.ddks.live/cdn/avatar-2.png'},
 ];
 
 const Team = () => {

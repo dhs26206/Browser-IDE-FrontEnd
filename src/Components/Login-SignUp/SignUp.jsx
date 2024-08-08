@@ -15,7 +15,7 @@ function Signup() {
                 <div className="bg-white bg-opacity-10 backdrop-blur-md px-6 py-8 rounded shadow-md text-white w-full">
                     <img
                         className="mx-auto h-12 w-auto"
-                        src="https://folder.ddks.live/logo.png"
+                        src="https://cdn.ddks.live/cdn/logo.png"
                         alt="Your Company"
                     />
                     <h1 className="mb-8 text-3xl text-center">Sign up</h1>
