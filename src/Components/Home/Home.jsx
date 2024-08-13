@@ -1,112 +1,85 @@
-import SolarSystemAnimation from "./SolarSystemAnimation";
+import { useNavigate } from "react-router-dom";
 import NavBar from "../NavBar";
 import Whatwedo from "./what-we-do";
 import Keyfeatures from "./key-features";
 import Team from "./Team";
 import Contribute from "./Contribute";
 import Footer from "./Footer";
-import ParticlesComponent from "./nuro";
 
-const Home = () => {
+const Home=()=>{
+    const navigate = useNavigate();
+
   const handleNavigate = () => {
     navigate('/contestList');
   };
-
   const handleNavigateSignUp = () => {
     navigate('/signup');
   };
-
-  return (
-    <div className="relative h-screen w-screen overflow-y-auto">
-      {/* Solar system animation as a background */}
-      <div className="absolute z-10">
-        <SolarSystemAnimation />
-      </div>
-
-      {/* Main content */}
-      <div className="relative flex flex-col">
-        {/* NavBar */}
-        <div className="w-full h-[12%] bg-transparent z-40">
-          <NavBar />
-        </div>
-
-        {/* Hero Section */}
-        <div className="w-full h-screen bg-transparent flex flex-col items-left justify-center text-left z-30">
-          <div className="font-bold px-4 text-3xl md:p-0 md:text-5xl text-[#F7F0F5] italic">
-            The journey of a thousand lines of code begins with a
-            <br />
-            single problem.
-          </div>
-          <div className="italic mt-2">
-            Because We Don't want More Drama in our Life
-          </div>
-          <div className="flex justify-center gap-10 mt-5">
-            <button
-              onClick={handleNavigateSignUp}
-              className="bg-transparent border-2 border-[#4D9DE0] text-[#4D9DE0] w-52 font-bold rounded-md hover:bg-[#4D9DE0] hover:text-white"
-            >
-              Sign Up
-            </button>
-            <button
-              onClick={handleNavigate}
-              className="bg-transparent border-2 border-[#f3ca40] text-[#f3ca40] w-52 font-bold rounded-md hover:bg-[#f3ca40] hover:text-white"
-            >
-              See Contests
-            </button>
-          </div>
-          <div className="mt-10 flex items-center justify-center gap-2">
-            <img
-              src="128px-Love_Heart_SVG.svg.png"
-              alt=""
-              className="h-3 w-3"
-            />
-            <div>Proudly Made In NITJ, for NITJ</div>
-          </div>
-        </div>
-
-        {/* Sections below the hero */}
-        <div className="flex flex-col w-full">
-          {/* Particles Background for What We Do */}
-          <div className="relative h-[100vh]">
-            <div className="absolute inset-0 -z-10">
-              <ParticlesComponent />
+    return(
+        <div className="h-screen w-screen overflow-y-scroll overflow-x-hidden">
+            <div className="w-full h-[12%]">
+            <NavBar/>
             </div>
-            <div className="relative z-20 h-full flex items-center">
-              <Whatwedo />
-            </div>
-          </div>
+        <div className="bg-[#102542] w-screen h-[88%] shadow-md">
+            <div className="flex justify-center items-center w-full h-full">
+                    <div className="flex flex-wrap gap-5 ">
+                        <div className="w-full font-bold px-4 text-3xl md:p-0 md:text-5xl  text-[#F7F0F5] text-center italic  " >                
+                            The journey of a thousand lines of code begins with a<br></br> single problem.
+                        </div>
+                        <div className="text-center h-min w-full italic ">
+                            Because We Don't want More Drama in our Life
+                        </div>
+                        <div className="flex justify-center w-full h-min gap-10 mt-5">
+                            <div className="md:w-52">
+                            <button onClick={handleNavigateSignUp} className="bg-[#4D9DE0] w-full  font-bold rounded-md border-1 border-white hover:bg-inherit">Sign Up</button>
+                            </div>
+                            <div className="md:w-52">
+                            <button onClick={handleNavigate} className="bg-[#f3ca40] w-full  font-bold rounded-md border-1 border-white hover:bg-inherit">See Contests</button>
+                            </div>
+                        </div>
+                        <div className="flex justify-center text-center w-full mt-10 gap-2 ">
+                        <img src="128px-Love_Heart_SVG.svg.png" alt="" className=" h-3 w-3 mt-2" />
+                           <div> Proudly Made In NITJ ,for NITJ</div>
+                        </div>
 
-          <div className="h-[100vh] bg-transparent z-20">
-            <Keyfeatures />
-          </div>
-          <div className="h-[100vh] bg-transparent z-20">
-            <Team />
-          </div>
-          <div className="h-[100vh] bg-transparent z-20">
-            <Contribute />
-          </div>
-          <div className="h-[100vh] bg-transparent z-20">
-            <Footer />
-          </div>
+                    </div>
+            </div>
+
         </div>
-      </div>
-    </div>
-  );
-};
+            <div className="w-full h-[85%] z-0 relative shadow-lg rounded-sm">
+                <div className="blur-sm h-full -z-10 filter bg-[#4D9DE0] w-full absolute"></div>
+                <div className="z-10  h-full w-full absolute">
+                    <Whatwedo/>
+                </div>
+            </div>
+            <div className="w-full h-[90%] z-0 relative shadow-lg rounded-sm">
+                <div className="blur-sm h-full -z-10 filter bg-[#f3ca40] w-full absolute"></div>
+                <div className="z-10  h-full w-full absolute">
+                    <Keyfeatures/>
+                </div>
+            </div>
+            
+            <div className="w-full h-[85%] z-0 relative shadow-lg rounded-sm">
+                <div className="blur-sm h-full -z-10 filter bg-[#D81E5B] w-full absolute"></div>
+                <div className="z-10  h-full w-full absolute">
+                    <Team/>
+                </div>
+            </div>
+            <div className="w-full h-[85%] z-0 relative shadow-lg rounded-sm">
+                <div className="blur-sm h-full -z-10 filter bg-[#1E152A] w-full absolute"></div>
+                <div className="z-10  h-full w-full absolute">
+                    <Contribute/>
+                </div>
+            </div>
+            <div className="w-full h-[55%] z-0 relative shadow-lg rounded-sm">
+                <div className="blur-sm h-full -z-10 filter bg-[#000000] w-full absolute"></div>
+                <div className="z-10  h-full w-full absolute">
+                    <Footer/>
+                </div>
+            </div>
+        </div>
+        
+    )
+}
 
 export default Home;
-
-
-
-
-
-
-
-
-
-      
-
-
-
-
-
