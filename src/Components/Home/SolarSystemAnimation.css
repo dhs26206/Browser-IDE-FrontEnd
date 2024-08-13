@@ -1,0 +1,190 @@
+.solar-system {
+    position: relative;
+    width: 100vw;
+    height: 100vh;
+    overflow: hidden;
+    background-color: transparent;; 
+  }
+  
+  .sun {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    width: 120px;
+    height: 120px;
+    background: radial-gradient(circle, #ffcc00, #ff9900); /* Gradient for sun */
+    border-radius: 50%;
+    transform: translate(-50%, -50%);
+    box-shadow: 0 0 80px rgba(255, 204, 0, 0.8); /* Glow effect */
+    z-index: 1;
+  }
+  .star {
+    position: absolute;
+    width: 2px;
+    height: 2px;
+    /* background-color: white; */
+    border-radius: 50%;
+    box-shadow: 0 0 6px 2px white;
+    opacity: 0.8;
+    animation: twinkle 2s infinite ease-in-out alternate;
+    z-index: 0;
+  }
+  @keyframes twinkle {
+    0% { opacity: 0.8; transform: scale(1); }
+    50% { opacity: 1; transform: scale(1.5); } /* Increase size slightly for twinkle effect */
+    100% { opacity: 0.6; transform: scale(1); }
+  }
+  
+  .planet {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform-origin: 0 0;
+  }
+  
+  .planet-inner {
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    background: radial-gradient(circle at 20% 20%, #fff, #000); /* Gradient for depth */
+    box-shadow: inset 0 0 10px rgba(0, 0, 0, 0.5); /* Inner shadow for depth */
+    border: 1px solid #333; /* Optional border for definition */
+  }
+  
+  .orbit-1 {
+    width: 220px;
+    height: 220px;
+    animation: orbit-1 10s linear infinite;
+  }
+  
+  .orbit-2 {
+    width: 300px;
+    height: 300px;
+    animation: orbit-2 20s linear infinite;
+  }
+  
+  .orbit-3 {
+    width: 400px;
+    height: 400px;
+    animation: orbit-3 30s linear infinite;
+  }
+  
+  .orbit-4 {
+    width: 500px;
+    height: 500px;
+    animation: orbit-4 40s linear infinite;
+  }
+  
+  .orbit-5 {
+    width: 600px;
+    height: 600px;
+    animation: orbit-5 50s linear infinite;
+  }
+  
+  .orbit-6 {
+    width: 700px;
+    height: 700px;
+    animation: orbit-6 60s linear infinite;
+  }
+  
+  .orbit-7 {
+    width: 800px;
+    height: 800px;
+    animation: orbit-7 70s linear infinite;
+  }
+  
+  .planet-1 {
+    background: radial-gradient(circle, #ff5733, #c70039); /* Mars-like red */
+  }
+  
+  .planet-2 {
+    background: radial-gradient(circle, #1e90ff, #4682b4); /* Earth-like blue */
+  }
+  
+  .planet-3 {
+    background: radial-gradient(circle, #32cd32, #228b22); /* Greenish for an Earth-like look */
+  }
+  
+  .planet-4 {
+    background: radial-gradient(circle, #ffd700, #ffcc00); /* Sun-like gold */
+  }
+  
+  .planet-5 {
+    background: radial-gradient(circle, #ba55d3, #8a2be2); /* Purple with gradient */
+  }
+  
+  .planet-6 {
+    background: radial-gradient(circle, #ff4500, #ff6347); /* Orange with depth */
+  }
+  
+  .planet-7 {
+    background: radial-gradient(circle, #6a5acd, #483d8b); /* Blueish with depth */
+  }
+  
+  @keyframes orbit-1 {
+    from {
+      transform: rotate(0deg) translateX(110px) rotate(0deg);
+    }
+    to {
+      transform: rotate(360deg) translateX(110px) rotate(-360deg);
+    }
+  }
+  
+  @keyframes orbit-2 {
+    from {
+      transform: rotate(0deg) translateX(150px) rotate(0deg);
+    }
+    to {
+      transform: rotate(360deg) translateX(150px) rotate(-360deg);
+    }
+  }
+  
+  @keyframes orbit-3 {
+    from {
+      transform: rotate(0deg) translateX(200px) rotate(0deg);
+    }
+    to {
+      transform: rotate(360deg) translateX(200px) rotate(-360deg);
+    }
+  }
+  
+  @keyframes orbit-4 {
+    from {
+      transform: rotate(0deg) translateX(250px) rotate(0deg);
+    }
+    to {
+      transform: rotate(360deg) translateX(250px) rotate(-360deg);
+    }
+  }
+  
+  @keyframes orbit-5 {
+    from {
+      transform: rotate(0deg) translateX(300px) rotate(0deg);
+    }
+    to {
+      transform: rotate(360deg) translateX(300px) rotate(-360deg);
+    }
+  }
+  
+  @keyframes orbit-6 {
+    from {
+      transform: rotate(0deg) translateX(350px) rotate(0deg);
+    }
+    to {
+      transform: rotate(360deg) translateX(350px) rotate(-360deg);
+    }
+  }
+  
+  @keyframes orbit-7 {
+    from {
+      transform: rotate(0deg) translateX(400px) rotate(0deg);
+    }
+    to {
+      transform: rotate(360deg) translateX(400px) rotate(-360deg);
+    }
+  }
+  
+  
+  
+  
+  
