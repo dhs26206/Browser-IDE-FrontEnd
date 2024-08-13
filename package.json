@@ -18,7 +18,8 @@
     "react-chrome-dino-ts": "^0.1.2",
     "react-dinosaur-game": "^1.0.0",
     "react-dom": "^18.2.0",
-    "react-router-dom": "^6.23.1"
+    "react-router-dom": "^6.23.1",
+     "@tsparticles/all": "^3.5.0"
   },
   "devDependencies": {
     "@types/react": "^18.2.66",
