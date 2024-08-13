@@ -6,8 +6,10 @@ import Team from "./Team";
 import Contribute from "./Contribute";
 import Footer from "./Footer";
 import ParticlesComponent from "./nuro";
+import { useNavigate } from "react-router-dom";
 
 const Home = () => {
+  const navigate=useNavigate();
   const handleNavigate = () => {
     navigate('/contestList');
   };
@@ -96,7 +98,4 @@ const Home = () => {
 
 export default Home;
         
-    )
-}
-
-export default Home;
+ 
