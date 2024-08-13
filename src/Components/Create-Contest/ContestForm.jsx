@@ -16,7 +16,7 @@ export const ContestForm=()=>{
         set_Security_State(item);
     }
     const handleQuestionChoose=()=>{
-        let url="http://localhost:5173/QChoose"
+        let url="http://localhost:5173/QChoose/gwbgswt"
         const features = 'width=600,height=400,top=100,left=100,menubar=no,toolbar=no,location=no,status=no';
         window.open(url, '_blank', features)
     }

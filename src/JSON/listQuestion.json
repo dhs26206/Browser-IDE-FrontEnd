@@ -15,7 +15,7 @@
     {
         "id": "aklomp-palindrom-qiopo",
         "question_name": "Palindrome Number",
-        "question_difficulty": "Easy",
+        "question_difficulty": "Medium",
         "Description": "Write a program to check if a given number is a palindrome.",
         "Function_Name": "isPalindrome",
         "Function_Return_Type": "boolean",
@@ -54,7 +54,7 @@
     {
         "id": "factcalc-qtolu-factolom",
         "question_name": "Factorial Calculation",
-        "question_difficulty": "Easy",
+        "question_difficulty": "Hard",
         "Description": "Write a program to calculate the factorial of a given number.",
         "Function_Name": "factorial",
         "Function_Return_Type": "int",
@@ -67,7 +67,7 @@
     {
         "id": "gcdcalc-mytrod-gcdctor",
         "question_name": "GCD Calculation",
-        "question_difficulty": "Easy",
+        "question_difficulty": "Hard",
         "Description": "Write a program to find the greatest common divisor (GCD) of two given numbers.",
         "Function_Name": "gcd",
         "Function_Return_Type": "int",
