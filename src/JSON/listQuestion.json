@@ -1,0 +1,82 @@
+[
+    {
+        "id":"erajog-neolot-baenjab",
+        "question_name":"Armstrong Number",
+        "question_difficulty":"Easy",
+        "Description":"Write a program to check if a given number is an Armstrong number or not.",
+        "Function_Name":"isArmstrong",
+        "Function_Return_Type":"boolean",
+        "Function_Parameter":[{ "name":"num", "type":"int" }, { "name":"n", "type":"int" }],
+        "Driver Code_Java":"public static void main(String[] args) { \n\tint num = 153; \n\tint n = 3; \n\tSystem.out.println(isArmstrong(num, n)); ",
+        "Driver Code_Python":"num = 153 \nn = 3 \nprint(isArmstrong(num, n))",
+        "Driver Code_Cpp":"int num = 153; \nint n = 3; \nstd::cout << isArmstrong(num, n);",
+        "Constraints":"1 <= num <= 10^5"
+    },
+    {
+        "id": "aklomp-palindrom-qiopo",
+        "question_name": "Palindrome Number",
+        "question_difficulty": "Medium",
+        "Description": "Write a program to check if a given number is a palindrome.",
+        "Function_Name": "isPalindrome",
+        "Function_Return_Type": "boolean",
+        "Function_Parameter": [{ "name": "num", "type": "int" }],
+        "Driver Code_Java": "public static void main(String[] args) { \n\tint num = 121; \n\tSystem.out.println(isPalindrome(num)); \n}",
+        "Driver Code_Python": "num = 121 \nprint(isPalindrome(num))",
+        "Driver Code_Cpp": "int num = 121; \nstd::cout << isPalindrome(num);",
+        "Constraints": "1 <= num <= 10^5"
+    },
+    {
+        "id": "primert-primeck-olokin",
+        "question_name": "Prime Number",
+        "question_difficulty": "Easy",
+        "Description": "Write a program to check if a given number is a prime number.",
+        "Function_Name": "isPrime",
+        "Function_Return_Type": "boolean",
+        "Function_Parameter": [{ "name": "num", "type": "int" }],
+        "Driver Code_Java": "public static void main(String[] args) { \n\tint num = 29; \n\tSystem.out.println(isPrime(num)); \n}",
+        "Driver Code_Python": "num = 29 \nprint(isPrime(num))",
+        "Driver Code_Cpp": "int num = 29; \nstd::cout << isPrime(num);",
+        "Constraints": "1 <= num <= 10^5"
+    },
+    {
+        "id": "fiboseq-neolin-fiboctr",
+        "question_name": "Fibonacci Sequence",
+        "question_difficulty": "Easy",
+        "Description": "Write a program to return the nth Fibonacci number.",
+        "Function_Name": "nthFibonacci",
+        "Function_Return_Type": "int",
+        "Function_Parameter": [{ "name": "n", "type": "int" }],
+        "Driver Code_Java": "public static void main(String[] args) { \n\tint n = 10; \n\tSystem.out.println(nthFibonacci(n)); \n}",
+        "Driver Code_Python": "n = 10 \nprint(nthFibonacci(n))",
+        "Driver Code_Cpp": "int n = 10; \nstd::cout << nthFibonacci(n);",
+        "Constraints": "1 <= n <= 30"
+    },
+    {
+        "id": "factcalc-qtolu-factolom",
+        "question_name": "Factorial Calculation",
+        "question_difficulty": "Hard",
+        "Description": "Write a program to calculate the factorial of a given number.",
+        "Function_Name": "factorial",
+        "Function_Return_Type": "int",
+        "Function_Parameter": [{ "name": "num", "type": "int" }],
+        "Driver Code_Java": "public static void main(String[] args) { \n\tint num = 5; \n\tSystem.out.println(factorial(num)); \n}",
+        "Driver Code_Python": "num = 5 \nprint(factorial(num))",
+        "Driver Code_Cpp": "int num = 5; \nstd::cout << factorial(num);",
+        "Constraints": "1 <= num <= 12"
+    },
+    {
+        "id": "gcdcalc-mytrod-gcdctor",
+        "question_name": "GCD Calculation",
+        "question_difficulty": "Hard",
+        "Description": "Write a program to find the greatest common divisor (GCD) of two given numbers.",
+        "Function_Name": "gcd",
+        "Function_Return_Type": "int",
+        "Function_Parameter": [{ "name": "a", "type": "int" }, { "name": "b", "type": "int" }],
+        "Driver Code_Java": "public static void main(String[] args) { \n\tint a = 48; \n\tint b = 18; \n\tSystem.out.println(gcd(a, b)); \n}",
+        "Driver Code_Python": "a = 48 \nb = 18 \nprint(gcd(a, b))",
+        "Driver Code_Cpp": "int a = 48; \nint b = 18; \nstd::cout << gcd(a, b);",
+        "Constraints": "1 <= a, b <= 10^5"
+    }
+                
+    
+]

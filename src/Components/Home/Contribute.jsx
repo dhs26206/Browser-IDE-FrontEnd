@@ -13,7 +13,7 @@ function Contribute(){
                 <div className="text-2xl  md:text-5xl pl-10 h-[20%] w-full flex items-center text-center  border-white">Ever Seen This Cat Before ?</div>
                 <div className="w-full h-[80%] md:flex-row-reverse flex flex-col  md:flex-nowrap"> 
                     <div className="md:w-1/2 md:h-full w-full h-[50%] flex items-center">
-                        <img onClick={()=>repo()} className="w-full cursor-pointer" src="https://d3oknbjxzqnj9i.cloudfront.net/cdn/githublogov2.png"  alt="Repo" srcset="" />
+                        <img onClick={()=>repo()} className="w-full cursor-pointer" src="https://cdn.ddks.live/cdn/githublogov2.png"  alt="Repo" srcset="" />
 
                     </div>
                     <div className="md:h-full h-[50%] md:w-1/2 w-full flex flex-wrap">

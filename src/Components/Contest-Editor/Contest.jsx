@@ -3,6 +3,7 @@ import { useState } from "react";
 import ContestNavBar from "./ContestNavBar"
 import Editor1 from "./Editor"
 import Question from "./Question"
+import { SubmitCompile } from "./Submit-Compile";
 
 
 const Contest = () => {
@@ -34,18 +35,20 @@ const Contest = () => {
   
     return (
       <div className="w-screen h-screen">
-        <ContestNavBar />
-        <div className="w-full h-full  sm:w-full flex-wrap gap-5 md:gap-0 md:flex-nowrap flex container overflow-y-scroll">
-          <div className="h-[80%] md:h-full " style={{ width: window.innerWidth >= 1024 ? `${leftWidth}%`:'100%' }}>
+        <div className="w-full h-1/5"><ContestNavBar /></div>
+        <div className="w-full h-4/5  sm:w-full flex-wrap gap-5 md:gap-0 md:flex-nowrap flex container ">
+          <div className="h-[80%] md:h-full overflow-y-scroll " style={{ width: window.innerWidth >= 1024 ? `${leftWidth}%`:'100%' }}>
             <Question />
           </div>
           <div
             className="w-1 hidden md:flex bg-slate-500 cursor-ew-resize"
             onMouseDown={handleMouseDown}
           ></div>
-          <div className="h-[80%] md:h-full flex-grow0" style={{ width: window.innerWidth >= 1024 ? `calc(100% - ${leftWidth}% - 1%)` : '100%' }} >
-            <Editor1 />
+          <div className="h-[80%] md:h-full flex-grow0   overflow-auto" style={{ width: window.innerWidth >= 1024 ? `calc(100% - ${leftWidth}% )` : '100%' }} >
+              <div className="w-full h-[94%]  "> <Editor1 /></div>
+              <div className="w-full h-[6%]  sticky bottom-0 "> <SubmitCompile/> </div>
           </div>
+          
         </div>
       </div>
     );

@@ -20,18 +20,18 @@ const Editor1 = () => {
     
     return (
         <div className="w-full h-full flex flex-wrap ">
-        <NavBarLang Language={Language} Theme={Theme} />
-        <div className="z-0 w-full relative">
-        <Editor
-        height="96vh"
-        language={lang}
-        defaultLanguage={lang}
-        onChange={handleChange}
-        theme={theme}
-        defaultValue="def funct(arr,n):
-            #Enter Code Here And return Integer"
-        />
-        </div>
+        <div className="w-full h-[7%]"><NavBarLang Language={Language} Theme={Theme} /> </div>
+            <div className="z-0 w-full h-[93%]  ">
+            <Editor
+            height="100%"
+            language={lang}
+            defaultLanguage={lang}
+            onChange={handleChange}
+            theme={theme}
+            defaultValue="def funct(arr,n):
+                #Enter Code Here And return Integer"
+            />
+            </div>
         </div>
     );
     }

@@ -15,7 +15,7 @@ const NavBarLang = ({Language,Theme}) => {
         Theme(item)
     }
     return(
-        <div className="flex justify-between w-full h-8 z-10 bg-slate-900">
+        <div className="flex justify-between w-full h-full z-10 bg-slate-900">
             <div className="text-white"></div>
             <div>
             <Dropdown title={defaultLanguage} items={language} onSelect={handleLanguageSelect} />
