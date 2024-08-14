@@ -34,12 +34,12 @@ const Home = () => {
 
         {/* Hero Section */}
         <div className="w-full h-screen bg-transparent flex flex-col items-left justify-center text-left z-30">
-          <div className="font-bold px-4 text-3xl md:p-0 md:text-5xl text-[#F7F0F5] italic">
+          <div className="md:ml-5 font-bold px-4 text-3xl md:p-0 md:text-5xl text-[#F7F0F5] italic">
             The journey of a thousand lines of code begins with a
             <br />
             single problem.
           </div>
-          <div className="italic mt-2">
+          <div className="ml-5 italic mt-2">
             Because We Don't want More Drama in our Life
           </div>
           <div className="flex justify-center gap-10 mt-5">

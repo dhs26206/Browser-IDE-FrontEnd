@@ -1,5 +1,5 @@
 
-export const Navigate=()=>{
+export const Navigate=({toggleState})=>{
     return(
         <div className="h-full w-full bg-[#182d67] flex justify-center">
             <div className="w-[80%] h-full bg-inherit ">
@@ -12,8 +12,8 @@ export const Navigate=()=>{
                             <div className=" font-bold text-xl ">Manage Contest</div>
                         </div>
                         <div className="w-full h-[70%]">
-                                <div className="hello cursor-pointer hover:underline text-[#b2aaaa] hover:text-white">Create Contest</div>
-                                <div className="hello cursor-pointer hover:underline text-[#b2aaaa] hover:text-white">Manage Contest</div>
+                                <div onClick={()=>toggleState("create")} className="hello cursor-pointer hover:underline text-[#b2aaaa] hover:text-white">Create Contest</div>
+                                <div onClick={()=>toggleState("manage")} className="hello cursor-pointer hover:underline text-[#b2aaaa] hover:text-white">Manage Contest</div>
                                 <div className="hello cursor-pointer hover:underline text-[#b2aaaa] hover:text-white">Contest Result</div>
                         </div>
                             
