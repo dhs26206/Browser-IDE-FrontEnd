@@ -1,8 +1,8 @@
 import Ques from "./../../JSON/listQuestion.json"
 export const QuestionList=()=>{
     return(
-        <div className="py-4 h-screen w-screen items-center">
-            <div className="h-full w-full  flex flex-col  items-center gap-5 overflow-y-scrol justify-center">
+        <div className="py-4 h-screen w-screen items-center ">
+            <div className="h-full w-full  flex flex-wrap items-center gap-5 overflow-y-scroll justify-center">
                 {Ques.map((element,index)=>{
                     let classn = "";
                     if (element.question_difficulty === "Easy") classn = "bg-green-400";
@@ -15,7 +15,7 @@ export const QuestionList=()=>{
                        <div className="w-[95%] flex h-[40%]">
                             <div className="w-[90%] text-sm text-[#9c9b9b]">{element.Description}</div>
                             {/* <div className="w-[20%] h-full flex justify-end"><button className="bg-yellow-500 border-2 border-white " type="button">Select</button></div> */}
-                            <button className="h-full border-2 hover:bg-inherit hover:delay-300 bg-yellow-500 hover:text-yellow-300 hover:border-yellow-400" type="button">Submit</button>
+                            <button className=" border-2 hover:bg-inherit hover:delay-300 bg-yellow-500 hover:text-yellow-300 hover:border-yellow-400" type="button">Select</button>
 
                             {/* </div> */}
                         </div>
