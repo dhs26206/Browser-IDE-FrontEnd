@@ -2,9 +2,8 @@
     {
         "contest_id": "fophet-ebneor-blfdebnl",
         "contest_name": "Contest-1",
-        "created_on": 1618391134372,
-        "start_time": 1717391134372,
-        "end_time": 1718391136372,
+        "start_time": 1718391134372,
+        "end_time": 1718391134372,
         "no_of_problems": 3,
         "type": "public",
         "security":"strict"
@@ -12,7 +11,6 @@
     {
         "contest_id": "jdgwgr-ejher-fbekgek",
         "contest_name": "Contest-2",
-        "created_on": 1718391134372,
         "start_time": 1718391134372,
         "end_time": 1718391134372,
         "no_of_problems": 2,
@@ -22,7 +20,6 @@
     {
         "contest_id": "jdgwgr-ejher-fbekgek",
         "contest_name": "Contest-3",
-        "created_on": 1718391134372,
         "start_time": 1718391134372,
         "end_time": 1718391134372,
         "no_of_problems": 2,
@@ -32,7 +29,6 @@
     {
         "contest_id": "jdgwgr-ejher-fbekgek",
         "contest_name": "Contest-4",
-        "created_on": 1718391134372,
         "start_time": 1718391134372,
         "end_time": 1718391134372,
         "no_of_problems": 2,

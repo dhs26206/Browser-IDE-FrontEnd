@@ -1,53 +1,16 @@
-import React, { useEffect, useState } from 'react';
+import React, { useState } from 'react';
 import { useNavigate } from 'react-router-dom';
 import logo from './logo.png'; 
 import giphy from './giphy.webp'
 function Log() {
-    const [formData,setFormData]=useState({username:"",password:""});
+    const [username, setUsername] = useState('');
+    const [password, setPassword] = useState('');
     const navigate = useNavigate();
-    useEffect(()=>{
-        fetch(`http://localhost:3000/checklogin`,{
-            method:`GET`,
-            credentials:"include"
-        }).then(res=> res.json()).then(response =>{
-            if(response.login)
-            {
-                alert(`already loged in!!`);
-                navigate('/');
-            }
-        })
-    },[]);
+
     const handleSignupRedirect = () => {
         navigate('/signup');
     };
-    const handleChange=(e)=>{
-        //console.log(`hi`);
-        const {name,value}=e.target;
-        setFormData((prevFormData) => ({
-            ...prevFormData,
-            [name]: value
-          }));
-          //console.log(formData);
-    }
-    const handleSubmit=(event)=>{
-        event.preventDefault();
-        console.log(formData);
-        fetch(`http://localhost:3000/login`,{
-            body:JSON.stringify(formData),
-            method:`POST`,
-            credentials:"include",
-            headers:{"Content-Type":"application/json"}
-        }).then(res=> res.json()).then(response =>{
-            console.log(response)
-            if(response.status)
-            {
-                navigate('/');
-            }
-            else{
-                alert(`incorrect username or password`);
-            }
-        })
-    }
+
     return (
         <div className='h-screen w-screen flex justify-center items-center bg-no-repeat bg-cover 'style={{ backgroundImage: `url(${giphy})` }} >
             <div className=''>
@@ -70,15 +33,15 @@ function Log() {
                                         htmlFor="email"
                                         className="block text-sm font-medium leading-6 text-white"
                                     >
-                                        User Name
+                                        Email address
                                     </label>
                                     <div className="mt-2">
                                         <input
-                                            value={formData.username} onChange={handleChange}
-                                            id="username"
-                                            name="username"
-                                            type="username"
-                                            autoComplete="username"
+                                            value={username} onChange={e => setUsername(e.target.value)}
+                                            id="email"
+                                            name="email"
+                                            type="email"
+                                            autoComplete="email"
                                             required
                                             className="block w-full rounded-md border-0 py-1.5 text-gray-900 shadow-sm ring-1 ring-inset ring-gray-300 placeholder:text-gray-400 focus:ring-2 focus:ring-inset focus:ring-indigo-600 sm:text-sm sm:leading-6"
                                         />
@@ -104,7 +67,7 @@ function Log() {
                                     </div>
                                     <div className="mt-2">
                                         <input
-                                            value={formData.password} onChange={handleChange}
+                                            value={password} onChange={e => setPassword(e.target.value)}
                                             id="password"
                                             name="password"
                                             type="password"
@@ -119,7 +82,6 @@ function Log() {
                                     <button
                                         type="submit"
                                         className="flex w-full justify-center rounded-md bg-indigo-600 px-3 py-1.5 text-sm font-semibold leading-6 text-white shadow-sm hover:bg-indigo-500 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-indigo-600"
-                                        onClick={handleSubmit}
                                     >
                                         Sign in
                                     </button>
