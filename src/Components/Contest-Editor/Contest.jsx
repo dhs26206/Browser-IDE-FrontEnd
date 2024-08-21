@@ -33,6 +33,10 @@ const Contest = () => {
       document.removeEventListener('mouseup', handleMouseUp);
     };
   
+
+
+
+    const[submitData,setSubmitData]=useState({code:"",input:"",lang:"java",userid:"ash123"});
     return (
       <div className="w-screen h-screen">
         <div className="w-full h-1/5"><ContestNavBar /></div>
@@ -45,8 +49,8 @@ const Contest = () => {
             onMouseDown={handleMouseDown}
           ></div>
           <div className="h-[80%] md:h-full flex-grow0   overflow-auto" style={{ width: window.innerWidth >= 1024 ? `calc(100% - ${leftWidth}% )` : '100%' }} >
-              <div className="w-full h-[94%]  "> <Editor1 /></div>
-              <div className="w-full h-[6%]  sticky bottom-0 "> <SubmitCompile/> </div>
+              <div className="w-full h-[94%]  "> <Editor1 setSubmitData={setSubmitData} submitData={submitData}/></div>
+              <div className="w-full h-[6%]  sticky bottom-0 "> <SubmitCompile submitData={submitData}/> </div>
           </div>
           
         </div>

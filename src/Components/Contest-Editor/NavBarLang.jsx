@@ -1,14 +1,14 @@
 import { useState } from "react";
 import Dropdown from "./DropDown";
 
-const NavBarLang = ({Language,Theme}) => {
+const NavBarLang = ({setSubmitData,Theme}) => {
     const [defaultLanguage, setDefaultLanguage] = useState("python");
     const [theme, setTheme] = useState("vs-dark");
     let language=['python','javascript','cpp','java'];
     let themeChoice=['vs-dark','light']
     const handleLanguageSelect=(item)=>{
         setDefaultLanguage(item)
-        Language(item)
+        setSubmitData((predata) => ({...predata,lang:item}));
     }
     const handleThemeSelect=(item)=>{
         setTheme(item);

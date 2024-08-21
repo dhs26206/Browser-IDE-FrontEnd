@@ -1,11 +1,20 @@
 import { useState } from "react"
+import {url} from "../../../url"
 
-
-export const SubmitCompile=()=>{
+export const SubmitCompile=({submitData})=>{
     const [hit ,sethit]=useState(false);
     const handleClick=(event)=>{
         sethit(true);
         setTimeout(() => { sethit(false); }, 3000);
+        console.log(submitData);
+        fetch(`${url}/exec`,{
+            body:JSON.stringify(submitData),
+            method:`POST`,
+            credentials:"include",
+            headers:{"Content-Type":"application/json"}
+        }).then(res=> res.json()).then(response =>{
+            console.log(response);
+        })
     }
     
     return(

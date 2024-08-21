@@ -2,11 +2,12 @@ import React, { useEffect, useState } from 'react';
 import { useNavigate } from 'react-router-dom';
 import logo from './logo.png'; 
 import giphy from './giphy.webp'
+import {url} from '../../../url'
 function Log() {
     const [formData,setFormData]=useState({username:"",password:""});
     const navigate = useNavigate();
     useEffect(()=>{
-        fetch(`http://localhost:3000/checklogin`,{
+        fetch(`${url}/checklogin`,{
             method:`GET`,
             credentials:"include"
         }).then(res=> res.json()).then(response =>{

@@ -2,6 +2,7 @@ import React, { useState } from 'react';
 import { useNavigate } from 'react-router-dom';
 import logo from './logo.png'; 
 import giphy from './giphy.webp'
+import {url} from '../../../url'
 function Signup() {
     const navigate = useNavigate();
     const [formData,setFormData]=useState({username:"",password:"",email:""});
@@ -20,7 +21,7 @@ function Signup() {
     const handleSubmit=(event)=>{
         event.preventDefault();
         console.log(formData);
-        fetch(`http://localhost:3000/signup`,{
+        fetch(`${url}/signup`,{
             body:JSON.stringify(formData),
             method:`POST`,
             credentials:"include",
@@ -37,7 +38,7 @@ function Signup() {
         })
     }
     const handleCheck=()=>{
-        fetch(`http://localhost:3000/checklogin`,{
+        fetch(`${url}/checklogin`,{
             
             method:`GET`,
             credentials:"include"
