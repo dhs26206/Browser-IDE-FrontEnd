@@ -1,14 +1,48 @@
-import React from 'react';
+import React, { useState } from 'react';
 import { useNavigate } from 'react-router-dom';
 import logo from './logo.png'; 
 import giphy from './giphy.webp'
 function Signup() {
     const navigate = useNavigate();
-
+    const [formData,setFormData]=useState({username:"",password:"",email:""});
     const handleLoginRedirect = () => {
         navigate('/login');
     };
-
+    const handleChange=(e)=>{
+        //console.log(`hi`);
+        const {name,value}=e.target;
+        setFormData((prevFormData) => ({
+            ...prevFormData,
+            [name]: value
+          }));
+          //console.log(formData);
+    }
+    const handleSubmit=(event)=>{
+        event.preventDefault();
+        console.log(formData);
+        fetch(`http://localhost:3000/signup`,{
+            body:JSON.stringify(formData),
+            method:`POST`,
+            credentials:"include",
+            headers:{"Content-Type":"application/json"}
+        }).then(res=> res.json()).then(response =>{
+            console.log(response)
+            if(response.status)
+            {
+                navigate('/');
+            }
+            else{
+                alert(`username is present !!!`);
+            }
+        })
+    }
+    const handleCheck=()=>{
+        fetch(`http://localhost:3000/checklogin`,{
+            
+            method:`GET`,
+            credentials:"include"
+        }).then(res=> res.json()).then(response =>{console.log(response)})
+    }
     return (
         <div className="bg-grey-lighter min-h-screen w-screen flex flex-col bg-opacity-10 backdrop-blur-md bg-cover bg-no-repeat" style={{ backgroundImage: `url(${giphy})` }}>
             <div className="container max-w-sm mx-auto flex-1 flex flex-col items-center justify-center px-2">
@@ -22,18 +56,24 @@ function Signup() {
                     <input 
                         type="text"
                         className="block border border-grey-light w-full p-3 rounded mb-4"
-                        name="fullname"
-                        placeholder="Full Name" />
+                        name="username"
+                        placeholder="Full Name" 
+                        value={formData.username}
+                        onChange={handleChange}/>
                     <input 
                         type="text"
                         className="block border border-grey-light w-full p-3 rounded mb-4"
                         name="email"
-                        placeholder="Email" />
+                        placeholder="Email" 
+                        value={formData.email}
+                        onChange={handleChange}/>
                     <input 
                         type="password"
                         className="block border border-grey-light w-full p-3 rounded mb-4"
                         name="password"
-                        placeholder="Password" />
+                        placeholder="Password" 
+                        value={formData.password}
+                        onChange={handleChange}/>
                     <input 
                         type="password"
                         className="block border border-grey-light w-full p-3 rounded mb-4"
@@ -42,6 +82,7 @@ function Signup() {
                     <button
                         type="submit"
                         className="w-full text-center py-3 rounded bg-green text-white hover:bg-green-dark focus:outline-none my-1"
+                        onClick={handleSubmit}
                     >Create Account</button>
                     <div className="text-center text-sm text-grey-dark mt-4">
                         By signing up, you agree to the 
