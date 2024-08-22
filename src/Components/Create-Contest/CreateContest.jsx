@@ -1,6 +1,6 @@
 import { useState } from "react";
 import { ContestForm } from "./ContestForm";
-import ContestNavBar from "../Contest-Editor/ContestNavBar";
+import ContestNavBar from "./ContestNavBar";
 import { Navigate } from "./Dashboard-Navigate";
 import {CombinedComponent} from "./CombinedComponent";
 
