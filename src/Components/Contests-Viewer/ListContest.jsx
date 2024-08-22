@@ -26,8 +26,12 @@ const ListContest=({list})=>{
         <div className="w-full h-full">
             <div className="flex flex-wrap gap-8 border-b-2  border-slate-600">
                 {list.map((item,index)=>{
-                    const isContestActive = now >= item.contest_start && now <= item.contest_end;
-                    const isContestEnded = now > item.contest_end;
+                    const rightnow=new Date();
+                    
+                    //console.log(rightnow)
+                    //console.log(`  ${item.contest_start}  ${rightnow.toISOString()}  ${item.contest_end} `);
+                    const isContestActive = rightnow.toISOString() >= item.contest_start && rightnow.toISOString() <= item.contest_end;
+                    const isContestEnded = rightnow.toISOString() > item.contest_end;
                     return (<div id={item.contest_id} key={index} className="px-6 flex w-full h-36 flex-wrap  border-2  border-gray-700 hover:border-4">
                         <div className="w-full h-[10%] italic text-sm text-slate-500"> Organised by {item.organizer}</div>
                         <div className="w-full h-2"></div>

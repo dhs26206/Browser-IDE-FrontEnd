@@ -14,7 +14,7 @@ const QuestionList=({contests})=>{
     return(
         <div  className="w-full h-full md:pb-10">
             <div className="flex flex-wrap gap-8 border-b-2  border-slate-600">
-            {contests.contests[0].questions.map((item,index)=>{
+            {contests.questions.map((item,index)=>{
                     
                     return (<div  key={index} className="px-6 flex w-full h-36 flex-wrap  border-2  border-gray-700 hover:border-4">
                         <div className="w-full h-[10%] italic text-sm text-slate-500"> Score : {item.score} </div>
