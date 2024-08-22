@@ -46,10 +46,11 @@ export const ManageContest=()=>{
 
                                             </div>
                                         </div>
-                                        {expand==index&&<div className="pl-2 h-[50%] w-full border-b-[1px] border-l-[1px] border-r-[1px] border-red-600 flex flex-wrap justify-around">
-                                            <div className="w-full flex"> <span className="w-[50%]"> Contest ID:{element.contest_id}</span> <span className="w-[50%]"> No of Problems: {element.no_of_problems}</span></div>
-                                            <div className="w-full flex"> <span className="w-[50%]"> Contest Start Time: {convertTime(element.start_time)}</span> <span className="w-[50%]"> Contest End Time: {convertTime(element.end_time)}</span></div>
-                                            <div className="w-full flex"> <span className="w-[50%]"> Type: {element.type}</span> <span className="w-[50%]"> Security: {element.security}</span></div>
+                                        {expand==index&&<div className="pl-2 h-[55%] w-full border-b-[1px] border-l-[1px] border-r-[1px] border-red-600 flex flex-wrap justify-around">
+                                            <div className="w-full h-1/4 flex"> <span className="w-[50%]"> Contest ID:{element.contest_id}</span> <span className="w-[50%]"> No of Problems: {element.no_of_problems}</span></div>
+                                            <div className="w-full h-1/4 flex"> <span className="w-[50%]"> Contest Start Time: {convertTime(element.start_time)}</span> <span className="w-[50%]"> Contest End Time: {convertTime(element.end_time)}</span></div>
+                                            <div className="w-full h-1/4 flex"> <span className="w-[50%]"> Type: {element.type}</span> <span className="w-[50%]"> Security: {element.security}</span></div>
+                                            <div className="w-1/2"></div> <div className="w-1/2 pr-3 pb-2 h-1/4 flex justify-end gap-3"><button className="bg-green-500 hover:bg-green-400 h-full flex items-center">Edit Details</button><button className="bg-red-800 hover:bg-red-900 h-full flex items-center">Delete</button></div>
                                             </div>}
                                     </>
                                     
