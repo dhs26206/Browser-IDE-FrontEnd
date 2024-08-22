@@ -10,6 +10,7 @@ import Signup from './Components/Login-SignUp/SignUp.jsx';
 import CreateContest from './Components/Create-Contest/CreateContest.jsx';
 import ProtectedRoute from './RestrictedURLs.jsx';
 import { QuestionList } from './Components/Create-Contest/QuestionList.jsx';
+import Account from './Components/Manage-Account/Account.jsx';
 
 // import Dino from './Components/Contest-Viewer/Dino.jsx';
 const isAuthenticatedTrue=()=>{
@@ -24,6 +25,7 @@ const routes = [
     { path: '/signup', element: <Signup/> },
     { path: '/CreateContest', element:<ProtectedRoute element={CreateContest} isAuthenticated={isAuthenticatedTrue}/> },
     { path: '/QChoose/:q', element:<ProtectedRoute element={QuestionList} isAuthenticated={isAuthenticatedTrue}/> },
+    { path: '/User', element:<ProtectedRoute element={Account} isAuthenticated={isAuthenticatedTrue}/> },
     
     // { path: '/dev2', element: <Dino/> },
     // { path: '/abc/:id', element: <DynamicPage /> }, // Dynamic route

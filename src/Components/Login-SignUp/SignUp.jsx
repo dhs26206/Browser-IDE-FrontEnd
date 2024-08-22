@@ -1,5 +1,5 @@
-import React, { useState } from 'react';
-import { useNavigate, Link } from 'react-router-dom';  // Add Link here
+import React from 'react';
+import { useNavigate } from 'react-router-dom';
 import logo from './logo.png'; 
 import giphy from './giphy.webp';
 import { url } from '../../../url';
@@ -7,7 +7,6 @@ import ParticlesComponent from '../Home/nuro';
 
 function Signup() {
     const navigate = useNavigate();
-    const [formData, setFormData] = useState({ username: "", password: "", email: "" });
 
     const handleLoginRedirect = () => {
         navigate('/login');
@@ -59,27 +58,18 @@ function Signup() {
                     <input 
                         type="text"
                         className="block border border-grey-light w-full p-3 rounded mb-4"
-                        name="username"
-                        placeholder="Full Name" 
-                        value={formData.username}
-                        onChange={handleChange}
-                    />
+                        name="fullname"
+                        placeholder="Full Name" />
                     <input 
                         type="text"
                         className="block border border-grey-light w-full p-3 rounded mb-4"
                         name="email"
-                        placeholder="Email" 
-                        value={formData.email}
-                        onChange={handleChange}
-                    />
+                        placeholder="Email" />
                     <input 
                         type="password"
                         className="block border border-grey-light w-full p-3 rounded mb-4"
                         name="password"
-                        placeholder="Password" 
-                        value={formData.password}
-                        onChange={handleChange}
-                    />
+                        placeholder="Password" />
                     <input 
                         type="password"
                         className="block border border-grey-light w-full p-3 rounded mb-4"
@@ -89,7 +79,6 @@ function Signup() {
                     <button
                         type="submit"
                         className="w-full text-center py-3 rounded bg-green text-white hover:bg-green-dark focus:outline-none my-1"
-                        onClick={handleSubmit}
                     >Create Account</button>
                     <div className="text-center text-sm text-grey-dark mt-4">
                         By signing up, you agree to the 
