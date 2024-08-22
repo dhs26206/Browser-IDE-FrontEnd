@@ -1,5 +1,5 @@
 import React, { useEffect, useState } from 'react';
-import { useNavigate } from 'react-router-dom';
+import { useNavigate,Link } from 'react-router-dom';
 import logo from './logo.png'; 
 import giphy from './giphy.webp'
 import {url} from '../../../url'
@@ -56,11 +56,9 @@ function Log() {
             <div className=''>
             <div className="flex  justify-center px-6 py-12 lg:px-8 bg-white bg-opacity-10 backdrop-blur-md self-center my-36">
                         <div className="sm:mx-auto sm:w-full sm:max-w-sm">
-                            <img
-                                className="mx-auto h-12 w-auto"
-                                src="https://cdn.ddks.live/cdn/logo.png"
-                                alt="Your Company"
-                            />
+                        <Link to="/">
+                         <img className={`w-64 h-14 pl-5`} src="https://cdn.ddks.live/cdn/logo.png" alt="Logo" />
+                         </Link>
                             <h2 className="mt-10 text-center text-2xl font-bold leading-9 tracking-tight text-white">
                                 Sign in to your account
                             </h2>

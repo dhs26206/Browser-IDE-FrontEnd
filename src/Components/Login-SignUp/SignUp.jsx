@@ -1,60 +1,60 @@
 import React, { useState } from 'react';
-import { useNavigate } from 'react-router-dom';
+import { useNavigate, Link } from 'react-router-dom';  // Add Link here
 import logo from './logo.png'; 
-import giphy from './giphy.webp'
-import {url} from '../../../url'
+import giphy from './giphy.webp';
+import { url } from '../../../url';
 import ParticlesComponent from '../Home/nuro';
+
 function Signup() {
     const navigate = useNavigate();
-    const [formData,setFormData]=useState({username:"",password:"",email:""});
+    const [formData, setFormData] = useState({ username: "", password: "", email: "" });
+
     const handleLoginRedirect = () => {
         navigate('/login');
     };
-    const handleChange=(e)=>{
-        //console.log(`hi`);
-        const {name,value}=e.target;
+
+    const handleChange = (e) => {
+        const { name, value } = e.target;
         setFormData((prevFormData) => ({
             ...prevFormData,
             [name]: value
-          }));
-          //console.log(formData);
+        }));
     }
-    const handleSubmit=(event)=>{
+
+    const handleSubmit = (event) => {
         event.preventDefault();
         console.log(formData);
-        fetch(`${url}/signup`,{
-            body:JSON.stringify(formData),
-            method:`POST`,
-            credentials:"include",
-            headers:{"Content-Type":"application/json"}
-        }).then(res=> res.json()).then(response =>{
-            console.log(response)
-            if(response.status)
-            {
+        fetch(`${url}/signup`, {
+            body: JSON.stringify(formData),
+            method: `POST`,
+            credentials: "include",
+            headers: { "Content-Type": "application/json" }
+        }).then(res => res.json()).then(response => {
+            console.log(response);
+            if (response.status) {
                 navigate('/');
-            }
-            else{
+            } else {
                 alert(`username is present !!!`);
             }
-        })
+        });
     }
-    const handleCheck=()=>{
-        fetch(`${url}/checklogin`,{
-            
-            method:`GET`,
-            credentials:"include"
-        }).then(res=> res.json()).then(response =>{console.log(response)})
+
+    const handleCheck = () => {
+        fetch(`${url}/checklogin`, {
+            method: `GET`,
+            credentials: "include"
+        }).then(res => res.json()).then(response => { console.log(response) });
     }
+
     return (
         <div className="bg-grey-lighter min-h-screen w-screen flex flex-col bg-opacity-10 backdrop-blur-md bg-cover bg-no-repeat" style={{ backgroundImage: `url(${giphy})` }}>
-            <ParticlesComponent/>
+            <ParticlesComponent />
             <div className="container max-w-sm mx-auto flex-1 flex flex-col items-center justify-center px-2">
                 <div className="bg-white bg-opacity-10 backdrop-blur-md px-6 py-8 rounded shadow-md text-white w-full">
-                    <img
-                        className="mx-auto h-12 w-auto"
-                        src="https://cdn.ddks.live/cdn/logo.png"
-                        alt="Your Company"
-                    />
+                <Link to="/">
+               <img className={`w-64 h-14 pl-5`} src="https://cdn.ddks.live/cdn/logo.png" alt="Logo" />
+            </Link>
+
                     <h1 className="mb-8 text-3xl text-center">Sign up</h1>
                     <input 
                         type="text"
@@ -62,26 +62,30 @@ function Signup() {
                         name="username"
                         placeholder="Full Name" 
                         value={formData.username}
-                        onChange={handleChange}/>
+                        onChange={handleChange}
+                    />
                     <input 
                         type="text"
                         className="block border border-grey-light w-full p-3 rounded mb-4"
                         name="email"
                         placeholder="Email" 
                         value={formData.email}
-                        onChange={handleChange}/>
+                        onChange={handleChange}
+                    />
                     <input 
                         type="password"
                         className="block border border-grey-light w-full p-3 rounded mb-4"
                         name="password"
                         placeholder="Password" 
                         value={formData.password}
-                        onChange={handleChange}/>
+                        onChange={handleChange}
+                    />
                     <input 
                         type="password"
                         className="block border border-grey-light w-full p-3 rounded mb-4"
                         name="confirm_password"
-                        placeholder="Confirm Password" />
+                        placeholder="Confirm Password" 
+                    />
                     <button
                         type="submit"
                         className="w-full text-center py-3 rounded bg-green text-white hover:bg-green-dark focus:outline-none my-1"
@@ -112,4 +116,5 @@ function Signup() {
 }
 
 export default Signup;
+
 
