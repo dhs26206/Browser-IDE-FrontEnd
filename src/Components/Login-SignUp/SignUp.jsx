@@ -2,15 +2,52 @@ import React from 'react';
 import { useNavigate } from 'react-router-dom';
 import logo from './logo.png'; 
 import giphy from './giphy.webp'
+import {url} from '../../../url'
+import ParticlesComponent from '../Home/nuro';
 function Signup() {
     const navigate = useNavigate();
 
     const handleLoginRedirect = () => {
         navigate('/login');
     };
-
+    const handleChange=(e)=>{
+        //console.log(`hi`);
+        const {name,value}=e.target;
+        setFormData((prevFormData) => ({
+            ...prevFormData,
+            [name]: value
+          }));
+          //console.log(formData);
+    }
+    const handleSubmit=(event)=>{
+        event.preventDefault();
+        console.log(formData);
+        fetch(`${url}/signup`,{
+            body:JSON.stringify(formData),
+            method:`POST`,
+            credentials:"include",
+            headers:{"Content-Type":"application/json"}
+        }).then(res=> res.json()).then(response =>{
+            console.log(response)
+            if(response.status)
+            {
+                navigate('/');
+            }
+            else{
+                alert(`username is present !!!`);
+            }
+        })
+    }
+    const handleCheck=()=>{
+        fetch(`${url}/checklogin`,{
+            
+            method:`GET`,
+            credentials:"include"
+        }).then(res=> res.json()).then(response =>{console.log(response)})
+    }
     return (
         <div className="bg-grey-lighter min-h-screen w-screen flex flex-col bg-opacity-10 backdrop-blur-md bg-cover bg-no-repeat" style={{ backgroundImage: `url(${giphy})` }}>
+            <ParticlesComponent/>
             <div className="container max-w-sm mx-auto flex-1 flex flex-col items-center justify-center px-2">
                 <div className="bg-white bg-opacity-10 backdrop-blur-md px-6 py-8 rounded shadow-md text-white w-full">
                     <img
@@ -53,7 +90,7 @@ function Signup() {
                         </a>.
                     </div>
                 </div>
-                <div className="text-grey-dark mt-6">
+                <div className="text-grey-dark mt-6 z-10">
                     Already have an account? 
                     <button
                         className="no-underline border-b border-blue text-blue"
