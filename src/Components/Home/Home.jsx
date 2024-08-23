@@ -81,10 +81,10 @@ const Home = () => {
           <div className="h-[100vh] bg-transparent z-20">
             <Keyfeatures />
           </div>
-          <div className="h-[100vh] bg-transparent z-20">
+          <div className="h-[100vh] bg-transparent z-20 relative bottom-40">
             <Team />
           </div>
-          <div className="h-[100vh] bg-transparent z-20">
+          <div className="h-[100vh] bg-transparent z-20 relative top-5 p-32">
             <Contribute />
           </div>
           <div className="h-[100vh] bg-transparent z-20">
