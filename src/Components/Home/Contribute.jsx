@@ -1,34 +1,46 @@
 
 
-function Contribute(){
-    const repo=()=>{
-        window.location.href="https://aws1.ddks.live"
-    }
+function Contribute() {
+    const repo = () => {
+        window.location.href = "https://aws1.ddks.live";
+    };
 
-
-
-    return(
-        <div className="w-full h-full">
-            <div className="w-full h-full flex-col md:flex-nowrap">
-                <div className="text-2xl  md:text-5xl pl-10 h-[20%] w-full flex items-center text-center  border-white">Ever Seen This Cat Before ?</div>
-                <div className="w-full h-[80%] md:flex-row-reverse flex flex-col  md:flex-nowrap"> 
-                    <div className="md:w-1/2 md:h-full w-full h-[50%] flex items-center">
-                        <img onClick={()=>repo()} className="w-full cursor-pointer" src="https://cdn.ddks.live/cdn/githublogov2.png"  alt="Repo" srcset="" />
-
-                    </div>
-                    <div className="md:h-full h-[50%] md:w-1/2 w-full flex flex-wrap">
-                        
-                        <div className="flex flex-wrap items-center h-[80%] w-full ">
-                            <div className="items-center w-full pl-7  md:tracking-normal"><span className=" font-bold text-3xl">Well ! Thats Great </span><br /><span className="font-bold font-2xl"> You Can Contribute ,</span><br /> <span className="font-semibold">Just Click the Cat and She will show you the Way* !!</span></div>
-                            <div className="w-full md:flex hidden font-thin text-xs pl-2" > *By Clicking the Icon ,You agree to the Terms and Conditions of github.com and its Privacy Policy. <br />
-                            Note: If the link is not accessible , Kindly Contact Us using any of the References Below </div>
-                        </div>
+    return (
+        <div className="w-full h-full flex flex-col justify-center items-center">
+            <div className="w-full text-center mb-8">
+                <div className="text-2xl md:text-5xl">
+                    Ever Seen This Cat Before?
+                </div>
+            </div>
+            <div className="w-full flex flex-col md:flex-row justify-center items-center">
+                <div className="md:w-1/3 flex justify-center items-center mb-4 md:mb-0">
+                    <div className="flex justify-center items-center" style={{ backgroundColor: "white", borderRadius: "50%" }}>
+                        <img 
+                            onClick={repo} 
+                            className="cursor-pointer w-48 h-48 rounded-full object-cover" 
+                            src="https://cdn.ddks.live/cdn/githublogov2.png"  
+                            alt="Repo" 
+                        />
                     </div>
                 </div>
-                
+                <div className="md:w-2/3 text-center md:text-left">
+                    <div className="font-bold text-3xl">
+                        Well! That's Great
+                    </div>
+                    <div className="font-bold text-2xl">
+                        You Can Contribute,
+                    </div>
+                    <div className="font-semibold">
+                        Just Click the Cat and She will show you the Way* !!
+                    </div>
+                    <div className="w-full mt-4 font-thin text-xs">
+                        *By Clicking the Icon, You agree to the Terms and Conditions of github.com and its Privacy Policy. <br />
+                        Note: If the link is not accessible, Kindly Contact Us using any of the References Below.
+                    </div>
+                </div>
             </div>
         </div>
-    )
+    );
 }
 
 export default Contribute;
