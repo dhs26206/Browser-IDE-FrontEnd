@@ -9,7 +9,7 @@ import Signup from './Components/Login-SignUp/SignUp.jsx';
 import CreateContest from './Components/Create-Contest/CreateContest.jsx';
 import ProtectedRoute from './RestrictedURLs.jsx';
 import { QuestionList } from './Components/Create-Contest/QuestionList.jsx';
-import Account from './Components/Manage-Account/Account.jsx';
+// import Account from './Components/Manage-Account/Account.jsx';
 import QuestionCreate from './Components/Create-Contest/QuestionCreate.jsx';
 
 // import Dino from './Components/Contest-Viewer/Dino.jsx';
