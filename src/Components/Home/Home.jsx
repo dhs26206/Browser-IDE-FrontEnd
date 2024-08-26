@@ -7,9 +7,32 @@ import Contribute from "./Contribute";
 import Footer from "./Footer";
 import ParticlesComponent from "./nuro";
 import { useNavigate } from "react-router-dom";
+import { useState, useEffect } from "react";
+import { url } from "../../../url";
 
 const Home = () => {
-  const navigate=useNavigate();
+  const navigate = useNavigate();
+  const [isLoggedIn, setIsLoggedIn] = useState(false);
+
+  useEffect(() => {
+    // Check if the user is already logged in
+    fetch(`${url}/checklogin`, {
+      method: 'GET',
+      credentials: 'include',
+    })
+    .then((res) => res.json())
+    .then((response) => {
+      if (response.login) {
+        setIsLoggedIn(true); // User is logged in
+      } else {
+        setIsLoggedIn(false); // User is not logged in
+      }
+    })
+    .catch((error) => {
+      console.error('Error checking login status:', error);
+    });
+  }, []);
+
   const handleNavigate = () => {
     navigate('/contestList');
   };
@@ -20,12 +43,10 @@ const Home = () => {
 
   return (
     <div className="relative h-screen w-screen overflow-y-auto">
-      
       <div className="absolute z-10">
         <SolarSystemAnimation />
       </div>
 
-      
       <div className="relative flex flex-col">
         {/* NavBar */}
         <div className="w-full h-[12%] bg-transparent z-40">
@@ -42,13 +63,16 @@ const Home = () => {
           <div className="ml-5 italic mt-2">
             Because We Don't want More Drama in our Life
           </div>
+          
           <div className="flex justify-center gap-10 mt-5">
-            <button
-              onClick={handleNavigateSignUp}
-              className="bg-transparent border-2 border-[#4D9DE0] text-[#4D9DE0] w-52 font-bold rounded-md hover:bg-[#4D9DE0] hover:text-white"
-            >
-              Sign Up
-            </button>
+            {!isLoggedIn && (
+              <button
+                onClick={handleNavigateSignUp}
+                className="bg-transparent border-2 border-[#4D9DE0] text-[#4D9DE0] w-52 font-bold rounded-md hover:bg-[#4D9DE0] hover:text-white"
+              >
+                Sign Up
+              </button>
+            )}
             <button
               onClick={handleNavigate}
               className="bg-transparent border-2 border-[#f3ca40] text-[#f3ca40] w-52 font-bold rounded-md hover:bg-[#f3ca40] hover:text-white"
@@ -68,7 +92,6 @@ const Home = () => {
 
         {/* Sections below the hero */}
         <div className="flex flex-col w-full">
-          
           <div className="relative h-[100vh]">
             <div className="absolute inset-0 -z-10">
               <ParticlesComponent />
@@ -97,5 +120,5 @@ const Home = () => {
 };
 
 export default Home;
-        
+
  
