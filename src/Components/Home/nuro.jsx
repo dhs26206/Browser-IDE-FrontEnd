@@ -1,8 +1,8 @@
-import React, { Component } from "react";
+import React, { PureComponent } from "react";
 import Particles, { initParticlesEngine } from "@tsparticles/react";
 import { loadSlim } from "@tsparticles/slim";
 
-class ParticlesComponent extends Component {
+class ParticlesComponent extends PureComponent {
   constructor(props) {
     super(props);
     this.state = {
@@ -110,4 +110,3 @@ class ParticlesComponent extends Component {
 }
 
 export default ParticlesComponent;
-
