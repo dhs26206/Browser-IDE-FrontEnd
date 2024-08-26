@@ -15,11 +15,12 @@ export const ContestForm=()=>{
     const handleSecurity=(item)=>{
         set_Security_State(item);
     }
-    const handleQuestionChoose=()=>{
-        let url="/dev2"
-        const features = 'width=1000,height=800,top=100,left=100,menubar=no,toolbar=no,location=no,status=no';
-        window.open(url, '_blank', features)
+    const handleQuestionChoose = () => {
+        let url = "/QChoose/gwbgswt";
+        const features = 'width=800,height=600,top=100,left=100,location=no,menubar=no,toolbar=no,location=no,status=no,resizable=no';
+        window.open(url, '_blank', features);
     }
+    
     return(
         <div className="pl-5 h-full w-full bg-blue-950 overflow-x-scroll">
             <div className="w-full h-1/5 text-5xl flex items-center ">
