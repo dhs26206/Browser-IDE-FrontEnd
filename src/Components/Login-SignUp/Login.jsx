@@ -37,7 +37,7 @@ function Log() {
 
     const handleSubmit = useCallback((event) => {
         event.preventDefault();
-        fetch(`http://localhost:3000/login`, {
+        fetch(`${url}/login`, {
             body: JSON.stringify(formData),
             method: `POST`,
             credentials: "include",

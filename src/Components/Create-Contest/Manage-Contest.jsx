@@ -41,32 +41,22 @@ export const ManageContest=()=>{
                         manage.map((element,index)=>{
                             // console.log(element.contest_id)
                             return(
-                                <div key={index} className={`pt-1 pl-1 w-full ${expand===index?"h-[90%]":"h-[40%]"} flex flex-col  bg-[#1d3275] hover:border-yellow-200 hover:delay-100 border-2 border-gray-800`}>
-                                    <div className={`flex-grow-[4] w-full `}>
-                                        <div className="w-full h-3 text-sm text-[#6e6e6e]">{element.contest_id}</div>
-                                        <div className="w-full h-full pt-1 flex items-center">
-                                            <div className="flex justify-between w-full">
-                                                <div className="text-2xl pl-4">{element.contest_name} </div>
-                                                <div className="mr-2">
-                                                    <button onClick={()=>handleExpand(index)} className={`${expand===index?"bg-red-600":"bg-yellow-500"}`}>{expand===index?"Close":"View Details"}</button>
-                                                </div>
+                                <>
+                                        <div key={index} className="h-[35%] w-full border-[1px] border-gray-500 hover:border-2">
+                                            <div className="w-full h-[20%] text-sm text-slate-600 "> {element.contest_id} </div>
+                                            <div className="w-full h-[80%] flex justify-between">
+                                                <div className="h-full pl-2 items-center flex text-2xl" >{element.contest_name}</div>
+                                                <div className="h-full pr-4 items-center flex "> <button onClick={()=>handleExpand(index)} className={` w-full  hover:delay-100  border-2 hover:border-red-300 ${expand===index?"bg-red-600 hover:bg-red-400":"bg-yellow-500 hover:bg-yellow-400"} `} type="button">{expand==index?"Close":"View Details"}</button></div>
+
                                             </div>
                                         </div>
-                                    </div>
-                                    {expand===index&& <div className="w-full h-[60%] flex-grow-[9] ">
-                                         <div className="w-full h-full flex flex-wrap justify-center ">
-                                            <div className="w-[100%] border-t-2 border-[#aba5a5]"></div>
-                                            <div className="w-full h-full flex flex-wrap items-center justify-center">
-                                                <div className="w-[90%] flex justify-between"><span  className="w-1/2 flex justify-start">Contest ID: {element.contest_id}</span> <span  className="w-1/2 flex justify-start">Contest Created On : {convertTime(element.created_on)} </span></div>
-                                                <div className="w-[90%] flex justify-between"><span  className="w-1/2 flex justify-start">Start : {convertTime(element.start_time)}</span> <span  className="w-1/2 flex justify-start">End : {convertTime(element.end_time)} </span></div>
-                                                <div className="w-[90%] flex justify-between"><span className="w-1/2 "> Type : {element.type} </span> <span className="w-1/2 flex justify-start"> Security : {element.security} </span></div>
-                                                
-                                                <div className="w-full flex justify-between" ><span className="w-1/2"></span> <span className="w-1/2 items-end flex justify-end gap-3 p-2"> <button className="bg-yellow-400 rounded-lg" type="button">Modify</button> <button className="bg-red-900 rounded-lg" type="button">Delete</button> </span> </div>
-                                            </div>
-                                         </div>
-                                         </div>}
-
-                                </div>
+                                        {expand==index&&<div className="pl-2 h-[55%] w-full border-b-[1px] border-l-[1px] border-r-[1px] border-red-600 flex flex-wrap justify-around">
+                                            <div className="w-full h-1/4 flex"> <span className="w-[50%]"> Contest ID:{element.contest_id}</span> <span className="w-[50%]"> No of Problems: {element.no_of_problems}</span></div>
+                                            <div className="w-full h-1/4 flex"> <span className="w-[50%]"> Contest Start Time: {convertTime(element.start_time)}</span> <span className="w-[50%]"> Contest End Time: {convertTime(element.end_time)}</span></div>
+                                            <div className="w-full h-1/4 flex"> <span className="w-[50%]"> Type: {element.type}</span> <span className="w-[50%]"> Security: {element.security}</span></div>
+                                            <div className="w-1/2"></div> <div className="w-1/2 pr-3 pb-2 h-1/4 flex justify-end gap-3"><button className="bg-green-500 hover:bg-green-400 h-full flex items-center">Edit Details</button><button className="bg-red-800 hover:bg-red-900 h-full flex items-center">Delete</button></div>
+                                            </div>}
+                                    </>
                             )
                         })
                     }
