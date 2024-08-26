@@ -28,7 +28,8 @@ const routes = [
     
     { path: '/dev2', element: <QuestionCreate/> },
     // { path: '/abc/:id', element: <DynamicPage /> }, // Dynamic route
-    { path: '/dev2', element: <QuestionCreate/> },
+    // { path: '/dev2', element: <QuestionCreate/> },
+    
     // { path: '/User', element: <Account/> },
     // { path: '*', element: <NotFound /> },
   ];
