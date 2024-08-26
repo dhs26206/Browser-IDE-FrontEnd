@@ -6,7 +6,7 @@ import {CombinedComponent} from "./CombinedComponent";
 
 
 function CreateContest(){
-    const[state,setstate]=useState("manage");
+    const[state,setstate]=useState("create");
     const handlestate=(e)=>{
         setstate(e);
     }
