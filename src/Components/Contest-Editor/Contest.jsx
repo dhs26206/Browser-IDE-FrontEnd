@@ -4,10 +4,18 @@ import ContestNavBar from "./ContestNavBar"
 import Editor1 from "./Editor"
 import Question from "./Question"
 import { SubmitCompile } from "./Submit-Compile";
-
-
+import Block from "./Block";
+import 'animate.css';
 const Contest = () => {
     const [leftWidth, setLeftWidth] = useState(42);
+    const [hit, setHit]=useState(false);
+    const handleHit=()=>{
+      setHit(true);
+      
+    }
+    const hideBlock=()=>{
+      setHit(false);
+    }
   
     const handleMouseDown = (e) => {
       e.preventDefault();
@@ -44,9 +52,16 @@ const Contest = () => {
             className="w-1 hidden md:flex bg-slate-500 cursor-ew-resize"
             onMouseDown={handleMouseDown}
           ></div>
-          <div className="h-[80%] md:h-full flex-grow0   overflow-auto" style={{ width: window.innerWidth >= 1024 ? `calc(100% - ${leftWidth}% )` : '100%' }} >
-              <div className="w-full h-[94%]  "> <Editor1 /></div>
-              <div className="w-full h-[6%]  sticky bottom-0 "> <SubmitCompile/> </div>
+          <div className="h-[80%] md:h-full flex-grow0 relative  overflow-auto" style={{ width: window.innerWidth >= 1024 ? `calc(100% - ${leftWidth}% )` : '100%' }} >
+          <div className="relative w-full h-[94%]">
+              <div className="absolute inset-0 z-0">
+                <Editor1 />
+              </div>
+              <div className={`absolute inset-0 z-10 ${hit ? "" : "animate__animated animate__bounceInDown hidden"}`}>
+                <Block hideBlockButton={hideBlock} />
+              </div>
+          </div>
+              <div className="w-full h-[6%] z-20 sticky bottom-0 "> <SubmitCompile isClicked={handleHit}/> </div>
           </div>
           
         </div>
