@@ -1,9 +1,11 @@
 import 'animate.css';
+import { data } from 'jquery';
 import { useState } from 'react';
 
-const Block=({hideBlockButton})=>{
+const Block=({hideBlockButton,submitData,setSubmitData})=>{
     const [compilation,toggleCompilation]=useState(true);
     const [animate,setAnimate]=useState(true);
+    const[input,setInput]=useState("");
     function handleBlock(){
         setAnimate(false);
         setTimeout(()=>{
@@ -12,8 +14,13 @@ const Block=({hideBlockButton})=>{
 
         },1000);  
     }
+    console.log(submitData);
     function handleCompilation(e){
         toggleCompilation(e);
+    }
+    const handleChange=(event)=>{
+        //setInput(event.target.value);
+        setSubmitData({...submitData,input:event.target.value});
     }
     return(
         <div className={`overflow-y-scroll h-full w-full animate__animated ${animate?"animate__jackInTheBox":"animate__bounceOutDown"}  rounded-t-3xl bg-pink-700`}>
@@ -31,7 +38,7 @@ const Block=({hideBlockButton})=>{
             <div className='pl-8 pt-10 w-full h-[40%] flex items-center' name="Input">
                 <div className='w-[90%] h-full'>
                     <div className='w-full pb-1 text-lg'>Input</div>
-                    <textarea className="bg-gray-800 pl-1 w-4/5 h-3/4 rounded-lg text-[#aba0a0]  border-2 border-gray-600 placeholder:pl-4 placeholder:text-[#646363] placeholder:text-sm  text-left overflow-x-auto" placeholder="" type="text" />
+                    <textarea className="bg-gray-800 pl-1 w-4/5 h-3/4 rounded-lg text-[#aba0a0]  border-2 border-gray-600 placeholder:pl-4 placeholder:text-[#646363] placeholder:text-sm  text-left overflow-x-auto" placeholder="" type="text" name="input" onChange={handleChange}/>
                 </div>
             </div>
             <div className='pl-8 pt-10 w-full h-[25%] flex items-center' name="Input">

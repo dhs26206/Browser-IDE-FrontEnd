@@ -62,10 +62,10 @@ const Contest = () => {
                 <Editor1 setSubmitData={setSubmitData} submitData={submitData}/>
               </div>
               <div className={`absolute inset-0 z-10 ${hit ? "" : "animate__animated animate__bounceInDown hidden"}`}>
-                <Block hideBlockButton={hideBlock} />
+                <Block hideBlockButton={hideBlock} setSubmitData={setSubmitData} submitData={submitData} />
               </div>
           </div>
-              <div className="w-full h-[6%] z-20 sticky bottom-0 "> <SubmitCompile isClicked={handleHit}/> </div>
+              <div className="w-full h-[6%] z-20 sticky bottom-0 "> <SubmitCompile isClicked={handleHit} submitData={submitData}/> </div>
           </div>
           
         </div>
