@@ -18,7 +18,7 @@ function Contribute() {
                         <img 
                             onClick={repo} 
                             className="cursor-pointer w-48 h-48 rounded-full object-cover" 
-                            src="https://cdn.ddks.live/cdn/githublogov2.png"  
+                            src="https://folder.ddks.live/cdn/githublogov2.png"  
                             alt="Repo" 
                         />
                     </div>

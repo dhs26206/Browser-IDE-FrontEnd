@@ -6,7 +6,7 @@ function Footer(){
         <div className=" h-full w-full">
             <div className="flex h-full w-full">
                 <div className="h-full w-[20%] border-r-[1px] border-white">
-                    <img className="w-[95%]" src="https://cdn.ddks.live/cdn/logo.png" alt="Logo" srcset="" />
+                    <img className="w-[95%]" src="https://folder.ddks.live/cdn/logo.png" alt="Logo" srcset="" />
                 </div>
                 <div className="w-[80%] h-full flex-wrap flex">
                     <div className="w-full h-[30%] flex justify-center items-center  border-white ">
@@ -15,7 +15,7 @@ function Footer(){
                     <div className=" w-full h-[65%] flex justify-evenly items-center">
                         <div className="h-[60%] w-[20%] flex flex-col items-center">
                             
-                            <img className="h-[25%] "  src="https://cdn.ddks.live/cdn/igbgremoved.png" alt="" srcset="" />
+                            <img className="h-[25%] "  src="https://folder.ddks.live/cdn/igbgremoved.png" alt="" srcset="" />
                             
                             <div className="flex flex-col h-3/4">
                                 <div className=" text-center cursor-pointer hover:text-blue-400 text-blue-800 hover:underline" onClick={()=>{window.location.href="https://example.com"}}>Ashleel_Coders</div>
@@ -27,7 +27,7 @@ function Footer(){
                             </div>
                         </div>
                         <div className="h-[60%] w-[20%] flex flex-col justify-between items-center">
-                            <img className="h-1/4 rounded-full object-cover" src="https://cdn.ddks.live/cdn/downloadgithub.png" alt="" srcset="" />
+                            <img className="h-1/4 rounded-full object-cover" src="https://folder.ddks.live/cdn/downloadgithub.png" alt="" srcset="" />
                             <div className="flex flex-col h-3/4 ">
                                 <div className=" text-center cursor-pointer hover:text-blue-400 text-blue-800 hover:underline" onClick={()=>{window.location.href="https://example.com"}}>Ashleel_Coders</div>
                                 <div className=" text-center cursor-pointer hover:text-blue-400 text-blue-800 hover:underline" onClick={()=>{window.location.href="https://example.com"}}>Dhruv</div>
