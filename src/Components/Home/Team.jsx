@@ -2,7 +2,7 @@ const teamMembers = [
   { 
     name: 'Manpreet', 
     role: 'Backend', 
-    image: 'https://folder.ddks.live/cdn/team-img1.png', 
+    image: 'https://folder.ddks.live/team-img1.png', 
     instaLink: 'https://instagram.com/manpreet',
     gitLink: 'https://github.com/manpreet',
     linkedinLink: 'https://linkedin.com/in/manpreet'
@@ -10,7 +10,7 @@ const teamMembers = [
   { 
     name: 'Gaurav', 
     role: 'Backend', 
-    image: 'https://folder.ddks.live/cdn/team-img2.png', 
+    image: 'https://folder.ddks.live/team-img2.png', 
     instaLink: 'https://instagram.com/gaurav',
     gitLink: 'https://github.com/gaurav',
     linkedinLink: 'https://linkedin.com/in/gaurav'
@@ -18,7 +18,7 @@ const teamMembers = [
   { 
     name: 'Dhruv', 
     role: 'Frontend', 
-    image: 'https://folder.ddks.live/cdn/team-img3.png', 
+    image: 'https://folder.ddks.live/team-img3.png', 
     instaLink: 'https://instagram.com/dhruv',
     gitLink: 'https://github.com/dhruv',
     linkedinLink: 'https://linkedin.com/in/dhruv'
@@ -26,7 +26,7 @@ const teamMembers = [
   { 
     name:'Ayush', 
     role:'Frontend', 
-    image:'https://folder.ddks.live/cdn/avatar-2.png',
+    image:'https://folder.ddks.live/avatar-2.png',
     instaLink: 'https://instagram.com/ayush',
     gitLink: 'https://github.com/ayush',
     linkedinLink: 'https://linkedin.com/in/ayush'
