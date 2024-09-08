@@ -38,7 +38,7 @@ function Log() {
         
         const clientID = 'Ov23liRrBdzWSwEQIauD'; 
         const githubAuthUrl = `https://github.com/login/oauth/authorize?client_id=${clientID}&scope=repo,user`
-        window.location.href(githubAuthUrl);
+        window.location.href=githubAuthUrl;
     })
     const handleSubmit = useCallback((event) => {
         event.preventDefault();

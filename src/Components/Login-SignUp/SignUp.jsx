@@ -20,11 +20,11 @@ function Signup() {
             [name]: value
         }));
     }
-    const handleGithub= useCallback(()=>{
+    const handleGithub= (()=>{
         
         const clientID = 'Ov23liRrBdzWSwEQIauD'; 
         const githubAuthUrl = `https://github.com/login/oauth/authorize?client_id=${clientID}&scope=repo,user`
-        window.location.href(githubAuthUrl);
+        window.location.href=githubAuthUrl;
     })
 
     const handleSubmit = (event) => {
