@@ -34,7 +34,12 @@ function Log() {
             [name]: value,
         }));
     }, []);
-
+    const handleGithub= useCallback(()=>{
+        
+        const clientID = 'Ov23liRrBdzWSwEQIauD'; 
+        const githubAuthUrl = `https://github.com/login/oauth/authorize?client_id=${clientID}&scope=repo,user`
+        window.location.href(githubAuthUrl);
+    })
     const handleSubmit = useCallback((event) => {
         event.preventDefault();
         fetch(`${url}/login`, {
@@ -110,13 +115,17 @@ function Log() {
                                     />
                                 </div>
                             </div>
-                            <div>
+                            <div className='flex flex-wrap gap-3'>
                                 <button
                                     type="submit"
                                     className="flex w-full justify-center rounded-md bg-indigo-600 px-3 py-1.5 text-sm font-semibold leading-6 text-white shadow-sm hover:bg-indigo-500 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-indigo-600"
                                 >
                                     Sign in
                                 </button>
+                                <div onClick={()=>handleGithub()}  className="w-full bg-black p-2 rounded-lg text-slate-600 flex gap-2 justify-center cursor-pointer hover:bg-slate-800">
+                                    SignIn With Github
+                                    <img className='w-4 h-4' src="https://folder.ddks.live/downloadgithub.png" alt="logo" />
+                                </div>
                             </div>
                         </form>
                         <p className="mt-10 text-center text-sm text-gray-500">

@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React, { useCallback, useState } from 'react';
 import { useNavigate, Link } from 'react-router-dom';  // Add Link here
 import logo from './logo.png'; 
 import giphy from './giphy.webp';
@@ -20,6 +20,12 @@ function Signup() {
             [name]: value
         }));
     }
+    const handleGithub= useCallback(()=>{
+        
+        const clientID = 'Ov23liRrBdzWSwEQIauD'; 
+        const githubAuthUrl = `https://github.com/login/oauth/authorize?client_id=${clientID}&scope=repo,user`
+        window.location.href(githubAuthUrl);
+    })
 
     const handleSubmit = (event) => {
         event.preventDefault();
@@ -91,6 +97,10 @@ function Signup() {
                         className="w-full text-center py-3 rounded bg-green text-white hover:bg-green-dark focus:outline-none my-1"
                         onClick={handleSubmit}
                     >Create Account</button>
+                    <div onClick={()=>handleGithub()}  className="w-full bg-black p-2 rounded-lg text-slate-600 flex gap-2 justify-center cursor-pointer hover:bg-slate-800">
+                             SignUp With Github
+                            <img className='w-4 h-4' src="https://folder.ddks.live/downloadgithub.png" alt="logo" />
+                            </div>
                     <div className="text-center text-sm text-grey-dark mt-4">
                         By signing up, you agree to the 
                         <a className="no-underline border-b border-grey-dark text-grey-dark" href="https://images.pexels.com/photos/21300485/pexels-photo-21300485.jpeg?cs=srgb&dl=pexels-ravi-roshan-2875998-21300485.jpg&fm=jpg&w=4000&h=6000" target='__blank'>
