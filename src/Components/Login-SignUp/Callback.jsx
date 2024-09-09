@@ -23,25 +23,32 @@ async function GetHerLogin(accessToken){
         headers: { "Content-Type": "application/json" },
         credentials:'include'
     })
-    Navigate('/');
+    
     
 }
 export default function CallBack(){
+  const { search } = useLocation();
     useEffect(() => {
         const handleGitHubLogin = async () => {
           try {
             // Get the access token
-            const { search } = useLocation();
+            
             const queryParams = new URLSearchParams(search);
             const code = queryParams.get('code');
             console.log("Got the code "+code);
-            let token = await getAccessToken(code);
-            console.log("Token is this "+token);      
-            // Wait for 3 seconds using setTimeout
-            await new Promise(resolve => setTimeout(resolve, 3000));
-            
-            // Proceed with the next step after the delay
-            await GetHerLogin(token);
+            if (code) {
+              let token = await getAccessToken(code);
+              console.log("Token is this " + token);
+    
+              // Wait for 3 seconds using setTimeout
+              await new Promise(resolve => setTimeout(resolve, 3000));
+    
+              // Proceed with the next step after the delay
+              await GetHerLogin(token);
+              Navigate('/');
+            } else {
+              console.error('Authorization code not found');
+            }
           } catch (error) {
             console.error('Error during GitHub login process:', error);
           }
