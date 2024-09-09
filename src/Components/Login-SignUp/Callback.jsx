@@ -1,5 +1,6 @@
-import { useNavigate, useParams } from 'react-router-dom';
+import { useLocation, useNavigate, useParams } from 'react-router-dom';
 import { url } from '../../../url';
+import { useEffect } from 'react';
 
 
 async function getAccessToken(code){
@@ -30,8 +31,12 @@ export default function CallBack(){
         const handleGitHubLogin = async () => {
           try {
             // Get the access token
+            const { search } = useLocation();
+            const queryParams = new URLSearchParams(search);
+            const code = queryParams.get('code');
+            console.log("Got the code "+code);
             let token = await getAccessToken(code);
-            
+            console.log("Token is this "+token);      
             // Wait for 3 seconds using setTimeout
             await new Promise(resolve => setTimeout(resolve, 3000));
             
@@ -43,8 +48,8 @@ export default function CallBack(){
         };
     
         handleGitHubLogin();
-      }, [code]);
-    const { code } = useParams();
+      }, []);
+      
     // let token= getAccessToken(code);
     // await new Promise(resolve => setTimeout(resolve, 3000));
     // GetHerLogin(token);

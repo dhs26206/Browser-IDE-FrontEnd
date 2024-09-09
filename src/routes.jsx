@@ -29,7 +29,7 @@ const routes = [
     
     { path: '/dev2', element: <QuestionCreate/> },
     {path:'/userdashboard',element:<Dashboard/>},
-    {path:'/callback/:code',element:<CallBack/>}
+    {path:'/callback',element:<CallBack/>}
     // { path: '/abc/:id', element: <DynamicPage /> }, // Dynamic route
     // { path: '/dev2', element: <QuestionCreate/> },
     
