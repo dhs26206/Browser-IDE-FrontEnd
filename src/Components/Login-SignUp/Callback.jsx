@@ -15,7 +15,7 @@ async function getAccessToken(code){
     return accessToken;
 }
 async function GetHerLogin(accessToken){
-    const Navigate=useNavigate();
+    
     const payload={"code":accessToken};
     const resp=await fetch(`${url}/github/login`,{
         body: JSON.stringify(payload),
@@ -28,6 +28,7 @@ async function GetHerLogin(accessToken){
 }
 export default function CallBack(){
   const { search } = useLocation();
+  const navigate=useNavigate();
     useEffect(() => {
         const handleGitHubLogin = async () => {
           try {
@@ -45,7 +46,7 @@ export default function CallBack(){
     
               // Proceed with the next step after the delay
               await GetHerLogin(token);
-              Navigate('/');
+              navigate('/');
             } else {
               console.error('Authorization code not found');
             }
@@ -55,7 +56,7 @@ export default function CallBack(){
         };
     
         handleGitHubLogin();
-      }, []);
+      }, [search, navigate]);
       
     // let token= getAccessToken(code);
     // await new Promise(resolve => setTimeout(resolve, 3000));
