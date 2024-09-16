@@ -14,6 +14,9 @@ import QuestionCreate from './Components/Create-Contest/QuestionCreate.jsx';
 import Dashboard from './Components/userdashboard/Dashboard.jsx';
 import CallBack from './Components/Login-SignUp/Callback.jsx';
 // import Dino from './Components/Contest-Viewer/Dino.jsx';
+import VerifyEmail from './Components/Login-SignUp/VerifyEmail.jsx';
+import CallVerify from './Components/Login-SignUp/CallVerify.jsx';
+
 const isAuthenticatedTrue=()=>{
   return true;
 }
@@ -29,7 +32,9 @@ const routes = [
     
     { path: '/dev2', element: <QuestionCreate/> },
     {path:'/userdashboard',element:<Dashboard/>},
-    {path:'/callback',element:<CallBack/>}
+    {path:'/callback',element:<CallBack/>},
+    {path:'/verify',element:<VerifyEmail/>},
+    {path:'/callverify',element:<CallVerify/>}
     // { path: '/abc/:id', element: <DynamicPage /> }, // Dynamic route
     // { path: '/dev2', element: <QuestionCreate/> },
     

@@ -7,7 +7,7 @@ import ParticlesComponent from '../Home/nuro';
 
 function Signup() {
     const navigate = useNavigate();
-    const [formData, setFormData] = useState({ username: "", password: "", email: "" });
+    const [formData, setFormData] = useState({ username: "", password: "", email: "" ,name:""});
 
     const handleLoginRedirect = () => {
         navigate('/login');
@@ -28,6 +28,7 @@ function Signup() {
     })
 
     const handleSubmit = (event) => {
+
         event.preventDefault();
         console.log(formData);
         fetch(`${url}/signup`, {
@@ -65,8 +66,16 @@ function Signup() {
                     <input 
                         type="text"
                         className="block border border-grey-light w-full p-3 rounded mb-4 "
-                        name="username"
+                        name="name"
                         placeholder="Full Name" 
+                        value={formData.name}
+                        onChange={handleChange}
+                    />
+                    <input 
+                        type="text"
+                        className="block border border-grey-light w-full p-3 rounded mb-4 "
+                        name="username"
+                        placeholder="Username" 
                         value={formData.username}
                         onChange={handleChange}
                     />
