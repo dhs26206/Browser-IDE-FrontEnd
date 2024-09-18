@@ -3,10 +3,7 @@ import { useState } from "react";
 const ContestNavBar=()=>{
     const [click,setClick]=useState(false)
     const [not,setNot]=useState(false);
-    const divStyle = {
-        background: 'rgb(16, 37, 66)',
-        backgroundImage: 'linear-gradient(90deg, rgba(16,37,66,1) 6%, rgba(0,2,223,1) 28%, rgba(16,37,66,1) 100%)'
-      };
+    
       const handlleClick=()=>{
         setClick(prev=>!prev);
 

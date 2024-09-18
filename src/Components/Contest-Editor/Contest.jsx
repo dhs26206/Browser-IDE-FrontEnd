@@ -61,7 +61,7 @@ const Contest = () => {
               <div className="absolute inset-0 z-0">
                 <Editor1 setSubmitData={setSubmitData} submitData={submitData}/>
               </div>
-              <div className={`absolute inset-0 z-10 ${hit ? "" : "animate__animated animate__bounceInDown hidden"}`}>
+              <div className={`absolute inset-0 z-10 flex justify-center items-center ${hit ? "" : "animate__animated animate__bounceInDown hidden"}`}>
                 <Block hideBlockButton={hideBlock} setSubmitData={setSubmitData} submitData={submitData} />
               </div>
           </div>

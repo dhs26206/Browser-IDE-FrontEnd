@@ -13,13 +13,13 @@ function Signup() {
         navigate('/login');
     };
 
-    const handleChange = (e) => {
+    const handleChange = useCallback((e) => {
         const { name, value } = e.target;
         setFormData((prevFormData) => ({
             ...prevFormData,
             [name]: value
-        }));
-    }
+        }))},[setFormData]);
+    
     const handleGithub= (()=>{
         
         const clientID = 'Ov23liRrBdzWSwEQIauD'; 
