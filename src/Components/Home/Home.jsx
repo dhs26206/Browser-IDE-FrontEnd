@@ -40,7 +40,7 @@ const Home = () => {
             single problem.
           </div>
           <div className="ml-5 italic mt-2">
-            Because We Don't want More Drama in our Life.
+            Because We Don't want More Drama in our Life
           </div>
           <div className="flex justify-center gap-10 mt-5">
             <button
