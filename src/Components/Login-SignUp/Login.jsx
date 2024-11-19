@@ -65,7 +65,7 @@ function Log() {
                 <div className="flex justify-center px-6 py-12 lg:px-8 bg-white bg-opacity-10 backdrop-blur-md self-center my-36">
                     <div className="sm:mx-auto sm:w-full sm:max-w-sm">
                         <Link to="/">
-                            <img className={`w-64 h-14 pl-5`} src="https://folder.ddks.live/logo.png" alt="Logo" />
+                            <img className={`w-64 h-14 pl-5`} src="https://folder.ddks.tech/logo.png" alt="Logo" />
                         </Link>
                         <h2 className="mt-10 text-center text-2xl font-bold leading-9 tracking-tight text-white">
                             Sign in to your account

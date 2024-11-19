@@ -24,7 +24,7 @@ const ContestDetails=({contest_id,total_questions,max_score,start_time,end_time}
     let {days,hours,minutes,seconds}=getLeft(end_time);
     return(
         <div className="w-full h-full z-0 relative">
-            <div className="w-full h-full bg-[url(https://folder.ddks.live/background-night.webp)] bg-cover bg-center bg-no-repeat  rounded-lg filter -z-10 absolute blur-sm "></div>
+            <div className="w-full h-full bg-[url(https://folder.ddks.tech/background-night.webp)] bg-cover bg-center bg-no-repeat  rounded-lg filter -z-10 absolute blur-sm "></div>
             <div className="w-full h-full flex flex-wrap justify-normal items-center z-10 absolute">
                 <div className="w-1/2 h-1/2  font-bold text-2xl font-mono  ">Contest ID : {contest_id}</div>
                 <div className="w-1/2 h-1/2 font-bold text-2xl font-mono ">Total Questions :{total_questions}</div>
