@@ -64,6 +64,7 @@ const Contest = () => {
               </div>
               <div className={`absolute inset-0 z-10 ${hit ? "" : "animate__animated animate__bounceInDown hidden"}`}>
                 <Block hideBlockButton={hideBlock} setSubmitData={setSubmitData} submitData={submitData} />
+>>>>>>> 310c76e982ac062b1dd02c7ce43f9dfc0756c6a0
               </div>
           </div>
               <div className="w-full h-[6%] z-20 sticky bottom-0 "> <SubmitCompile isClicked={handleHit} submitData={submitData} setOutput={setOutput}  setOutputLoading={setOutputLoading} /> </div>
