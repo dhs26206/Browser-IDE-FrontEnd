@@ -2,11 +2,10 @@ import 'animate.css';
 import { data } from 'jquery';
 import { useState } from 'react';
 
-const Block=({hideBlockButton,submitData,setSubmitData,outputLoading,output})=>{
+const Block=({hideBlockButton,submitData,setSubmitData})=>{
     const [compilation,toggleCompilation]=useState(true);
     const [animate,setAnimate]=useState(true);
-
-
+    const[input,setInput]=useState("");
     function handleBlock(){
         setAnimate(false);
         setTimeout(()=>{
@@ -17,10 +16,8 @@ const Block=({hideBlockButton,submitData,setSubmitData,outputLoading,output})=>{
     }
     console.log(submitData);
     function handleCompilation(e){
-        console.log(`button is pressed ${compilation}`);
         toggleCompilation(e);
     }
-    // console.log(`state has been changed`);
     const handleChange=(event)=>{
         //setInput(event.target.value);
         setSubmitData({...submitData,input:event.target.value});
@@ -36,22 +33,44 @@ const Block=({hideBlockButton,submitData,setSubmitData,outputLoading,output})=>{
             <div className='w-full bg-yellow-500 h-[15%] flex items-end'>
                 <div className='h-[50%] w-full flex gap-5'>
                     <div className='w-[5%]'></div>
-                    <div onClick={()=>handleCompilation(true)} className={`w-1/5 h-full flex items-center justify-center rounded-t-xl text-md  bg-pink-700 ${!compilation?"bg-purple-700":""}`} >Compilation Result</div>
-                    <div onClick={()=>handleCompilation(false)} className={`w-1/5 h-full flex items-center justify-center rounded-t-xl text-md  bg-pink-700 ${compilation?"bg-purple-700":""}`}>Custom Input</div>
+                    <div onClick={()=>handleCompilation(true)} className={`w-1/5 h-full flex items-center justify-center rounded-t-xl text-md  bg-blue-800 ${!compilation?"bg-pink-800":""}`} >Compilation Result</div>
+                    <div onClick={()=>handleCompilation(false)} className={`w-1/5 h-full flex items-center justify-center rounded-t-xl text-md   ${compilation?"bg-pink-800":"bg-blue-800"}`}>Custom Input</div>
                 </div>
             </div>
-            <div className='pl-8 pt-10 w-full h-[40%] flex items-center' name="Input">
-                <div className='w-[90%] h-full'>
-                    <div className='w-full pb-1 text-lg'>Input</div>
-                    <textarea className="bg-gray-800 pl-1 w-4/5 h-3/4 rounded-lg text-[#aba0a0]  border-2 border-gray-600 placeholder:pl-4 placeholder:text-[#646363] placeholder:text-sm  text-left overflow-x-auto" placeholder="" type="text" name="input" onChange={handleChange}/>
+            {!compilation&&(<>
+                <div className='pl-8 pt-10 w-full h-[40%] flex items-center' name="Input">
+                    <div className='w-[90%] h-full'>
+                        <div className='w-full pb-1 text-lg'>Input</div>
+                        <textarea className="bg-gray-800 pl-1 w-4/5 h-3/4 rounded-lg text-[#aba0a0]  border-2 border-gray-600 placeholder:pl-4 placeholder:text-[#646363] placeholder:text-sm  text-left overflow-x-auto" placeholder="" type="text" name="input" onChange={handleChange}/>
+                    </div>
                 </div>
-            </div>
-            <div className='pl-8 pt-10 w-full h-[25%] flex items-center' name="Input">
-                <div className='w-[90%] h-full'>
-                    <div className='w-full pb-1 text-lg'>Sample Input/Input Format</div>
-                    
+                <div className='pl-8 pt-10 w-full h-[25%] flex items-center' name="Input">
+                    <div className='w-[90%] h-full'>
+                        <div className='w-full pb-1 text-lg'>Sample Input/Input Format</div>
+                        
+                    </div>
                 </div>
-            </div>
+            </>)}
+            {compilation&&(<>
+                <div className='pl-8 pt-10 w-full h-[25%] flex items-center' name="Input">
+                    <div className='w-[90%] h-full'>
+                        <div className='w-full pb-1 text-lg'>Input</div>
+                        {/* <textarea className="bg-gray-800 pl-1 w-4/5 h-3/4 rounded-lg text-[#aba0a0]  border-2 border-gray-600 placeholder:pl-4 placeholder:text-[#646363] placeholder:text-sm  text-left overflow-x-auto" placeholder="" type="text" name="input" onChange={handleChange}/> */}
+                    </div>
+                </div>
+                <div className='pl-8 pt-10 w-full h-[25%] flex items-center' name="Input">
+                    <div className='w-[90%] h-full'>
+                        <div className='w-full pb-1 text-lg'>Your Output</div>
+                        
+                    </div>
+                </div>
+                <div className='pl-8 pt-10 w-full h-[25%] flex items-center' name="Input">
+                    <div className='w-[90%] h-full'>
+                        <div className='w-full pb-1 text-lg'>Expected Output</div>
+                        
+                    </div>
+                </div>
+            </>)}
             
 
         </div>

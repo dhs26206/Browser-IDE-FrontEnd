@@ -2,12 +2,9 @@ import { useState } from "react"
 import {url} from "../../../url"
 
 
-export const SubmitCompile=({isClicked,submitData,setOutput,setOutputLoading})=>{
-    let polling=null;
-    const [subId,setSubId]=useState("");
+export const SubmitCompile=({isClicked,submitData})=>{
     const [hit ,sethit]=useState(false);
     const handleClick=(event)=>{
-        setOutputLoading(true);
         sethit(true);
         setTimeout(() => { sethit(false); }, 3000);
         console.log(submitData);
@@ -18,12 +15,9 @@ export const SubmitCompile=({isClicked,submitData,setOutput,setOutputLoading})=>
             headers:{"Content-Type":"application/json"}
         }).then(res=> res.json()).then(response =>{
             console.log(response);
-            setSubId(response.subId);
         })
         isClicked();
     }
-    
-
     
     return(
         <div className="h-full w-full flex justify-end bg-[#1e1e1e] shadow-lg border-t-[1px] border-[#373636] rounded-b-md ">

@@ -43,8 +43,7 @@ const Contest = () => {
   
 
 
-    const[outputLoading,setOutputLoading]=useState(false);
-    const[output,setOutput]=useState("");
+
     const[submitData,setSubmitData]=useState({code:"",input:"",lang:"java",userid:"ash123"});
     return (
       <div className="w-screen h-screen">
@@ -62,12 +61,11 @@ const Contest = () => {
               <div className="absolute inset-0 z-0">
                 <Editor1 setSubmitData={setSubmitData} submitData={submitData}/>
               </div>
-              <div className={`absolute inset-0 z-10 ${hit ? "" : "animate__animated animate__bounceInDown hidden"}`}>
+              <div className={`absolute inset-0 z-10 flex justify-center items-center ${hit ? "" : "animate__animated animate__bounceInDown hidden"}`}>
                 <Block hideBlockButton={hideBlock} setSubmitData={setSubmitData} submitData={submitData} />
->>>>>>> 310c76e982ac062b1dd02c7ce43f9dfc0756c6a0
               </div>
           </div>
-              <div className="w-full h-[6%] z-20 sticky bottom-0 "> <SubmitCompile isClicked={handleHit} submitData={submitData} setOutput={setOutput}  setOutputLoading={setOutputLoading} /> </div>
+              <div className="w-full h-[6%] z-20 sticky bottom-0 "> <SubmitCompile isClicked={handleHit} submitData={submitData}/> </div>
           </div>
           
         </div>
