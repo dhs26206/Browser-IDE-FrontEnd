@@ -40,11 +40,8 @@ const Contest = () => {
       document.removeEventListener('mousemove', handleMouseMove);
       document.removeEventListener('mouseup', handleMouseUp);
     };
-  
-
-
-
-    const[submitData,setSubmitData]=useState({code:"",input:"",lang:"java",userid:"ash123"});
+    const curUrl=window.location.href.split("/");
+    const[submitData,setSubmitData]=useState({code:"",input:"",lang:"java",userid:"ash123",quesId:curUrl[curUrl.length-1]});
     return (
       <div className="w-screen h-screen">
         <div className="w-full h-1/5"><ContestNavBar /></div>
