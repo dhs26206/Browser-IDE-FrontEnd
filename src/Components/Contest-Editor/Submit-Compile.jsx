@@ -2,9 +2,11 @@ import { useState } from "react"
 import {url} from "../../../url"
 
 
-export const SubmitCompile=({isClicked,submitData,setOutput})=>{
+export const SubmitCompile=({isClicked,submitData,setOutput,setErrorVisible,setErrorMes,toggleCompilation,setCompilationLoading})=>{
     const [hit ,sethit]=useState(false);
     const handleClick=(event)=>{
+        setCompilationLoading(true);
+        toggleCompilation(true);
         sethit(true);
         setTimeout(() => { sethit(false); }, 3000);
         console.log(submitData);
@@ -30,11 +32,15 @@ export const SubmitCompile=({isClicked,submitData,setOutput})=>{
                         console.log(responseData);
                         setOutput(responseData);
                         clearInterval(poll);
+                        setCompilationLoading(false);
                     }
                 },500)
             }
             else{
-                console.log(`error status false`);
+                console.log(`error status false ${response}`);
+                setErrorVisible(true);
+                setErrorMes(response.mes);
+                setCompilationLoading(false);
             }
         })
         isClicked();

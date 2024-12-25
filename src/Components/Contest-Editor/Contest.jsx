@@ -4,12 +4,17 @@ import ContestNavBar from "./ContestNavBar"
 import Editor1 from "./Editor"
 import Question from "./Question"
 import { SubmitCompile } from "./Submit-Compile";
+import ErrorPopup from "../error-popup/index";
 import Block from "./Block";
 import 'animate.css';
 const Contest = () => {
+  const [isVisible, setIsVisible] = useState(false);
+  const[errorMes,setErrorMes]=useState("Sorry some error has occured !!");
     const [leftWidth, setLeftWidth] = useState(42);
-    const[output,setOutput]=useState({});
+    const[output,setOutput]=useState({output:{op:""}});
     const [hit, setHit]=useState(false);
+    const [compilation,toggleCompilation]=useState(true);
+    const[compilationLoading,setCompilationLoading]=useState(false);
     const handleHit=()=>{
       setHit(true);
       
@@ -46,6 +51,7 @@ const Contest = () => {
     return (
       <div className="w-screen h-screen">
         <div className="w-full h-1/5"><ContestNavBar /></div>
+        <ErrorPopup isVisible={isVisible} setIsVisible={setIsVisible} mes={errorMes}></ErrorPopup>
         <div className="w-full h-4/5  sm:w-full flex-wrap gap-5 md:gap-0 md:flex-nowrap flex container ">
           <div className="h-[80%] md:h-full overflow-y-scroll " style={{ width: window.innerWidth >= 1024 ? `${leftWidth}%`:'100%' }}>
             <Question />
@@ -60,10 +66,10 @@ const Contest = () => {
                 <Editor1 setSubmitData={setSubmitData} submitData={submitData}/>
               </div>
               <div className={`absolute inset-0 z-10 flex justify-center items-center ${hit ? "" : "animate__animated animate__bounceInDown hidden"}`}>
-                <Block hideBlockButton={hideBlock} setSubmitData={setSubmitData} submitData={submitData} output={output}/>
+                <Block hideBlockButton={hideBlock} setSubmitData={setSubmitData} submitData={submitData} output={output} compilation={compilation}  toggleCompilation={toggleCompilation} compilationLoading={compilationLoading}/>
               </div>
           </div>
-              <div className="w-full h-[6%] z-20 sticky bottom-0 "> <SubmitCompile isClicked={handleHit} submitData={submitData} setOutput={setOutput} /> </div>
+              <div className="w-full h-[6%] z-20 sticky bottom-0 "> <SubmitCompile isClicked={handleHit} submitData={submitData} setOutput={setOutput} setErrorVisible={setIsVisible} setErrorMes={setErrorMes} toggleCompilation={toggleCompilation} setCompilationLoading={setCompilationLoading}/> </div>
           </div>
           
         </div>

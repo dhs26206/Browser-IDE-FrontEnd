@@ -1,0 +1,27 @@
+/* Loading Spinner Container */
+.loading-spinner {
+    display: inline-flex; /* Inline-flex for embedding within other components */
+    justify-content: center;
+    align-items: center;
+  }
+  
+  /* Circle Animation */
+  .circle {
+    width: 24px; /* Smaller size for embedding */
+    height: 24px;
+    border: 3px solid rgba(200, 200, 200, 0.3); /* Light gray, semi-transparent border */
+    border-top: 3px solid #3498db; /* Blue border for animation */
+    border-radius: 50%; /* Circular shape */
+    animation: spin 1s linear infinite; /* Smooth spinning animation */
+  }
+  
+  /* Keyframes for spin animation */
+  @keyframes spin {
+    0% {
+      transform: rotate(0deg); /* Start position */
+    }
+    100% {
+      transform: rotate(360deg); /* Full rotation */
+    }
+  }
+  

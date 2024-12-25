@@ -8,7 +8,7 @@ const Editor1 = ({submitData,setSubmitData}) => {
         console.log(value);
          console.log(submitData);
     };
-    const [lang,setLang]=useState("python")
+    const [lang,setLang]=useState("java")
     const [theme,setTheme]=useState("vs-dark")
     const Language=(item)=>{
         // console.log(item)
@@ -29,8 +29,13 @@ const Editor1 = ({submitData,setSubmitData}) => {
             defaultLanguage={lang}
             onChange={handleChange}
             theme={theme}
-            defaultValue="def funct(arr,n):
-                #Enter Code Here And return Integer"
+            defaultValue={`public class Main {
+    public static void main(String[] args) {
+        // Print a simple message
+        System.out.println("Hello, World!");
+    }
+}
+`}
             />
             </div>
         </div>
