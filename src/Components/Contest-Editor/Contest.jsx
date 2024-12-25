@@ -8,7 +8,7 @@ import Block from "./Block";
 import 'animate.css';
 const Contest = () => {
     const [leftWidth, setLeftWidth] = useState(42);
-    const[output,setOutput]=useState("");
+    const[output,setOutput]=useState({});
     const [hit, setHit]=useState(false);
     const handleHit=()=>{
       setHit(true);

@@ -17,7 +17,6 @@ export const SubmitCompile=({isClicked,submitData,setOutput})=>{
             console.log(response);
             if(response.status)
             {
-                
                 let poll=setInterval(async()=>{
                     let pollres=await fetch("http://localhost:3000/submission",{
                         method:'POST',
@@ -28,8 +27,8 @@ export const SubmitCompile=({isClicked,submitData,setOutput})=>{
                     // console.log(pollres1);
                     if(pollres1.status){
                         let responseData=JSON.parse(pollres1.response);
-                        console.log(responseData.output);
-                        setOutput(responseData.output.op);
+                        console.log(responseData);
+                        setOutput(responseData);
                         clearInterval(poll);
                     }
                 },500)
@@ -40,12 +39,15 @@ export const SubmitCompile=({isClicked,submitData,setOutput})=>{
         })
         isClicked();
     }
+    const handleInputClick=(event)=>{
+        isClicked();
+    };
     
     return(
         <div className="h-full w-full flex justify-end bg-[#1e1e1e] shadow-lg border-t-[1px] border-[#373636] rounded-b-md ">
             <div className="h-full w-[50%] flex justify-evenly items-center">
                 <div className="w-1/3 h-4/6  rounded-md text-sm">
-                    <button onClick={()=>handleClick()} className={`w-full h-full bg-transparent flex items-center justify-center  ${hit?'cursor-default bg-gray-900':'cursor-pointer'} `} type="button">Custom Input</button>
+                    <button onClick={()=>handleInputClick()} className={`w-full h-full bg-transparent flex items-center justify-center  ${hit?'cursor-default bg-gray-900':'cursor-pointer'} `} type="button">Custom Input</button>
                 </div>
                 <div className="w-1/3 h-4/6  rounded-md text-sm">
                     <button onClick={()=>handleClick()} className={`w-full h-full bg-gray-700 flex items-center justify-center  ${hit?'cursor-default bg-gray-900':'cursor-pointer'} `} type="button">Compile & Run</button>

@@ -56,13 +56,13 @@ const Block=({hideBlockButton,submitData,setSubmitData,output})=>{
                 <div className='pl-8 pt-10 w-full h-[25%] flex items-center' name="Input">
                     <div className='w-[90%] h-full'>
                         <div className='w-full pb-1 text-lg'>Input</div>
-                        <div className="w-74 h-24 overflow-y-scroll border border-gray-300 p-2 whitespace-pre-wrap bg-black">{input}</div>
+                        <div className="w-74 h-24 overflow-y-scroll border border-gray-300 p-2 whitespace-pre-wrap bg-black">{output.input}</div>
                     </div>
                 </div>
                 <div className='pl-8 pt-10 w-full h-[25%] flex items-center' name="Input">
                     <div className='w-[90%] h-full'>
                         <div className='w-full pb-1 text-lg'>Your Output</div>
-                        <div className="w-74 h-24 overflow-y-scroll border border-gray-300 p-2 whitespace-pre-wrap bg-black">{output}</div>
+                        <div className="w-74 h-24 overflow-y-scroll border border-gray-300 p-2 whitespace-pre-wrap bg-black">{output.output.op}</div>
                     </div>
                 </div>
                 <div className='pl-8 pt-10 w-full h-[25%] flex items-center' name="Input">
