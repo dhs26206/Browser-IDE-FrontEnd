@@ -8,6 +8,7 @@ import Block from "./Block";
 import 'animate.css';
 const Contest = () => {
     const [leftWidth, setLeftWidth] = useState(42);
+    const[output,setOutput]=useState("");
     const [hit, setHit]=useState(false);
     const handleHit=()=>{
       setHit(true);
@@ -59,10 +60,10 @@ const Contest = () => {
                 <Editor1 setSubmitData={setSubmitData} submitData={submitData}/>
               </div>
               <div className={`absolute inset-0 z-10 flex justify-center items-center ${hit ? "" : "animate__animated animate__bounceInDown hidden"}`}>
-                <Block hideBlockButton={hideBlock} setSubmitData={setSubmitData} submitData={submitData} />
+                <Block hideBlockButton={hideBlock} setSubmitData={setSubmitData} submitData={submitData} output={output}/>
               </div>
           </div>
-              <div className="w-full h-[6%] z-20 sticky bottom-0 "> <SubmitCompile isClicked={handleHit} submitData={submitData}/> </div>
+              <div className="w-full h-[6%] z-20 sticky bottom-0 "> <SubmitCompile isClicked={handleHit} submitData={submitData} setOutput={setOutput} /> </div>
           </div>
           
         </div>

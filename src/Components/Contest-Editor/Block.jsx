@@ -2,10 +2,11 @@ import 'animate.css';
 import { data } from 'jquery';
 import { useState } from 'react';
 
-const Block=({hideBlockButton,submitData,setSubmitData})=>{
+const Block=({hideBlockButton,submitData,setSubmitData,output})=>{
     const [compilation,toggleCompilation]=useState(true);
     const [animate,setAnimate]=useState(true);
     const[input,setInput]=useState("");
+    
     function handleBlock(){
         setAnimate(false);
         setTimeout(()=>{
@@ -55,13 +56,13 @@ const Block=({hideBlockButton,submitData,setSubmitData})=>{
                 <div className='pl-8 pt-10 w-full h-[25%] flex items-center' name="Input">
                     <div className='w-[90%] h-full'>
                         <div className='w-full pb-1 text-lg'>Input</div>
-                        {/* <textarea className="bg-gray-800 pl-1 w-4/5 h-3/4 rounded-lg text-[#aba0a0]  border-2 border-gray-600 placeholder:pl-4 placeholder:text-[#646363] placeholder:text-sm  text-left overflow-x-auto" placeholder="" type="text" name="input" onChange={handleChange}/> */}
+                        <div className="w-74 h-24 overflow-y-scroll border border-gray-300 p-2 whitespace-pre-wrap bg-black">{input}</div>
                     </div>
                 </div>
                 <div className='pl-8 pt-10 w-full h-[25%] flex items-center' name="Input">
                     <div className='w-[90%] h-full'>
                         <div className='w-full pb-1 text-lg'>Your Output</div>
-                        
+                        <div className="w-74 h-24 overflow-y-scroll border border-gray-300 p-2 whitespace-pre-wrap bg-black">{output}</div>
                     </div>
                 </div>
                 <div className='pl-8 pt-10 w-full h-[25%] flex items-center' name="Input">

@@ -2,7 +2,7 @@ import { useState } from "react"
 import {url} from "../../../url"
 
 
-export const SubmitCompile=({isClicked,submitData})=>{
+export const SubmitCompile=({isClicked,submitData,setOutput})=>{
     const [hit ,sethit]=useState(false);
     const handleClick=(event)=>{
         sethit(true);
@@ -28,7 +28,8 @@ export const SubmitCompile=({isClicked,submitData})=>{
                     // console.log(pollres1);
                     if(pollres1.status){
                         let responseData=JSON.parse(pollres1.response);
-                        console.log(responseData);
+                        console.log(responseData.output);
+                        setOutput(responseData.output.op);
                         clearInterval(poll);
                     }
                 },500)
