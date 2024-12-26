@@ -20,7 +20,7 @@ export const SubmitCompile=({isClicked,submitData,setOutput,setErrorVisible,setE
             if(response.status)
             {
                 let poll=setInterval(async()=>{
-                    let pollres=await fetch(url,{
+                    let pollres=await fetch(`${url}/submission`,{
                         method:'POST',
                         headers:{"Content-Type":"application/json"},
                         body:JSON.stringify({subId:response.submissionId})
