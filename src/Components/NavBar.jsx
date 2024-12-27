@@ -35,7 +35,7 @@ const NavBar = () => {
         navigate('/login');
     };
     const handleLogout=()=>{
-        Cookie.remove('sessionToken');
+        Cookie.remove('sessionToken', { path: '/', domain: 'ashleel-backend.onrender.com' });
         console.log(Cookie.get());
         setIsLoggedIn(false);
         console.log(`logged out !!`);

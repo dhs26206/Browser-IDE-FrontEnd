@@ -23,28 +23,28 @@ function Dashboard() {
     dotPulse.register()
     const [login,setLogin]=useState(false);
     useEffect(()=>{
-        // fetch(`${url}/checklogin`, {
-        //             method: 'GET',
-        //             credentials: 'include',
-        //         })
-        //         .then((res) => res.json())
-        //         .then((response) => {
-        //             if (response.login) {
-        //                 setLogin(true);
-        //             } else {
-        //                 navigate('/login');
-        //             }
-        //         })
-        //         .catch((error) => {
-        //             console.error('Error checking login status:', error);
-        //         }); 
-        setTimeout(()=>{
-            setLogin(true);
-        },5000)
+        fetch(`${url}/checklogin`, {
+                    method: 'GET',
+                    credentials: 'include',
+                })
+                .then((res) => res.json())
+                .then((response) => {
+                    if (response.login) {
+                        setLogin(true);
+                    } else {
+                        navigate('/login');
+                    }
+                })
+                .catch((error) => {
+                    console.error('Error checking login status:', error);
+                }); 
+        // setTimeout(()=>{
+        //     setLogin(true);
+        // },5000)
     },[]);
     const navigate=useNavigate();
     const handleLogout=()=>{
-        Cookie.remove('sessionToken');
+        Cookie.remove('sessionToken', { path: '/', domain: 'ashleel-backend.onrender.com' });
         setLogin(false);
         navigate('/');
     };
