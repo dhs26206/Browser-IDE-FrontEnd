@@ -37,7 +37,7 @@ const NavBar = () => {
     const handleLogout=()=>{
         console.log(document.cookie);
         console.log(Cookies.get('sessionToken'));
-        Cookies.remove('sessionToken', { path: '/', domain: '.ashleel-backend.onrender.com' });
+        Cookies.remove('sessionToken',{path:'/',domain:'.codebackend.vurtex.tech'});
         setIsLoggedIn(false);
         console.log(`logged out !!`);
     }
