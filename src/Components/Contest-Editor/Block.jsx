@@ -2,6 +2,10 @@ import 'animate.css';
 import { data } from 'jquery';
 import { useState } from 'react';
 import Loading from '../loading/index'
+
+
+
+
 const Block=({hideBlockButton,submitData,setSubmitData,output,compilation,toggleCompilation,compilationLoading})=>{
     const [animate,setAnimate]=useState(true);
     const[input,setInput]=useState("");
@@ -55,14 +59,14 @@ const Block=({hideBlockButton,submitData,setSubmitData,output,compilation,toggle
             {compilation&&(<>
                 <div className='pl-8 pt-10 w-full h-[25%] flex items-center' name="Input">
                     <div className='w-[90%] h-full'>
-                        <div className='w-full pb-1 text-lg'>Input</div>
-                        <div className="w-74 h-24 overflow-y-scroll border border-gray-300 p-2 whitespace-pre-wrap bg-black">{compilationLoading ? <Loading/> : output.input}</div>
+                        <div className='w-full pb-1 text-lg '>Input</div>
+                        <div className="w-74 h-24 overflow-y-scroll rounded-lg border border-gray-300 p-2 whitespace-pre-wrap bg-black ">{compilationLoading ? <Loading/> : output.input}</div>
                     </div>
                 </div>
                 <div className='pl-8 pt-10 w-full h-[25%] flex items-center' name="Input">
                     <div className='w-[90%] h-full'>
                         <div className='w-full pb-1 text-lg'>Your Output</div>
-                        <div className="w-74 h-24 overflow-y-scroll border border-gray-300 p-2 whitespace-pre-wrap bg-black">{compilationLoading ? <Loading/> : output.output.status ? output.output.op : "error please submit again !!"}</div>
+                        <div className="w-74 h-24 overflow-y-scroll rounded-lg border border-gray-300 p-2 whitespace-pre-wrap bg-black">{compilationLoading ? <Loading/> : output.output.status ? output.output.op : "error please submit again !!"}</div>
                     </div>
                 </div>
                 <div className='pl-8 pt-10 w-full h-[25%] flex items-center' name="Input">

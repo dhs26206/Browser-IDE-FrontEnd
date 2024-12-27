@@ -2,48 +2,44 @@
 
 /* Popup Styling */
 .error-popup {
-    position: fixed;
-    top: 20px; /* Adjust the margin to top */
-    left: 50%;
-    transform: translateX(-50%) translateY(-50px); /* Start slightly off-screen */
-    width: 300px;
-    padding: 1rem;
-    background-color: #f44336; /* Red color for error */
-    color: white;
-    border-radius: 8px;
-    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
-    z-index: 50;
-    opacity: 0; /* Initially hidden for fade-in effect */
-    animation: slideIn 0.6s cubic-bezier(0.68, -0.55, 0.27, 1.55) forwards; /* Animation with bounce effect */
-  }
-  
-  /* Keyframe Animation for Slide-in and Fade-in with bounce */
-  @keyframes slideIn {
-    0% {
-      transform: translateX(-50%) translateY(-50px); /* Start slightly above */
+  position: fixed;
+  top: 20px; /* Adjust the margin to top */
+  left: 50%;
+  transform: translateX(-50%) translateY(-20px); /* Start slightly off-screen */
+  width: 300px;
+  padding: 1rem;
+  background-color: #2b2d42; /* Neutral dark tone for background */
+  color: #edf2f4; /* Soft white text for contrast */
+  border-radius: 8px;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+  z-index: 50;
+  opacity: 0; /* Initially hidden for fade-in effect */
+  animation: fadeSlideIn 0.5s ease-out forwards; /* Smooth animation */
+}
+
+/* Keyframe Animation for Slide-in and Fade-in */
+@keyframes fadeSlideIn {
+  0% {
+      transform: translateX(-50%) translateY(-20px); /* Start slightly above */
       opacity: 0; /* Start invisible */
-    }
-    60% {
-      transform: translateX(-50%) translateY(10px); /* Move slightly down, simulate bounce */
+  }
+  100% {
+      transform: translateX(-50%) translateY(0); /* End at the intended position */
       opacity: 1; /* Fully visible */
-    }
-    100% {
-      transform: translateX(-50%) translateY(0); /* End at the top */
-      opacity: 1; /* Fully visible */
-    }
   }
-  
-  /* Close Button Styling */
-  button {
-    background-color: #d32f2f; /* Dark Red */
-    padding: 0.5rem 1rem;
-    border-radius: 4px;
-    border: none;
-    cursor: pointer;
-    transition: background-color 0.3s ease;
-  }
-  
-  button:hover {
-    background-color: #b71c1c; /* Darker red for hover effect */
-  }
-  
+}
+
+/* Close Button Styling */
+button {
+  background-color: #4a4e69; /* Muted dark tone */
+  color: #edf2f4; /* Soft white for text */
+  padding: 0.5rem 1rem;
+  border-radius: 4px;
+  border: none;
+  cursor: pointer;
+  transition: background-color 0.2s ease;
+}
+
+button:hover {
+  background-color: #6c757d; /* Slightly lighter tone on hover */
+}
