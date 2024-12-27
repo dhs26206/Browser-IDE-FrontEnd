@@ -2,7 +2,7 @@ import { useState, useEffect } from "react";
 import Navigation from "./Navigation";
 import { Link, useNavigate } from "react-router-dom";
 import { url } from "../../url";
-import Cookie from 'js-cookie';
+import Cookies from 'js-cookie';
 const NavBar = () => {
     const navigate = useNavigate();
     const [click, setClick] = useState(false);
@@ -35,8 +35,9 @@ const NavBar = () => {
         navigate('/login');
     };
     const handleLogout=()=>{
-        Cookie.remove('sessionToken', { path: '/', domain: 'ashleel-backend.onrender.com' });
-        console.log(Cookie.get());
+        console.log(document.cookie);
+        console.log(Cookies.get('sessionToken'));
+        Cookies.remove('sessionToken', { path: '/', domain: '.ashleel-backend.onrender.com' });
         setIsLoggedIn(false);
         console.log(`logged out !!`);
     }
