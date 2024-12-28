@@ -1,14 +1,15 @@
 import React from 'react';
 
-function ProfileCard() {
+function ProfileCard({name,email,bio}) {
+
     return (
-        <div className="bg-white bg-opacity-5  backdrop-blur-sm  rounded-lg p-6 hover:bg-gradient-to-r from-indigo-500 via-purple-500 to-pink-5000">
+        <div className="bg-white bg-opacity-5  backdrop-blur-sm  rounded-lg p-6 transition duration-200 hover:scale-105">
             <div className="flex items-center">
                 <img className="h-16 w-16 rounded-full" src="https://folder.ddks.tech/team-img2.png" alt="User Profile" />
                 <div className="ml-4">
-                    <h2 className="text-xl font-bold">John Doe</h2>
-                    <p className="text-gray-600">john.doe@example.com</p>
-                    <p className="text-gray-600">Short Bio</p>
+                    <h2 className="text-xl font-bold">{name ? name : "YOUR NAME"}</h2>
+                    <p className="text-gray-600">{email ? email : "youemail.com"}</p>
+                    <p className="text-gray-600">{bio ? bio :"Your BIO "}</p>
                 </div>
             </div>
         </div>

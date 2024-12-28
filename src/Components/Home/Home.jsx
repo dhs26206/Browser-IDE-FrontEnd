@@ -44,6 +44,9 @@ const Home = () => {
   const handleNavigateSignUp = () => {
     navigate('/signup');
   };
+  const handleNavigateCreateContest=()=>{
+    navigate('/createcontest');
+  }
 
   return (
     <div className="relative h-screen w-screen overflow-y-auto">
@@ -83,6 +86,12 @@ const Home = () => {
             >
               See Contests
             </button>
+            <button
+              onClick={handleNavigateCreateContest}
+              className="bg-transparent border-2 border-[#f3ca40] text-[#f3ca40] w-52 font-bold rounded-md hover:bg-[#f3ca40] hover:text-white"
+            >
+              Create Contest
+            </button>
           </div>
           <div className="mt-10 flex items-center justify-center gap-2">
             <img
@@ -90,7 +99,7 @@ const Home = () => {
               alt=""
               className="h-3 w-3"
             />
-            <div>Proudly Made In NITJ, for NITJ</div>
+            <div>Probably God knows who made this website, and how is it still functional :/ </div>
           </div>
         </div>
 

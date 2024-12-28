@@ -22,6 +22,7 @@ import { dotPulse } from 'ldrs'
 function Dashboard() {
     dotPulse.register()
     const [login,setLogin]=useState(false);
+    const [userInfo,setUserInfo]=useState({email:"",name:"",bio:"",questionDetail:{easy:0,medium:0,hard:0}});
     useEffect(()=>{
         fetch(`${url}/checklogin`, {
                     method: 'GET',
@@ -41,13 +42,47 @@ function Dashboard() {
         // setTimeout(()=>{
         //     setLogin(true);
         // },5000)
+        fetch(`${url}/userinfo`,{
+            method:'GET',
+            credentials:'include',
+        }).then(res=>{
+            return res.json();
+        }).then(res =>{
+            console.log(res);
+            setUserInfo(res.userInfo);
+        }).catch(err=>{
+            console.error(err);
+        });
     },[]);
     const navigate=useNavigate();
     const handleLogout=()=>{
-        Cookie.remove('sessionToken', { path: '/', domain: 'ashleel-backend.onrender.com' });
+        Cookie.remove('sessionToken');
         setLogin(false);
         navigate('/');
     };
+    const handledeleteUser=()=>{
+        fetch(`${url}/deleteuser`,{
+            method:'GET',
+            credentials:'include',
+        }).then(res=>{
+            return res.json();
+        }).then(res =>{
+            if(res.status)
+            {
+                setLogin(false);
+                setUserInfo({});
+                navigate('/');
+            }
+        }).catch(err=>{
+            console.error(err);
+        });
+    };
+
+
+
+
+
+
     return (
         <div className="relative min-h-screen bg-transparent">
         {/* Blur and Loading Overlay */}
@@ -77,6 +112,7 @@ function Dashboard() {
                 </button>
             </div>
         </header>
+       
 
         {/* Main Content */}
         <main className="relative py-10 z-10">
@@ -84,14 +120,14 @@ function Dashboard() {
                 <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
                     {/* Profile Overview */}
                     <div className="col-span-1">
-                        <ProfileCard />
+                        <ProfileCard email={userInfo.email} bio={userInfo.bio} name={userInfo.name} />
                     </div>
 
                     {/* Other Components */}
                     <div className="col-span-2 md:col-span-2 lg:col-span-3">
                         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
                             {/* Questions Solved */}
-                            <QuestionsSolved />
+                            <QuestionsSolved quesDetail={userInfo.questionDetail} />
 
                             {/* Rank in Branch and College */}
                             <Rank />
@@ -101,6 +137,13 @@ function Dashboard() {
                 </div>
             </div>
         </main>
+        <header className="relative bg-transparent z-10 pt-16">
+            <div className="max-w-7xl mx-auto py-6 px-4 sm:px-6 lg:px-8 flex justify-between items-center">
+                <button onClick={handledeleteUser} className="text-red-500 hover:text-red-700">
+                    Delete Account 
+                </button>
+            </div>
+        </header>
     </div>
     );
 }

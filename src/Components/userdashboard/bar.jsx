@@ -1,13 +1,13 @@
 import { Doughnut } from 'react-chartjs-2';
 import Chart from 'chart.js/auto';
 
-const DoughnutChart = () => {
+const DoughnutChart = ({easy,medium,hard}) => {
     const data = {
         labels: ['Easy', 'Medium', 'Hard'],
         datasets: [
             {
                 label: 'Difficulty',
-                data: [30, 40, 30], // Replace with your actual data
+                data: [easy, medium, hard], // Replace with your actual data
                 backgroundColor: ['#4F81BC', '#C0504E', '#9BBB59'], // Colors for each segment
                 borderWidth: 1,
             },
