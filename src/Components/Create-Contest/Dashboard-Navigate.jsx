@@ -1,7 +1,7 @@
 
 export const Navigate=({toggleState})=>{
     return(
-        <div className="h-full w-full bg-[#182d67] flex justify-center">
+        <div className="h-full w-full bg-[#04070f] flex justify-center">
             <div className="w-[80%] h-full bg-inherit ">
                 <div id="NavbarType " className="h-[30%] w-full flex items-center ">
                     <div className="font-semibold text-3xl">DashBoard</div>

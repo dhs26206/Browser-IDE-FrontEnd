@@ -33,7 +33,7 @@ function CreateContest(){
         setstate(e);
     }
     return(
-        <div className="w-full h-full bg-[#9594b7]">
+        <div className="w-full h-full bg-[#131216]">
             <div className="w-full h-[15%]">
                 <ContestNavBar />
             </div>

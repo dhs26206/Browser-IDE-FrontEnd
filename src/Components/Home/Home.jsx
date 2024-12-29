@@ -99,7 +99,7 @@ const Home = () => {
               alt=""
               className="h-3 w-3"
             />
-            <div>Probably God knows who made this website, and how is it still functional :/ </div>
+            <div>Only God knows who made this website, and how is it still functional :/ </div>
           </div>
         </div>
 
