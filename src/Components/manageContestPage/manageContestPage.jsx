@@ -1,37 +1,125 @@
-import React, { useState } from 'react';
+import React, { useState,useEffect } from 'react';
+import { useParams,useNavigate } from 'react-router-dom';
+import {url} from '../../../url'
+import { dotPulse } from 'ldrs'
+import ContestDetails from '../Contest-Expand/Contest-Details';
+dotPulse.register()
+
+
 
 const ManageContest = () => {
-  // Sample contest info (replace this with data from an API)
-  const contestInfo = {
-    name: 'CodeRush 2024',
-    startTime: '2024-12-31T10:00:00',
-    endTime: '2024-12-31T12:00:00',
-    moderators: ['john@example.com', 'jane@example.com'],
-    visibility: 'Private', // Default visibility status
-    questions: ['What is 2 + 2?', 'Explain polymorphism in OOP.'],
-  };
-
-  // State to manage changes
-  const [questions, setQuestions] = useState(contestInfo.questions || []);
+  const navigate=useNavigate();
+  
+  
+  
+  const {q} =useParams();
   const [newQuestion, setNewQuestion] = useState('');
   const [newModerator, setNewModerator] = useState('');
-  const [startTime, setStartTime] = useState(contestInfo.startTime);
-  const [endTime, setEndTime] = useState(contestInfo.endTime);
-  const [visibility, setVisibility] = useState(contestInfo.visibility);
-
+  const [startTime, setStartTime] = useState();
+  const [endTime, setEndTime] = useState();
+  const [visibility, setVisibility] = useState();
+  const [refresh,setRefresh]=useState(false);
+  const [contestDetails,setContestDetails]=useState({contestName:"",contestStartDate:"",contestEndDate:"",contestModerator:[],contestAccess:"Private",contestQues:[]});
+  const [loading,setLoading]=useState(true);
+  const contestInfo = {
+    name: contestDetails.contestName,
+    startTime: contestDetails.contestStartDate,
+    endTime: contestDetails.contestEndDate,
+    moderators: contestDetails.contestModerator,
+    visibility: contestDetails.contestAccess, // Default visibility status
+    questions: contestDetails.contestQues,
+  };
+  const [questions, setQuestions] = useState(contestInfo.questions || contestInfo.questions);
+      useEffect(()=>{
+          fetch(`${url}/managecontest/${q}`, {
+              method: 'GET',
+              credentials: 'include',
+          })
+              .then((res) => res.json())
+              .then((response) => {
+                  if (response.status) {
+                    console.log(response.data);
+                      setContestDetails(response.data);
+                      setStartTime(response.data.contestStartDate);
+                      setEndTime(response.data.contestEndDate);
+                      setVisibility(response.data.contestAccess);
+                      setLoading(false);
+                  } else {
+                      console.log(`error in contest list.fetch`);
+                  }
+              })
+              .catch((error) => {
+                  console.error('Error checking login status:', error);
+                  // navigate('/login');
+              });
+      },[refresh]);
+  // Sample contest info (replace this with data from an API)
+  // State to manage changes
   // Handle adding a new question
   const handleAddQuestion = () => {
-    if (newQuestion.trim()) {
-      setQuestions([...questions, newQuestion]);
-      setNewQuestion('');
-    }
+    navigate(`/managecontest/${q}/createquestion`);
   };
 
+  const handleSubmit=(e)=>{
+    e.preventDefault();
+    let updateInfo={
+      contestStartDate:startTime,
+      contestEndDate:endTime,
+      visibility
+    }
+
+    console.log(updateInfo);
+    setLoading(true);
+      fetch(`${url}/managecontest/${q}`, {
+        method: 'POST',
+        credentials: 'include',
+        headers: { "Content-Type": "application/json" },
+        body:JSON.stringify(updateInfo)
+    })
+        .then((res) => res.json())
+        .then((response) => {
+            if (response.status) {
+              console.log(response.data);
+                // setContestDetails(response.data);
+                setRefresh(!refresh);
+                setLoading(false);
+                setContestDetails(response.data);
+              } else {
+                console.log(`error in contest list.fetch`);
+              }
+        })
+        .catch((error) => {
+            console.error('Error checking login status:', error);
+            // navigate('/login');
+        });
+
+
+  }
   // Handle adding a new moderator
   const handleAddModerator = () => {
     if (newModerator.trim()) {
-      contestInfo.moderators.push(newModerator); // Replace this with backend update logic
-      setNewModerator('');
+      setLoading(true);
+      fetch(`${url}/managecontest/${q}/addmoderator`, {
+        method: 'POST',
+        credentials: 'include',
+        headers: { "Content-Type": "application/json" },
+        body:JSON.stringify({name:newModerator.trim()})
+    })
+        .then((res) => res.json())
+        .then((response) => {
+            if (response.status) {
+              console.log(response.data);
+                // setContestDetails(response.data);
+                setRefresh(!refresh);
+                setLoading(false);
+              } else {
+                console.log(`error in contest list.fetch`);
+              }
+            })
+            .catch((error) => {
+              console.error('Error checking login status:', error);
+              // navigate('/login');
+            });
     }
   };
 
@@ -61,23 +149,34 @@ const ManageContest = () => {
       <h2 className="text-3xl font-bold text-center text-gray-100 border-b pb-4 border-gray-700">
         Manage Contest
       </h2>
+      {/*loading effect !!!*/ }
+
+
+      {loading ?  <div className="fixed inset-0 bg-white bg-opacity-50 backdrop-blur-sm z-500 flex items-center justify-center">
+                <div className="text-gray-700 text-lg font-semibold">
+                <l-dot-pulse size="43"   speed="1.3"  color="black"></l-dot-pulse>
+                </div>
+            </div>:
+            <></>
+            }
+
+
+
+
 
       {/* Contest Essentials */}
       <div className="space-y-2 bg-gray-800 p-4 rounded-lg shadow-md">
         <h3 className="text-lg font-semibold border-b border-gray-600 pb-2">Contest Details</h3>
-        <p><span className="font-medium">Contest Name:</span> {contestInfo.name}</p>
-        <p><span className="font-medium">Start Time:</span> {new Date(contestInfo.startTime).toLocaleString()}</p>
-        <p><span className="font-medium">End Time:</span> {new Date(contestInfo.endTime).toLocaleString()}</p>
-        <p><span className="font-medium">Moderators:</span> {contestInfo.moderators.join(', ')}</p>
-        <p><span className="font-medium">Visibility:</span> {visibility}</p>
+        <p><span className="font-medium">Contest Name:</span> {contestDetails.contestName}</p>
+        <p><span className="font-medium">Start Time:</span> {new Date(contestDetails.contestStartDate).toLocaleString()}</p>
+        <p><span className="font-medium">End Time:</span> {new Date(contestDetails.contestEndDate).toLocaleString()}</p>
+        <p><span className="font-medium">Moderators:</span> {contestDetails.contestModerator.join(', ')}</p>
+        <p><span className="font-medium">Visibility:</span> {contestDetails.contestAccess}</p>
       </div>
 
       {/* Editable Form */}
       <form
-        onSubmit={(e) => {
-          e.preventDefault();
-          handleTimeChange();
-        }}
+        onSubmit={handleSubmit}
         className="bg-gray-800 p-4 rounded-lg shadow-md space-y-4"
       >
         <h3 className="text-lg font-semibold border-b border-gray-600 pb-2">Edit Contest Details</h3>
@@ -87,9 +186,9 @@ const ManageContest = () => {
           <h3 className="text-lg font-semibold">Manage Questions</h3>
           <div className="space-y-3">
             <ul className="space-y-2">
-              {questions.map((question, index) => (
+              {contestDetails.contestQues.map((question, index) => (
                 <li key={index} className="text-sm bg-gray-900 p-2 rounded-md">
-                  {index + 1}. {question}
+                  {index + 1}. {question.quesTitle}
                 </li>
               ))}
             </ul>

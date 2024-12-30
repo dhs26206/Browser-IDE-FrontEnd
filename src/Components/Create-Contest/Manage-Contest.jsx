@@ -1,9 +1,9 @@
 import React, { useEffect, useState } from "react";
+import { useNavigate,useParams } from "react-router-dom";
 import manage from "./../../JSON/ManageContest.json";
 import { newtonsCradle } from 'ldrs'
 import {url} from "../../../url"
 newtonsCradle.register()
-
 // Default values shown
 
 const convertTime = (timeString) => {
@@ -21,7 +21,8 @@ const convertTime = (timeString) => {
 };
 
 export const ManageContest = () => {
-
+  const navigate=useNavigate();
+  // const {q} =useParams();
     const [contestList,setContestList]=useState([]);
     useEffect(()=>{
         fetch(`${url}/managecontest`, {
@@ -45,7 +46,9 @@ export const ManageContest = () => {
 
 
   const [expand, setExpand] = useState(-1);
-
+  // const handleEditButton=()=>{
+  //   navigate(`/managecontest/${}`)
+  // }
   const handleExpand = (index) => {
     setExpand(expand === index ? -1 : index);
   };
@@ -97,7 +100,7 @@ export const ManageContest = () => {
                   </p>
                 </div>
                 <div className="flex justify-end gap-4 mt-4">
-                  <button className="bg-green-500 hover:bg-green-400 text-white px-4 py-2 rounded-md font-medium">
+                  <button onClick={()=>{(navigate(`/managecontest/${contest.contestId}`))}} className="bg-green-500 hover:bg-green-400 text-white px-4 py-2 rounded-md font-medium">
                     Edit Details
                   </button>
                   <button className="bg-red-600 hover:bg-red-700 text-white px-4 py-2 rounded-md font-medium">

@@ -1,6 +1,11 @@
 import React, { useState } from 'react';
+import { useNavigate,useParams } from 'react-router-dom';
 import {url} from '../../../url'
 const CreateQuestion = () => {
+  const navigate=useNavigate();
+  const {q}=useParams();
+  const contestId=q;
+  // console.log(q);
   const [formData, setFormData] = useState({
     quesTitle: '',
     quesText: '',
@@ -12,6 +17,7 @@ const CreateQuestion = () => {
     inputFormat: '',
     outputFormat: '',
     correctCode: '',
+    contestId
   });
 
   const [message, setMessage] = useState('');
@@ -62,6 +68,7 @@ const CreateQuestion = () => {
         //   outputFormat: '',
         //   correctCode: '',
         // });
+        navigate(`/managecontest/${contestId}`);
       } else {
         const errorData = await response.json();
         setMessage(errorData.message || 'Failed to create question.');

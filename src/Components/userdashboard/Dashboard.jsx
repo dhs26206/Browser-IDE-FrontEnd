@@ -87,7 +87,7 @@ function Dashboard() {
         <div className="relative min-h-screen bg-transparent">
         {/* Blur and Loading Overlay */}
         {!login && (
-            <div className="absolute inset-0 bg-white bg-opacity-50 backdrop-blur-sm z-50 flex items-center justify-center">
+            <div className="absolute inset-0 bg-white bg-opacity-50 backdrop-blur-sm z-500 flex items-center justify-center">
                 <div className="text-gray-700 text-lg font-semibold">
                 <l-dot-pulse size="43"   speed="1.3"  color="black"></l-dot-pulse>
                 </div>

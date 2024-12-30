@@ -30,7 +30,7 @@ function CreateContest() {
             });
     }, []);
 
-    const [state, setState] = useState("create");
+    const [state, setState] = useState("manage");
     const handleState = (e) => {
         setState(e);
     };
