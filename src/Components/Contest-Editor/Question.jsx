@@ -1,4 +1,5 @@
 import Example from "./Example";
+
 const Question=({quesTitle,difficulty,description,inputFormat,outputFormat})=>{
     return(
         <div className="w-full h-screen bg-slate-900 overflow-scroll scrollbar-thumb">
