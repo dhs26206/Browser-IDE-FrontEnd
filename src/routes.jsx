@@ -16,6 +16,9 @@ import CallBack from './Components/Login-SignUp/Callback.jsx';
 // import Dino from './Components/Contest-Viewer/Dino.jsx';
 import VerifyEmail from './Components/Login-SignUp/VerifyEmail.jsx';
 import CallVerify from './Components/Login-SignUp/CallVerify.jsx';
+import ManageContest from './Components/manageContestPage/manageContestPage.jsx'
+import CreateQuestion from "./Components/createQuestion/createQuestion.jsx";
+
 
 const isAuthenticatedTrue=()=>{
   return true;
@@ -27,9 +30,10 @@ const routes = [
     { path: '/contest/:q', element: <ContestExpand/> },
     { path: '/login', element: <Log/> },
     { path: '/signup', element: <Signup/> },
+    { path: '/createquestion', element: <CreateQuestion/> },
     { path: '/CreateContest', element:<ProtectedRoute element={CreateContest} isAuthenticated={isAuthenticatedTrue}/> },
     { path: '/QChoose/:q', element:<ProtectedRoute element={QuestionList} isAuthenticated={isAuthenticatedTrue}/> },
-    
+    {path : '/managecontest', element : <ManageContest/>},
     { path: '/dev2', element: <QuestionCreate/> },
     {path:'/userdashboard',element:<Dashboard/>},
     {path:'/callback',element:<CallBack/>},

@@ -1,92 +1,128 @@
-import { useState } from "react";
-import Dropdown from "./DropDown";
-
+import React, { useState } from "react";
+import Dropdown from "./Dropdown"; // Assuming Dropdown is a custom component
+import {url} from "../../../url"
 export const ContestForm = () => {
-  const Type = ["Public", "Private(accessed through link)"];
-  const [Contest_Type, set_Contest_Type] = useState("Public");
-  const handleType = (item) => {
-    set_Contest_Type(item);
-  };
-  const Security = ["Strict", "Moderate", "Mild(User Allowed to Tab Change)"];
-  const [Security_State, set_Security_State] = useState("Public");
-  const handleSecurity = (item) => {
-    set_Security_State(item);
-  };
-  const handleQuestionChoose = () => {
-    let url = "/QChoose/gwbgswt";
-    const features =
-      "width=800,height=600,top=100,left=100,location=no,menubar=no,toolbar=no,location=no,status=no,resizable=no";
-    window.open(url, "_blank", features);
+  const [contestName, setContestName] = useState("");
+  const [contestType, setContestType] = useState("Public");
+  const [startTime, setStartTime] = useState("");
+  const [endTime, setEndTime] = useState("");
+  const [securityLevel, setSecurityLevel] = useState("Strict");
+
+  const handleSubmit = (e) => {
+    e.preventDefault();
+    const contestData = {
+      contestName:contestName,
+      contestAccess:contestType,
+      contestStartDate:startTime,
+      contestEndDate:endTime,
+    };
+    fetch(`${url}/createcontest`, {
+                        method: 'POST',
+                        credentials: 'include',
+                        headers: { "Content-Type": "application/json" },
+                        body:JSON.stringify(contestData)
+                    })
+                    .then((res) => res.json())
+                    .then((response) => {
+                        if (response.status) {
+                            alert(`contest created!! please go to manage section`);
+                        } else {
+                            alert(`some error occured and the form could not be creadted plz resubmit`);
+                        }
+                    })
+                    .catch((error) => {
+                        console.error('Error checking login status:', error);
+                        alert(`some error occured and the form could not be creadted plz resubmit`);
+                    }); 
+    console.log("Contest Created:", contestData);
+    // Add logic to handle the form submission
   };
 
   return (
-    <div className="pl-5 h-full w-full bg-gradient-to-b from-gray-900 via-black to-gray-900 text-white overflow-x-scroll font-sans">
-      <div className="w-full h-1/5 text-5xl flex items-center font-extrabold tracking-wide">
-        Create Contest
-      </div>
-      <div className="w-full h-5/6 pl-5 flex flex-col gap-8 overflow-x-scroll">
-        <div className="w-1/2 h-1/5">
-          <div className="w-full h-1/2 text-3xl font-bold">Contest's Name:</div>
-          <div className="w-full h-1/2">
-            <input
-              className="w-4/5 h-[70%] rounded-lg text-gray-300 bg-gray-800 border-2 border-gray-700 placeholder:pl-4 placeholder:text-gray-500 placeholder:text-sm focus:outline-none focus:border-purple-500"
-              placeholder="Enter Contest Name"
-              type="text"
-            />
-          </div>
+    <div className="px-8 py-10 h-full w-full bg-gradient-to-b from-gray-900 via-gray-800 to-gray-900 text-white font-sans overflow-scroll">
+      <h1 className="text-4xl font-extrabold tracking-wide mb-10 text-center text-purple-400">Create Contest</h1>
+      <form onSubmit={handleSubmit} className="max-w-3xl mx-auto bg-gray-800 rounded-lg shadow-lg p-8 space-y-6">
+        {/* Contest Name */}
+        <div>
+          <label htmlFor="contestName" className="block text-xl font-semibold mb-2 text-purple-300">
+            Contest Name:
+          </label>
+          <input
+            id="contestName"
+            type="text"
+            placeholder="Enter Contest Name"
+            value={contestName}
+            onChange={(e) => setContestName(e.target.value)}
+            className="w-full px-4 py-2 text-gray-300 bg-gray-700 border border-gray-600 rounded-md focus:outline-none focus:ring-2 focus:ring-purple-500 placeholder:text-gray-500"
+          />
         </div>
-        <div className="w-1/2 h-1/5">
-          <div className="w-full h-1/2 text-3xl font-bold">
+
+        {/* Contest Type */}
+        <div>
+          <label htmlFor="contestType" className="block text-xl font-semibold mb-2 text-purple-300">
             Contest Type (Public/Private):
-          </div>
-          <div className="w-full h-[35%]">
-            <Dropdown title={"Public"} items={Type} onSelect={handleType} clickable={false} />
-          </div>
+          </label>
+          <Dropdown
+            title={contestType}
+            items={["Public", "Private"]}
+            onSelect={setContestType}
+            clickable={false}
+          />
         </div>
-        <div className="w-1/2 h-1/5">
-          <div className="w-full h-1/2 text-2xl font-bold">Contest Start Timings</div>
-          <div className="w-full h-1/2">
-            <label htmlFor="Start-Time" className="text-gray-400">
-              Select
-            </label>
-            <input
-              type="datetime-local"
-              name="Start-Time"
-              id="Start-Time"
-              className="ml-3 text-gray-300 bg-gray-800 border-2 border-gray-700 rounded-lg focus:outline-none focus:border-purple-500"
-            />
-          </div>
+
+        {/* Contest Start Timings */}
+        <div>
+          <label htmlFor="startTime" className="block text-xl font-semibold mb-2 text-purple-300">
+            Contest Start Timings:
+          </label>
+          <input
+            id="startTime"
+            type="datetime-local"
+            value={startTime}
+            onChange={(e) => setStartTime(e.target.value)}
+            className="w-full px-4 py-2 text-gray-300 bg-gray-700 border border-gray-600 rounded-md focus:outline-none focus:ring-2 focus:ring-purple-500"
+          />
         </div>
-        <div className="w-1/2 h-1/5">
-          <div className="w-full h-1/2 text-2xl font-bold">Contest End Timings</div>
-          <div className="w-full h-1/2">
-            <label htmlFor="End-Time" className="text-gray-400">
-              Select
-            </label>
-            <input
-              type="datetime-local"
-              name="End-Time"
-              id="End-Time"
-              className="ml-3 text-gray-300 bg-gray-800 border-2 border-gray-700 rounded-lg focus:outline-none focus:border-purple-500"
-            />
-          </div>
+
+        {/* Contest End Timings */}
+        <div>
+          <label htmlFor="endTime" className="block text-xl font-semibold mb-2 text-purple-300">
+            Contest End Timings:
+          </label>
+          <input
+            id="endTime"
+            type="datetime-local"
+            value={endTime}
+            onChange={(e) => setEndTime(e.target.value)}
+            className="w-full px-4 py-2 text-gray-300 bg-gray-700 border border-gray-600 rounded-md focus:outline-none focus:ring-2 focus:ring-purple-500"
+          />
         </div>
-        <div className="w-1/2 h-1/5">
-          <div className="w-full h-1/2 text-3xl font-bold">Contest Security:</div>
-          <div className="w-full h-[35%]">
-            <Dropdown title={"Strict"} items={Security} onSelect={handleSecurity} clickable={false} />
-          </div>
+
+        {/* Contest Security */}
+        <div>
+          <label htmlFor="securityLevel" className="block text-xl font-semibold mb-2 text-purple-300">
+            Contest Security:
+          </label>
+          <Dropdown
+            title={securityLevel}
+            items={["Strict", "Moderate", "Lenient"]}
+            onSelect={setSecurityLevel}
+            clickable={false}
+          />
         </div>
+
+        {/* Submit Button */}
         <div>
           <button
-            onClick={() => handleQuestionChoose()}
-            className="bg-purple-600 text-white border-2 border-purple-700 rounded-lg px-6 py-2 hover:bg-purple-500 hover:shadow-lg transition duration-300 font-medium"
-            type="button"
+            type="submit"
+            className="w-full bg-purple-600 text-white border border-purple-700 rounded-md px-6 py-3 hover:bg-purple-500 hover:shadow-lg transition duration-300 font-medium text-lg"
           >
-            Choose Question
+            Create Contest
           </button>
         </div>
-      </div>
+      </form>
     </div>
   );
 };
+
+// export default CreateContestForm;
