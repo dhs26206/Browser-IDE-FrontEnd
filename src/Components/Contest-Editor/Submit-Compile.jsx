@@ -23,6 +23,7 @@ export const SubmitCompile=({isClicked,submitData,setOutput,setErrorVisible,setE
                     let pollres=await fetch(`${url}/submission`,{
                         method:'POST',
                         headers:{"Content-Type":"application/json"},
+                        credentials:"include",
                         body:JSON.stringify({subId:response.submissionId})
                     })
                     let pollres1=await pollres.json();
