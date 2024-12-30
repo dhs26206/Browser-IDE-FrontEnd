@@ -1,7 +1,7 @@
 import React, { useState } from 'react';
 // import './Dropdown.css'; // Include CSS for styling
 
-const Dropdown = ({ title, items, onSelect,clickable }) => {
+export const Dropdown = ({ title, items, onSelect,clickable }) => {
     const [isOpen, setIsOpen] = useState(false);
     const [selectedItem, setSelectedItem] = useState(title);
 
@@ -37,4 +37,4 @@ const Dropdown = ({ title, items, onSelect,clickable }) => {
     );
 };
 
-export default Dropdown;
+// export default Dropdown;

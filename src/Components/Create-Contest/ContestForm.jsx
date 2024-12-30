@@ -1,5 +1,5 @@
 import React, { useState } from "react";
-import Dropdown from "./Dropdown"; // Assuming Dropdown is a custom component
+import {Dropdown} from "./DropDown"; // Assuming Dropdown is a custom component
 import {url} from "../../../url"
 export const ContestForm = () => {
   const [contestName, setContestName] = useState("");
