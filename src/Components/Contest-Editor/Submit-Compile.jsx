@@ -35,7 +35,7 @@ export const SubmitCompile=({isClicked,submitData,setOutput,setErrorVisible,setE
                         clearInterval(poll);
                         setCompilationLoading(false);
                     }
-                },500)
+                },1300)
             }
             else{
                 console.log(`error status false ${response}`);
