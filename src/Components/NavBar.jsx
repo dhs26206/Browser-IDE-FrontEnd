@@ -3,7 +3,7 @@ import Navigation from "./Navigation";
 import { Link, useNavigate } from "react-router-dom";
 import { url } from "../../url";
 import Cookies from 'js-cookie';
-const NavBar = () => {
+const NavBar = ({setlogin}) => {
     const navigate = useNavigate();
     const [click, setClick] = useState(false);
     const [isLoggedIn, setIsLoggedIn] = useState(false);
@@ -34,12 +34,30 @@ const NavBar = () => {
     const handleNavigateLogin = () => {
         navigate('/login');
     };
-    const handleLogout=()=>{
-        console.log(document.cookie);
-        console.log(Cookies.get('sessionToken'));
-        Cookies.remove('sessionToken');
-        setIsLoggedIn(false);
-        console.log(`logged out !!`);
+    const handleLogout=async()=>{
+
+        // console.log(document.cookie);
+        // console.log(Cookies.get('sessionToken'));
+        // Cookies.remove('sessionToken');
+        // console.log(`logged out !!`);
+        fetch(`${url}/logout`, {
+            method: 'GET',
+            credentials: 'include',
+        })
+        .then((res) => res.json())
+        .then((response) => {
+            if (response.status) {
+                setIsLoggedIn(false);
+                setlogin(false);
+                // setIsLoggedIn(true); // User is logged in
+            } else {
+                // setIsLoggedIn(false); // User is not logged in
+                alert(`error in logging out plz try again`);
+            }
+        })
+        .catch((error) => {
+            console.error('Error checking login status:', error);
+        });
     }
     const choice = ["Practice", "LeaderBoard", "About", "ContactUs"];
 

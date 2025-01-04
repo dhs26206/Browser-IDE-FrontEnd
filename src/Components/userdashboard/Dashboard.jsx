@@ -55,11 +55,23 @@ function Dashboard() {
         });
     },[]);
     const navigate=useNavigate();
-    const handleLogout=()=>{
-        Cookie.remove('sessionToken');
-        setLogin(false);
-        navigate('/');
-    };
+    const handleLogout=async()=>{
+        fetch(`${url}/logout`, {
+            method: 'GET',
+            credentials: 'include',
+        })
+        .then((res) => res.json())
+        .then((response) => {
+            if (response.status) {
+                setLogin(false);
+            } else {
+                alert(`error in logging out plz try again`);
+            }
+        })
+        .catch((error) => {
+            console.error('Error checking login status:', error);
+        });
+    }
     const handledeleteUser=()=>{
         fetch(`${url}/deleteuser`,{
             method:'GET',

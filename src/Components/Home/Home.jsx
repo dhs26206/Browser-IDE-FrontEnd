@@ -9,8 +9,10 @@ import ParticlesComponent from "./nuro";
 import { useNavigate } from "react-router-dom";
 import { useState, useEffect } from "react";
 import { url } from "../../../url";
+import WholePageLoading from "../loading/wholePageLoading";
 
 const Home = () => {
+  const[loading,setLoading]=useState(true);
   const navigate = useNavigate();
   const [isLoggedIn, setIsLoggedIn] = useState(false);
   let onetime=false;
@@ -20,6 +22,7 @@ const Home = () => {
       onetime=true;
     }
     if(!onetime) tel();
+    setLoading(true);
     fetch(`${url}/checklogin`, {
       method: 'GET',
       credentials: 'include',
@@ -31,9 +34,11 @@ const Home = () => {
       } else {
         setIsLoggedIn(false); // User is not logged in
       }
+      setLoading(false);
     })
     .catch((error) => {
       console.error('Error checking login status:', error);
+      setLoading(false);
     });
   }, []);
 
@@ -50,18 +55,21 @@ const Home = () => {
 
   return (
     <div className="relative h-screen w-screen overflow-y-auto">
-      <div className="absolute z-10">
+
+      {/* <div className="absolute z-10">
         <SolarSystemAnimation />
-      </div>
+      </div> */}
 
       <div className="relative flex flex-col">
         {/* NavBar */}
         <div className="w-full h-[12%] bg-transparent z-40">
-          <NavBar />
+      {/* { wholePageLoading} */}
+      <WholePageLoading loading={loading} />
+          <NavBar setlogin={setIsLoggedIn}/>
         </div>
 
         {/* Hero Section */}
-        <div className="w-full h-screen bg-transparent flex flex-col items-left justify-center text-left z-30">
+        <div className="w-full h-screen bg-transparent flex flex-col items-left justify-center text-left z-3">
           <div className="md:ml-5 font-bold px-4 text-3xl md:p-0 md:text-5xl text-[#F7F0F5] italic">
             The journey of a thousand lines of code begins with a
             <br />
