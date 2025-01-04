@@ -67,6 +67,7 @@ function Dashboard() {
             } else {
                 alert(`error in logging out plz try again`);
             }
+            navigate('/');
         })
         .catch((error) => {
             console.error('Error checking login status:', error);
