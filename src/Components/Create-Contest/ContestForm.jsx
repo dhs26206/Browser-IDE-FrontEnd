@@ -1,13 +1,14 @@
 import React, { useState } from "react";
 import {Dropdown} from "./DropDown"; // Assuming Dropdown is a custom component
 import {url} from "../../../url"
-export const ContestForm = () => {
+import { useNavigate } from "react-router-dom";
+export const ContestForm = ({setState}) => {
   const [contestName, setContestName] = useState("");
   const [contestType, setContestType] = useState("Public");
   const [startTime, setStartTime] = useState("");
   const [endTime, setEndTime] = useState("");
   const [securityLevel, setSecurityLevel] = useState("Strict");
-
+  const navigate=useNavigate();
   const handleSubmit = (e) => {
     e.preventDefault();
     const contestData = {
@@ -25,7 +26,8 @@ export const ContestForm = () => {
                     .then((res) => res.json())
                     .then((response) => {
                         if (response.status) {
-                            alert(`contest created!! please go to manage section`);
+                            // alert(`contest created!! please go to manage section`);
+                            setState('manage');
                         } else {
                             alert(`some error occured and the form could not be creadted plz resubmit`);
                         }
@@ -39,7 +41,7 @@ export const ContestForm = () => {
   };
 
   return (
-    <div className="px-8 py-10 h-full w-full bg-gradient-to-b from-gray-900 via-gray-800 to-gray-900 text-white font-sans overflow-scroll">
+    <div className="px-8 py-10 h-full w-full bg-gradient-to-b from-gray-900 via-gray-800 to-gray-900 text-white font-sans overflow-y-scroll">
       <h1 className="text-4xl font-extrabold tracking-wide mb-10 text-center text-purple-400">Create Contest</h1>
       <form onSubmit={handleSubmit} className="max-w-3xl mx-auto bg-gray-800 rounded-lg shadow-lg p-8 space-y-6">
         {/* Contest Name */}

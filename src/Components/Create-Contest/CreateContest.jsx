@@ -43,18 +43,25 @@ function CreateContest() {
             </div>
 
             {/* Main Content */}
-            <div className="flex w-full h-[85%]">
+            <div className="flex w-full h-[80%]">
+                <div className="flex flex-col w-1/5 h-full transition-all duration-300 " >
                 {/* Navigation Panel */}
+                <div className="flex w-fit h-fit">
+
+                <button onClick={()=>{navigate('/')}} className="text-blue-800">Home</button>
+                </div>
                 {isNavOpen && (
-                    <div className="w-1/5 h-full transition-all duration-300">
+                    <div className=" h-full transition-all duration-300">
                         <Navigate toggleState={handleState} />
                     </div>
                 )}
 
+                </div>
+
                 {/* Resizable Combined Component */}
                 <div className={`h-full transition-all duration-300 ${isNavOpen ? "w-4/5" : "w-full"}`}>
                     
-                    <CombinedComponent state={state} setIsNavOpen={setIsNavOpen} isNavOpen={isNavOpen} />
+                    <CombinedComponent state={state} setIsNavOpen={setIsNavOpen} isNavOpen={isNavOpen} setState={setState} />
                 </div>
             </div>
         </div>

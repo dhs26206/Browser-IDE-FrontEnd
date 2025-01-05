@@ -26,8 +26,10 @@ export const ManageContest = () => {
 
   const [loading,setLoading]=useState(false);
     const [contestList,setContestList]=useState([]);
-    useEffect(()=>{
-      setLoading(true);
+  
+
+  const fetchContestList=async()=>{
+    setLoading(true);
         fetch(`${url}/managecontest`, {
             method: 'GET',
             credentials: 'include',
@@ -46,9 +48,31 @@ export const ManageContest = () => {
                 setLoading(false);
                 // navigate('/login');
             });
+  }
+    useEffect(()=>{
+      fetchContestList();
     },[]);
-
-
+    const handleDelete=async(contestId,index)=>{
+      console.log(contestId);
+      setLoading(true);
+      fetch(`${url}/deletecontest/${contestId}`, {
+        method: 'POST',
+        credentials: 'include',
+    })
+        .then((res) => res.json())
+        .then((response) => {
+            if (response.status) {
+              fetchContestList();
+            } else {
+                console.log(`error in deleteling contest `);
+            }
+            setLoading(false);
+        })
+        .catch((error) => {
+            console.error('Error checking login status:', error);
+            setLoading(false);
+        });
+    };
 
   const [expand, setExpand] = useState(-1);
   // const handleEditButton=()=>{
@@ -58,10 +82,16 @@ export const ManageContest = () => {
     setExpand(expand === index ? -1 : index);
   };
 
+  const handleBack=()=>{
+    navigate(-1);
+  }
+
   return (
-    <div className="px-8 py-10 h-full w-full bg-gradient-to-b from-gray-900 via-gray-800 to-gray-900 text-white font-sans">
+    <div className="px-8 py-10 h-[99%] w-full bg-gradient-to-b from-gray-900 via-gray-800 to-gray-900 text-white font-sans ">
+      <div className="h-full" >
+
       <h1 className="text-4xl font-extrabold tracking-wide mb-10 text-center text-blue-400">Manage Contests</h1>
-      <div className="max-w-5xl mx-auto bg-gray-800 rounded-lg shadow-lg p-8 space-y-4 overflow-y-auto h-[70vh]">
+      <div className="max-w-5xl mx-auto bg-gray-800 rounded-lg shadow-lg p-8 space-y-4 overflow-y-auto ">
         {loading ? <>
           <div className="flex justify-center items-center">
         <l-newtons-cradle size="100" speed="1.4" color="white" ></l-newtons-cradle>
@@ -114,7 +144,7 @@ export const ManageContest = () => {
                   <button onClick={()=>{(navigate(`/managecontest/${contest.contestId}`))}} className="bg-green-500 hover:bg-green-400 text-white px-4 py-2 rounded-md font-medium">
                     Edit Details
                   </button>
-                  <button className="bg-red-600 hover:bg-red-700 text-white px-4 py-2 rounded-md font-medium">
+                  <button onClick={()=>handleDelete(contest.contestId,index)} className="bg-red-600 hover:bg-red-700 text-white px-4 py-2 rounded-md font-medium">
                     Delete
                   </button>
                 </div>
@@ -125,6 +155,7 @@ export const ManageContest = () => {
         <>
         <h3> NO CONTESTS TO MANAGE PLEASE CREATE A NEW ONE :) </h3>
         </>}
+      </div>
       </div>
     </div>
   );

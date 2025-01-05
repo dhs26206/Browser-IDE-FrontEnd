@@ -56,18 +56,6 @@ const CreateQuestion = () => {
       console.log(`fetch request done`);
       if (response.ok) {
         setMessage('Question created successfully!');
-        // setFormData({
-        //   quesTitle: '',
-        //   quesText: '',
-        //   difficulty: 'Easy',
-        //   description: '',
-        //   score: 0,
-        //   testIp: '',
-        //   testOp: '',
-        //   inputFormat: '',
-        //   outputFormat: '',
-        //   correctCode: '',
-        // });
         navigate(`/managecontest/${contestId}`);
       } else {
         const errorData = await response.json();
@@ -81,9 +69,10 @@ const CreateQuestion = () => {
   return (
     <div className="min-h-screen bg-gradient-to-r from-gray-900 via-black to-gray-900 text-gray-200 p-6 flex items-center justify-center">
       <div className="max-w-4xl w-full space-y-6">
-        <h2 className="text-3xl font-extrabold text-center text-blue-400 mb-8 animate-bounce">
+        <h2 className="text-3xl font-extrabold text-center text-blue-400 mb-8 ">
           Create a New Question
         </h2>
+        <button onClick={()=>{navigate(`/managecontest/${q}`)}} className='text-lg text-red-600'>{'<'}</button>
         <form onSubmit={handleSubmit} className="grid grid-cols-1 md:grid-cols-2 gap-6">
           {/* Question Title */}
           <div className="p-4 bg-gray-800 rounded-lg shadow-lg transition-transform transform hover:scale-105">

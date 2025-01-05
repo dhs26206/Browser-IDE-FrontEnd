@@ -50,7 +50,7 @@ const Home = () => {
     navigate('/signup');
   };
   const handleNavigateCreateContest=()=>{
-    navigate('/createcontest');
+    navigate('/managecontest');
   }
 
   return (
@@ -98,7 +98,7 @@ const Home = () => {
               onClick={handleNavigateCreateContest}
               className="bg-transparent border-2 border-[#f3ca40] text-[#f3ca40] w-52 font-bold rounded-md hover:bg-[#f3ca40] hover:text-white"
             >
-              Create Contest
+              Manage Contest
             </button>
           </div>
           <div className="mt-10 flex items-center justify-center gap-2">

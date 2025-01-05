@@ -149,6 +149,7 @@ const ManageContest = () => {
       <h2 className="text-3xl font-bold text-center text-gray-100 border-b pb-4 border-gray-700">
         Manage Contest
       </h2>
+      <button onClick={()=>{navigate('/managecontest')}} className='text-lg text-red-600'>{'<'}</button>
       {/*loading effect !!!*/ }
 
 

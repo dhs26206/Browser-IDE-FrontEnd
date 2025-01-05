@@ -52,7 +52,7 @@ export const Navigate = ({ toggleState }) => {
                 </div>
               </div>
 
-              <div className="w-full h-1/3">
+              {/* <div className="w-full h-1/3">
                 <div className="w-full h-[30%]">
                   <div className="font-bold text-xl">Manage Account</div>
                 </div>
@@ -64,7 +64,7 @@ export const Navigate = ({ toggleState }) => {
                     Log Out
                   </div>
                 </div>
-              </div>
+              </div> */}
             </div>
           </div>
         </div>

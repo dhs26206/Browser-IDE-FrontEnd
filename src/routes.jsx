@@ -31,7 +31,7 @@ const routes = [
     { path: '/login', element: <Log/> },
     { path: '/signup', element: <Signup/> },
     // { path: '/createquestion', element: <CreateQuestion/> },
-    { path: '/CreateContest', element:<ProtectedRoute element={CreateContest} isAuthenticated={isAuthenticatedTrue}/> },
+    { path: '/managecontest', element:<ProtectedRoute element={CreateContest} isAuthenticated={isAuthenticatedTrue}/> },
     { path: '/QChoose/:q', element:<ProtectedRoute element={QuestionList} isAuthenticated={isAuthenticatedTrue}/> },
     {path : '/managecontest/:q', element : <ManageContest/>},
     { path: '/managecontest/:q/createquestion', element: <CreateQuestion/> },
