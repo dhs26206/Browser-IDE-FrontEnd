@@ -23,8 +23,11 @@ const convertTime = (timeString) => {
 export const ManageContest = () => {
   const navigate=useNavigate();
   // const {q} =useParams();
+
+  const [loading,setLoading]=useState(false);
     const [contestList,setContestList]=useState([]);
     useEffect(()=>{
+      setLoading(true);
         fetch(`${url}/managecontest`, {
             method: 'GET',
             credentials: 'include',
@@ -36,9 +39,11 @@ export const ManageContest = () => {
                 } else {
                     console.log(`error in contest list.fetch`);
                 }
+                setLoading(false);
             })
             .catch((error) => {
                 console.error('Error checking login status:', error);
+                setLoading(false);
                 // navigate('/login');
             });
     },[]);
@@ -57,7 +62,13 @@ export const ManageContest = () => {
     <div className="px-8 py-10 h-full w-full bg-gradient-to-b from-gray-900 via-gray-800 to-gray-900 text-white font-sans">
       <h1 className="text-4xl font-extrabold tracking-wide mb-10 text-center text-blue-400">Manage Contests</h1>
       <div className="max-w-5xl mx-auto bg-gray-800 rounded-lg shadow-lg p-8 space-y-4 overflow-y-auto h-[70vh]">
-        {contestList.length!==0 ? contestList.map((contest, index) => (
+        {loading ? <>
+          <div className="flex justify-center items-center">
+        <l-newtons-cradle size="100" speed="1.4" color="white" ></l-newtons-cradle>
+
+        </div>
+        </> :
+        contestList.length!==0 ? contestList.map((contest, index) => (
           <div
             key={index}
             className="bg-gray-700 rounded-lg p-4 border border-gray-600 hover:border-blue-500 transition duration-300"
@@ -112,10 +123,7 @@ export const ManageContest = () => {
           </div>
         )): 
         <>
-        <div className="flex justify-center items-center">
-        <l-newtons-cradle size="100" speed="1.4" color="white" ></l-newtons-cradle>
-
-        </div>
+        <h3> NO CONTESTS TO MANAGE PLEASE CREATE A NEW ONE :) </h3>
         </>}
       </div>
     </div>
