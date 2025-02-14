@@ -69,10 +69,10 @@ const NavBar = ({setlogin}) => {
                         <img className="w-64 h-14 pl-5" src="https://folder.ddks.tech/logo.png" alt="Logo" />
                     </Link>
 
-                    <div className="text-white h-14 items-center hidden sm:hidden md:flex cursor-pointer"><span>Practice</span><svg xmlns="http://www.w3.org/2000/svg" className="w-6 h-6" viewBox="0 0 320 512"><path fill="#ffffff" d="M137.4 374.6c12.5 12.5 32.8 12.5 45.3 0l128-128c9.2-9.2 11.9-22.9 6.9-34.9s-16.6-19.8-29.6-19.8L32 192c-12.9 0-24.6 7.8-29.6 19.8s-2.2 25.7 6.9 34.9l128 128z"/></svg></div>
-                    <div className="text-white h-14 items-center hidden sm:hidden md:flex cursor-pointer"><span>Contact Us</span><svg xmlns="http://www.w3.org/2000/svg" className="w-6 h-6" viewBox="0 0 320 512"><path fill="#ffffff" d="M137.4 374.6c12.5 12.5 32.8 12.5 45.3 0l128-128c9.2-9.2 11.9-22.9 6.9-34.9s-16.6-19.8-29.6-19.8L32 192c-12.9 0-24.6 7.8-29.6 19.8s-2.2 25.7 6.9 34.9l128 128z"/></svg></div>
-                    <div className="text-white h-14 items-center hidden sm:hidden md:flex cursor-pointer"><span>About</span><svg xmlns="http://www.w3.org/2000/svg" className="w-6 h-6" viewBox="0 0 320 512"><path fill="#ffffff" d="M137.4 374.6c12.5 12.5 32.8 12.5 45.3 0l128-128c9.2-9.2 11.9-22.9 6.9-34.9s-16.6-19.8-29.6-19.8L32 192c-12.9 0-24.6 7.8-29.6 19.8s-2.2 25.7 6.9 34.9l128 128z"/></svg></div>
-                    <div className="text-white h-14 items-center hidden sm:hidden md:flex cursor-pointer"><span><Link to="/userdashboard">User</Link></span><svg xmlns="http://www.w3.org/2000/svg" className="w-6 h-6" viewBox="0 0 320 512"><path fill="#ffffff" d="M137.4 374.6c12.5 12.5 32.8 12.5 45.3 0l128-128c9.2-9.2 11.9-22.9 6.9-34.9s-16.6-19.8-29.6-19.8L32 192c-12.9 0-24.6 7.8-29.6 19.8s-2.2 25.7 6.9 34.9l128 128z"/></svg></div>
+                    <div className="text-white h-14 items-center hidden sm:hidden md:flex cursor-pointer"><span>Practice</span></div>
+                    <div className="text-white h-14 items-center hidden sm:hidden md:flex cursor-pointer"><span>Contact Us</span></div>
+                    <div className="text-white h-14 items-center hidden sm:hidden md:flex cursor-pointer"><span>About</span></div>
+                    <div className="text-white h-14 items-center hidden sm:hidden md:flex cursor-pointer"><span><Link to="/userdashboard">User</Link></span></div>
 
                     {/* Conditionally render the "Login" button */}
                     {!isLoggedIn ?(

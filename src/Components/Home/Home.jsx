@@ -69,7 +69,7 @@ const Home = () => {
         </div>
 
         {/* Hero Section */}
-        <div className="w-full h-screen bg-transparent flex flex-col items-left justify-center text-left z-3">
+        <div className="w-full h-screen bg-transparent flex flex-col items-center justify-center text-left z-3">
           <div className="md:ml-5 font-bold px-4 text-3xl md:p-0 md:text-5xl text-[#F7F0F5] italic">
             The journey of a thousand lines of code begins with a
             <br />

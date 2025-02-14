@@ -18,9 +18,9 @@ function Footer(){
                             <img className="h-[25%] "  src="https://folder.ddks.tech/igbgremoved.png" alt="" srcset="" />
                             
                             <div className="flex flex-col h-3/4">
-                                <div className=" text-center cursor-pointer hover:text-blue-400 text-blue-800 hover:underline" onClick={()=>{window.location.href="https://example.com"}}>Ashleel_Coders</div>
+                                {/* <div className=" text-center cursor-pointer hover:text-blue-400 text-blue-800 hover:underline" onClick={()=>{window.location.href="https://example.com"}}>Ashleel_Coders</div> */}
                                 <div className=" text-center cursor-pointer hover:text-blue-400 text-blue-800 hover:underline" onClick={()=>{window.location.href="https://example.com"}}>Dhruv</div>
-                                <div className=" text-center cursor-pointer hover:text-blue-400 text-blue-800 hover:underline" onClick={()=>{window.location.href="https://example.com"}}>Gaurav</div>
+                                {/* <div className=" text-center cursor-pointer hover:text-blue-400 text-blue-800 hover:underline" onClick={()=>{window.location.href="https://example.com"}}>Gaurav</div> */}
                                 <div className=" text-center cursor-pointer hover:text-blue-400 text-blue-800 hover:underline" onClick={()=>{window.location.href="https://example.com"}}>Ayush</div>
                                 <div className=" text-center cursor-pointer hover:text-blue-400 text-blue-800 hover:underline" onClick={()=>{window.location.href="https://example.com"}}>Manpreet</div>
 
@@ -29,11 +29,11 @@ function Footer(){
                         <div className="h-[60%] w-[20%] flex flex-col justify-between items-center">
                             <img className="h-1/4 rounded-full object-cover" src="https://folder.ddks.tech/downloadgithub.png" alt="" srcset="" />
                             <div className="flex flex-col h-3/4 ">
-                                <div className=" text-center cursor-pointer hover:text-blue-400 text-blue-800 hover:underline" onClick={()=>{window.location.href="https://example.com"}}>Ashleel_Coders</div>
+                                {/* <div className=" text-center cursor-pointer hover:text-blue-400 text-blue-800 hover:underline" onClick={()=>{window.location.href="https://example.com"}}>Ashleel_Coders</div> */}
                                 <div className=" text-center cursor-pointer hover:text-blue-400 text-blue-800 hover:underline" onClick={()=>{window.location.href="https://example.com"}}>Dhruv</div>
-                                <div className=" text-center cursor-pointer hover:text-blue-400 text-blue-800 hover:underline" onClick={()=>{window.location.href="https://example.com"}}>Gaurav</div>
+                                {/* <div className=" text-center cursor-pointer hover:text-blue-400 text-blue-800 hover:underline" onClick={()=>{window.location.href="https://example.com"}}>Gaurav</div> */}
                                 <div className=" text-center cursor-pointer hover:text-blue-400 text-blue-800 hover:underline" onClick={()=>{window.location.href="https://example.com"}}>Ayush</div>
-                                <div className=" text-center cursor-pointer hover:text-blue-400 text-blue-800 hover:underline" onClick={()=>{window.location.href="https://example.com"}}>Manpreet</div>
+                                <div className=" text-center cursor-pointer hover:text-blue-400 text-blue-800 hover:underline" onClick={()=>{window.location.href="https://github.com/manpreet-singh1040"}}>Manpreet</div>
 
                             </div>
                         </div>
@@ -47,4 +47,13 @@ function Footer(){
         </div>
     )
 }
-export default Footer
+
+function NewFooter(){
+    return(
+        <div className="h-full w-full flex justify-center items-center">
+            <img className="" src="https://folder.ddks.tech/planetend.png" alt="Nothing" srcset="" />
+
+        </div>
+    )
+}
+export default NewFooter
