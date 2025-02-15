@@ -16,7 +16,7 @@ const Question=({data})=>{
                 </div>
             </div>
             <div id="description" className="text-white border-b-2 border-slate-500 p-5 mx-5 text-justify" >
-            {data.description}
+            {data.quesText}
             </div>
             <div className="border-b-2 border-slate-500 p-5 mx-5 text-white">
                INPUT FORMAT: <br />{data.inputFormat} 

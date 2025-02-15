@@ -1,6 +1,6 @@
 
 
-const Example=(data)=>{
+const Example=({data})=>{
     return(
         <div className="flex items-center w-full justify-center p-6">
             <div className="text-white rounded-lg bg-blue-700 p-5 w-[90%]">
