@@ -46,6 +46,48 @@ export const SubmitCompile=({isClicked,submitData,setOutput,setErrorVisible,setE
         })
         isClicked();
     }
+    const handleClickSubmit=(event)=>{
+        setCompilationLoading(true);
+        toggleCompilation(true);
+        sethit(true);
+        setTimeout(() => { sethit(false); }, 3000);
+        console.log(submitData);
+        fetch(`${url}/exec/submit`,{
+            body:JSON.stringify(submitData),
+            method:`POST`,
+            credentials:"include",
+            headers:{"Content-Type":"application/json"}
+        }).then(res=> res.json()).then(response =>{
+            console.log(response);
+            if(response.status)
+            {
+                let poll=setInterval(async()=>{
+                    let pollres=await fetch(`${url}/ques/submission`,{
+                        method:'POST',
+                        headers:{"Content-Type":"application/json"},
+                        credentials:"include",
+                        body:JSON.stringify({subId:response.submissionId})
+                    })
+                    let pollres1=await pollres.json();
+                    // console.log(pollres1);
+                    if(pollres1.status){
+                        let responseData=JSON.parse(pollres1.response);
+                        console.log(responseData);
+                        setOutput(responseData);
+                        clearInterval(poll);
+                        setCompilationLoading(false);
+                    }
+                },1300)
+            }
+            else{
+                console.log(`error status false ${response}`);
+                setErrorVisible(true);
+                setErrorMes(response.mes);
+                setCompilationLoading(false);
+            }
+        })
+        isClicked();
+    }
     const handleInputClick=(event)=>{
         isClicked();
     };
@@ -60,7 +102,7 @@ export const SubmitCompile=({isClicked,submitData,setOutput,setErrorVisible,setE
                     <button onClick={!hit?()=>handleClick():""} className={`w-full h-full bg-gray-700 flex items-center justify-center  ${hit?'cursor-default bg-gray-900':'cursor-pointer'} `} type="button">Compile & Run</button>
                 </div>
                 <div className="w-1/4 h-4/6  rounded-md">
-                    <button onClick={!hit?()=>handleClick():""} className={`w-full h-full bg-red-700  flex items-center justify-center  ${hit?'cursor-default bg-red-950':'cursor-pointer'}  `} type="button">Submit</button>
+                    <button onClick={!hit?()=>handleClickSubmit():""} className={`w-full h-full bg-red-700  flex items-center justify-center  ${hit?'cursor-default bg-red-950':'cursor-pointer'}  `} type="button">Submit</button>
                 </div>
             </div>
         </div>
