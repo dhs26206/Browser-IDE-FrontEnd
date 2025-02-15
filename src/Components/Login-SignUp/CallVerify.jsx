@@ -26,9 +26,9 @@ const CallVerify=()=>{
         const handleVerification=async ()=>{
             const queryParams = new URLSearchParams(search);
             const code = queryParams.get('code');
-            console.log("Got the code"+code);
+            // console.log("Got the code"+code);
             let response=await sendCode(code);
-            await new Promise(resolve => setTimeout(resolve, 2000));
+            await new Promise(resolve => setTimeout(resolve, 1000));
             if(response==true) {}
             else {
                 console.error("Error Verifying");

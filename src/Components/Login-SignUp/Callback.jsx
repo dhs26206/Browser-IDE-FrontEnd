@@ -41,8 +41,8 @@ export default function CallBack(){
               let token = await getAccessToken(code);
               console.log("Token is this " + token);
     
-              // Wait for 3 seconds using setTimeout
-              await new Promise(resolve => setTimeout(resolve, 3000));
+              // Wait for 1 seconds using setTimeout
+              await new Promise(resolve => setTimeout(resolve, 1000));
     
               // Proceed with the next step after the delay
               await GetHerLogin(token);

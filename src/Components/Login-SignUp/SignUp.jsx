@@ -65,7 +65,7 @@ function Signup() {
                     <h1 className="mb-8 text-3xl text-center">Sign up</h1>
                     <input 
                         type="text"
-                        className="block border border-grey-light w-full p-3 rounded mb-4 "
+                        className="block border border-grey-light bg-black w-full p-3 rounded mb-4 "
                         name="name"
                         placeholder="Full Name" 
                         value={formData.name}
@@ -73,7 +73,7 @@ function Signup() {
                     />
                     <input 
                         type="text"
-                        className="block border border-grey-light w-full p-3 rounded mb-4 "
+                        className="block border border-grey-light bg-black w-full p-3 rounded mb-4 "
                         name="username"
                         placeholder="Username" 
                         value={formData.username}
@@ -81,7 +81,7 @@ function Signup() {
                     />
                     <input 
                         type="text"
-                        className="block border border-grey-light w-full p-3 rounded mb-4"
+                        className="block border border-grey-light bg-black w-full p-3 rounded mb-4"
                         name="email"
                         placeholder="Email" 
                         value={formData.email}
@@ -89,7 +89,7 @@ function Signup() {
                     />
                     <input 
                         type="password"
-                        className="block border border-grey-light w-full p-3 rounded mb-4"
+                        className="block border border-grey-light bg-black w-full p-3 rounded mb-4"
                         name="password"
                         placeholder="Password" 
                         value={formData.password}
@@ -97,13 +97,13 @@ function Signup() {
                     />
                     <input 
                         type="password"
-                        className="block border border-grey-light w-full p-3 rounded mb-4"
+                        className="block border border-grey-light bg-black w-full p-3 rounded mb-4"
                         name="confirm_password"
                         placeholder="Confirm Password" 
                     />
                     <button
                         type="submit"
-                        className="w-full text-center py-3 rounded bg-green text-white hover:bg-green-dark focus:outline-none my-1"
+                        className="w-full text-center py-3 rounded bg-green-500 text-white hover:bg-green-400 focus:outline-none my-1"
                         onClick={handleSubmit}
                     >Create Account</button>
                     <div onClick={()=>handleGithub()}  className="w-full bg-black p-2 rounded-lg text-slate-600 flex gap-2 justify-center cursor-pointer hover:bg-slate-800">

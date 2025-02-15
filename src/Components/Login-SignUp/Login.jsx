@@ -89,7 +89,7 @@ function Log() {
                                         type="text"
                                         autoComplete="username"
                                         required
-                                        className="block w-full rounded-md border-0 py-1.5 px-3 text-white shadow-sm ring-1 ring-inset ring-gray-300 placeholder:text-gray-400 focus:ring-2 focus:ring-inset focus:ring-indigo-600 sm:text-sm sm:leading-6 text-left"
+                                        className="block w-full rounded-md border-0 py-1.5 px-3 bg-black text-white shadow-sm ring-1 ring-inset ring-gray-300 placeholder:text-gray-400 focus:ring-2 focus:ring-inset focus:ring-indigo-600 sm:text-sm sm:leading-6 text-left"
 
                                     />
                                 </div>
@@ -97,8 +97,7 @@ function Log() {
                             <div>
                                 <label
                                     htmlFor="password"
-                                    className="block text-sm font-medium leading-6 text-white"
-                                >
+                                    className="block text-sm  font-medium leading-6 text-white">
                                     Password
                                 </label>
                                 <div className="mt-2">
@@ -110,9 +109,7 @@ function Log() {
                                         type="password"
                                         autoComplete="current-password"
                                         required
-                                        className="block w-full rounded-md border-0 py-1.5 px-3 text-white shadow-sm ring-1 ring-inset ring-gray-300 placeholder:text-gray-400 focus:ring-2 focus:ring-inset focus:ring-indigo-600 sm:text-sm sm:leading-6 text-left"
-
-                                    />
+                                        className="block w-full rounded-md border-0 py-1.5 px-3 bg-black text-white shadow-sm ring-1 ring-inset ring-gray-300 placeholder:text-gray-400 focus:ring-2 focus:ring-inset focus:ring-indigo-600 sm:text-sm sm:leading-6 text-left"/>
                                 </div>
                             </div>
                             <div className='flex flex-wrap gap-3'>
