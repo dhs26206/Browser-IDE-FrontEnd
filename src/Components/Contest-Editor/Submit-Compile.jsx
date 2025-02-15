@@ -62,20 +62,20 @@ export const SubmitCompile=({isClicked,submitData,setOutput,setErrorVisible,setE
             if(response.status)
             {
                 let poll=setInterval(async()=>{
-                    let pollres=await fetch(`${url}/ques/submission`,{
+                    let pollres=await fetch(`${url}/quessubmission`,{
                         method:'POST',
                         headers:{"Content-Type":"application/json"},
                         credentials:"include",
                         body:JSON.stringify({subId:response.submissionId})
                     })
                     let pollres1=await pollres.json();
-                    // console.log(pollres1);
+                    console.log(pollres1);
                     if(pollres1.status){
+                        clearInterval(poll);
+                        setCompilationLoading(false);
                         let responseData=JSON.parse(pollres1.response);
                         console.log(responseData);
                         setOutput(responseData);
-                        clearInterval(poll);
-                        setCompilationLoading(false);
                     }
                 },1300)
             }
