@@ -21,7 +21,7 @@ const QuestionList=({contests})=>{
     
     return(
         <div  className="w-full h-full md:pb-10">
-            <div className="flex flex-wrap gap-8 border-b-2  border-slate-600">
+            <div className="flex flex-wrap gap-8 border-b-2 border-slate-600">
             {contests.questions.map((item,index)=>{
                     
                     return (<div  key={index} className="px-6 flex w-full h-36 flex-wrap rounded-2xl  border-2 bg-[url(https://images.unsplash.com/photo-1622793139910-e261be0b30a4?q=80&w=1887&auto=format&fit=crop&ixlib=rb-4.0.3)] border-gray-700 hover:border-4">
