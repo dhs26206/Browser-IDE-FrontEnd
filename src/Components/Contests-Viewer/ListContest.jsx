@@ -32,6 +32,7 @@ const ListContest=({list})=>{
                     //console.log(`  ${item.contest_start}  ${rightnow.toISOString()}  ${item.contest_end} `);
                     const isContestActive = rightnow.toISOString() >= item.contest_start && rightnow.toISOString() <= item.contest_end;
                     const isContestEnded = rightnow.toISOString() > item.contest_end;
+                    const isContestFuture=rightnow.toISOString()<item.contest_start;
                     return (<div id={item.contest_id} key={index} className="px-6 flex w-full h-36 flex-wrap  border-2 rounded-2xl border-gray-700 hover:border-4">
                         <div className="w-full h-[10%] italic text-sm text-slate-500"> Organised by {item.organizer}</div>
                         <div className="w-full h-2"></div>
@@ -42,7 +43,7 @@ const ListContest=({list})=>{
                         </div>
                         <div className="w-1/2 flex justify-end h-[90%] items-center">
                             <div>
-                                <button onClick={()=>handleNavigateContest(item.contest_id)} className={`rounded-md px-7 py-4 text-white ${isContestEnded || !isContestActive? 'bg-gray-400 cursor-not-allowed': 'bg-blue-500 hover:bg-blue-700'} `}>
+                                <button onClick={!isContestFuture?()=>handleNavigateContest(item.contest_id):""} className={`rounded-md px-7 py-4 text-white ${isContestEnded || !isContestActive? 'bg-gray-400 cursor-not-allowed': 'bg-blue-500 hover:bg-blue-700'} `}>
                                     Participate Now</button>
                             </div>
                         </div>
