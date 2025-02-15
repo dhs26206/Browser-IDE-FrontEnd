@@ -23,7 +23,7 @@ const Contest = () => {
 
 
     const{q}=useParams();
-       const[quesDetail,setQuesDetail]=useState({quesTitle:"",difficulty:"",description:"",inputFormat:"",outputFormat:""});
+       const[quesDetail,setQuesDetail]=useState({quesTitle:"",quesText:"",difficulty:"",description:"",inputFormat:"",outputFormat:"",totalSubmission:0,acceptedSubmission:0,score:0});
        useEffect(()=>{
            fetch(`${url}/problem/${q}`,{
                method:`GET`,
@@ -82,7 +82,7 @@ const Contest = () => {
         <ErrorPopup isVisible={isVisible} setIsVisible={setIsVisible} mes={errorMes}></ErrorPopup>
         <div className="w-full h-4/5  sm:w-full flex-wrap gap-5 md:gap-0 md:flex-nowrap flex container ">
           <div className="h-[80%] md:h-full overflow-y-scroll " style={{ width: window.innerWidth >= 1024 ? `${leftWidth}%`:'100%' }}>
-            <Question quesTitle={quesDetail.quesTitle} difficulty={quesDetail.difficulty} description={quesDetail.description} inputFormat={quesDetail.inputFormat} outputFormat={quesDetail.outputFormat}/>
+            <Question data={quesDetail} />
           </div>
           <div
             className="w-1 hidden md:flex bg-slate-500 cursor-ew-resize"
