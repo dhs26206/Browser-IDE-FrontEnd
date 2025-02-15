@@ -20,6 +20,7 @@ import ManageContest from './Components/manageContestPage/manageContestPage.jsx'
 import CreateQuestion from "./Components/createQuestion/createQuestion.jsx";
 import CreateQuestionPlain from './Components/createQuestion/createQuestionPlain.jsx';
 import { elements } from 'chart.js';
+import Practice from './Components/Home/Practice.jsx';
 
 
 const isAuthenticatedTrue=()=>{
@@ -42,7 +43,8 @@ const routes = [
     {path:'/callback',element:<CallBack/>},
     {path:'/verify',element:<VerifyEmail/>},
     {path:'/callverify',element:<CallVerify/>},
-    {path:'/createQuestion',element:<CreateQuestionPlain/>}
+    {path:'/createQuestion',element:<CreateQuestionPlain/>},
+    {path:'/practice',element:<Practice/>}
     // { path: '/abc/:id', element: <DynamicPage /> }, // Dynamic route
     // { path: '/dev2', element: <QuestionCreate/> },
     

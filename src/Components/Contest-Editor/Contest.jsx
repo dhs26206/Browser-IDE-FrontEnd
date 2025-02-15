@@ -23,7 +23,7 @@ const Contest = () => {
 
 
     const{q}=useParams();
-       const[quesDetail,setQuesDetail]=useState({quesTitle:"",quesText:"",difficulty:"",description:"",inputFormat:"",outputFormat:"",totalSubmission:0,acceptedSubmission:0,score:0});
+       const[quesDetail,setQuesDetail]=useState({quesTitle:"",quesText:"",difficulty:"",description:"",inputFormat:"",outputFormat:"",totalSubmission:0,acceptedSubmission:0,score:0,testIpExample:"",testOpExample:""});
        useEffect(()=>{
            fetch(`${url}/problem/${q}`,{
                method:`GET`,

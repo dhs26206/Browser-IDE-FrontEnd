@@ -14,6 +14,8 @@ const CreateQuestion = () => {
     score: 0,
     testIp: '',
     testOp: '',
+    testIpExample:'',
+    testOpExample:'',
     inputFormat: '',
     outputFormat: '',
     correctCode: '',
@@ -119,17 +121,7 @@ const CreateQuestion = () => {
           </div>
 
           {/* Description */}
-          <div className="p-6 bg-gray-800 rounded-lg shadow-lg transition-transform transform hover:scale-105">
-            <label className="block text-sm font-medium mb-1">Description</label>
-            <textarea
-              name="description"
-              value={formData.description}
-              onChange={handleChange}
-              placeholder="Enter description"
-              className="w-full p-2 bg-gray-900 border border-gray-700 rounded-md text-gray-300"
-              required
-            ></textarea>
-          </div>
+          
 
           {/* Score */}
           <div className="p-4 bg-gray-800 rounded-lg shadow-lg transition-transform transform hover:scale-105">
@@ -145,8 +137,20 @@ const CreateQuestion = () => {
             />
           </div>
 
-          {/* Input Format */}
           <div className="p-6 bg-gray-800 rounded-lg shadow-lg transition-transform transform hover:scale-105">
+            <label className="block text-sm font-medium mb-1">Description</label>
+            <textarea
+              name="description"
+              value={formData.description}
+              onChange={handleChange}
+              placeholder="Enter description"
+              className="w-full p-2 bg-gray-900 border border-gray-700 rounded-md text-gray-300"
+              required
+            ></textarea>
+          </div>
+
+          {/* Input Format */}
+          <div className="p-6 bg-gray-800 rounded-lg shadow-lg transition-transform transform hover:scale-105 col-span-2">
             <label className="block text-sm font-medium mb-1">Input Format</label>
             <textarea
               name="inputFormat"
@@ -186,7 +190,7 @@ const CreateQuestion = () => {
 
           {/* Test Input */}
           <div className="p-4 bg-gray-800 rounded-lg shadow-lg transition-transform transform hover:scale-105">
-            <label className="block text-sm font-medium mb-1">Test Input </label>
+            <label className="block text-sm font-medium mb-1">Full Input </label>
             <textarea
               name="testIp"
               value={formData.testIp}
@@ -198,10 +202,30 @@ const CreateQuestion = () => {
 
           {/* Test Output */}
           <div className="p-4 bg-gray-800 rounded-lg shadow-lg transition-transform transform hover:scale-105">
-            <label className="block text-sm font-medium mb-1">Test Output</label>
+            <label className="block text-sm font-medium mb-1">Full Output</label>
             <textarea
               name="testOp"
               value={formData.testOp}
+              onChange={handleChange}
+              placeholder="Enter test output"
+              className="w-full p-2 bg-gray-900 border border-gray-700 rounded-md text-gray-300"
+            ></textarea>
+          </div>
+          <div className="p-4 bg-gray-800 rounded-lg shadow-lg transition-transform transform hover:scale-105">
+            <label className="block text-sm font-medium mb-1">Test Input (Example)</label>
+            <textarea
+              name="testOp"
+              value={formData.testIpExample}
+              onChange={handleChange}
+              placeholder="Enter test output"
+              className="w-full p-2 bg-gray-900 border border-gray-700 rounded-md text-gray-300"
+            ></textarea>
+          </div>
+          <div className="p-4 bg-gray-800 rounded-lg shadow-lg transition-transform transform hover:scale-105">
+            <label className="block text-sm font-medium mb-1">Test Output (Example)</label>
+            <textarea
+              name="testOp"
+              value={formData.testOpExample}
               onChange={handleChange}
               placeholder="Enter test output"
               className="w-full p-2 bg-gray-900 border border-gray-700 rounded-md text-gray-300"
