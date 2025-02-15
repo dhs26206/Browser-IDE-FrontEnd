@@ -1,4 +1,8 @@
 /* For Firefox */
+*{
+  color:#fff
+}
+
 * {
     scrollbar-width: thin; /* "auto" or "thin" */
     scrollbar-color: lightgray transparent; /* thumb color and track color */

@@ -2,11 +2,11 @@
 
 function Contribute() {
     const repo = () => {
-        window.location.href = "https://aws1.ddks.live";
+        window.location.href = "https://aws1.ddks.tech";
     };
 
     return (
-        <div className="w-full h-full flex flex-col justify-center items-center">
+        <div className="w-full h-full flex flex-col justify-center  items-center">
             <div className="w-full text-center mb-8">
                 <div className="text-2xl md:text-5xl">
                     Ever Seen This Cat Before?

@@ -1,10 +1,10 @@
 import React, { useState } from 'react';
 import { useNavigate,useParams } from 'react-router-dom';
 import {url} from '../../../url'
-const CreateQuestion = () => {
+const CreateQuestionPlain = () => {
   const navigate=useNavigate();
-  const {q}=useParams();
-  const contestId=q;
+//   const {q}=useParams();
+//   const contestId=q;
   // console.log(q);
   const [formData, setFormData] = useState({
     quesTitle: '',
@@ -17,7 +17,7 @@ const CreateQuestion = () => {
     inputFormat: '',
     outputFormat: '',
     correctCode: '',
-    contestId
+    // contestId
   });
 
   const [message, setMessage] = useState('');
@@ -48,7 +48,7 @@ const CreateQuestion = () => {
 
     try {
         console.log(`send`)
-      const response = await fetch(`${url}/createquestion/forcontest`, {
+      const response = await fetch(`${url}/createquestion/forpractice`, {
         method: 'POST',
         credentials:"include",
         headers: { 'Content-Type': 'application/json' },
@@ -57,7 +57,7 @@ const CreateQuestion = () => {
       console.log(`fetch request done`);
       if (response.ok) {
         setMessage('Question created successfully!');
-        navigate(`/managecontest/${contestId}`);
+        navigate(`/practice`);
       } else {
         const errorData = await response.json();
         setMessage(errorData.message || 'Failed to create question.');
@@ -234,4 +234,4 @@ const CreateQuestion = () => {
   );
 };
 
-export default CreateQuestion;
+export default CreateQuestionPlain;

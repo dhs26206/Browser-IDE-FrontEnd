@@ -12,7 +12,7 @@ function Keyfeatures(){
                         </div>
                         <div className="h-[65%] w-full ">
                             <span className="text-center text-2xl text-blue-900 font-semibold ">Major Languages Supported <br /></span>
-                            <span className="text-justify">Obviously, We support all the languages that comes in your head ! <br /> yep That one also !!</span>
+                            <span className="text-justify">Obviously, We support all the languages that comes in your head! <br /> yep That one also !!</span>
                         </div>
                     </div>
                 </div>

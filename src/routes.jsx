@@ -18,6 +18,8 @@ import VerifyEmail from './Components/Login-SignUp/VerifyEmail.jsx';
 import CallVerify from './Components/Login-SignUp/CallVerify.jsx';
 import ManageContest from './Components/manageContestPage/manageContestPage.jsx'
 import CreateQuestion from "./Components/createQuestion/createQuestion.jsx";
+import CreateQuestionPlain from './Components/createQuestion/createQuestionPlain.jsx';
+import { elements } from 'chart.js';
 
 
 const isAuthenticatedTrue=()=>{
@@ -39,7 +41,8 @@ const routes = [
     {path:'/userdashboard',element:<Dashboard/>},
     {path:'/callback',element:<CallBack/>},
     {path:'/verify',element:<VerifyEmail/>},
-    {path:'/callverify',element:<CallVerify/>}
+    {path:'/callverify',element:<CallVerify/>},
+    {path:'/createQuestion',element:<CreateQuestionPlain/>}
     // { path: '/abc/:id', element: <DynamicPage /> }, // Dynamic route
     // { path: '/dev2', element: <QuestionCreate/> },
     
