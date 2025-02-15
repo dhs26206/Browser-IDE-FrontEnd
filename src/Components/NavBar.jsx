@@ -2,7 +2,7 @@ import { useState, useEffect } from "react";
 import Navigation from "./Navigation";
 import { Link, useNavigate } from "react-router-dom";
 import { url } from "../../url";
-import Cookies from 'js-cookie';
+// import Cookies from 'js-cookie';
 const NavBar = ({setlogin}) => {
     const navigate = useNavigate();
     const [click, setClick] = useState(false);

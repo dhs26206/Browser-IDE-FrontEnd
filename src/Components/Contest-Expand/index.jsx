@@ -25,7 +25,7 @@ const  ContestExpand=()=>{
         })
     },[])
     return (
-        <div className=" h-screen w-screen overflow-scroll bg-[#102542] ">
+        <div className=" h-screen w-screen overflow-scroll bg-[#080a12] ">
             <div className="w-full h-[10%]">
                 <NavBar/>
             </div>
