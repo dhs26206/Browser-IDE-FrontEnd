@@ -19,9 +19,9 @@ Let me introduce the humans (redacted for privacy):
 **P.S.:**  
 The frontend is deployed on Cloudflare Pages, the backend on Render, and one VM is running on Azure.
 
-**Frontend Repo:** [Link](https://example.com)  
-**Backend Repo:** [Link](https://example.com)  
-**Project Preview:** [Link](https://example.com)
+**Frontend Repo:** [Link](https://github.com/dhs26206/Browser-IDE-FrontEnd)  
+**Backend Repo:** [Link](https://github.com/manpreet-singh1040/ashleel-backend)  
+**Project Preview:** [Link](https://code.ddks.tech)
 
 ## Features
 
