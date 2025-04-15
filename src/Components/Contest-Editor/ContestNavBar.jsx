@@ -23,7 +23,7 @@ const ContestNavBar=()=>{
                 
                 <div className="flex justify-center w-1/5 h-1/7">
                 <Link to="/">
-                <img src={'https://folder.ddks.tech/logo.png'} alt="" className="w-full h-full " />
+                <img src={'https://restless-credit-56f1.ddksddks.workers.dev/logo.png'} alt="" className="w-full h-full " />
                 </Link>
                 </div>
                 
