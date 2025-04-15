@@ -2,7 +2,7 @@
 
 function Contribute() {
     const repo = () => {
-        window.location.href = "https://aws1.ddks.tech";
+        window.location.href = "https://github.com/dhs26206/Browser-IDE-FrontEnd";
     };
 
     return (
