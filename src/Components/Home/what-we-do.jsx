@@ -10,7 +10,7 @@ function Whatwedo(){
                  </div>
 
                 <div className="w-full md:w-1/2  text-pink-900 flex items-center justify-center">
-                <img className="w-[80%] h-[80%]" src="https://restless-credit-56f1.ddksddks.workers.dev/banda2.png"  alt="image" />
+                <img className="w-[80%] h-[80%]" src="https://pub-6221107b49d0481188b00f3f3f1dcdda.r2.dev/banda2.png"  alt="image" />
                 </div>
             </div>
         </div>

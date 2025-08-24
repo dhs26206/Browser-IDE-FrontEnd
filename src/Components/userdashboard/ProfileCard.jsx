@@ -5,7 +5,7 @@ function ProfileCard({name,email,bio}) {
     return (
         <div className="bg-white bg-opacity-5  backdrop-blur-sm  rounded-lg p-6 transition duration-200 hover:scale-105">
             <div className="flex items-center">
-                <img className="h-16 w-16 rounded-full" src="https://restless-credit-56f1.ddksddks.workers.dev/team-img2.png" alt="User Profile" />
+                <img className="h-16 w-16 rounded-full" src="https://pub-6221107b49d0481188b00f3f3f1dcdda.r2.dev/team-img2.png" alt="User Profile" />
                 <div className="ml-4">
                     <h2 className="text-xl font-bold">{name ? name : "YOUR NAME"}</h2>
                     <p className="text-gray-600">{email ? email : "youemail.com"}</p>

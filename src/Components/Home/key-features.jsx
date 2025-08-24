@@ -8,7 +8,7 @@ function Keyfeatures(){
                 <div className="h-1/4 md:h-full flex w-full md:w-1/6 justify-center items-center">
                     <div className="flex flex-wrap h-full md:h-[80%] w-[85%]">
                         <div className="h-[35%] w-full flex items-center justify-center">
-                            <img className="h-full" src="https://restless-credit-56f1.ddksddks.workers.dev/codepng.png" alt="" />
+                            <img className="h-full" src="https://pub-6221107b49d0481188b00f3f3f1dcdda.r2.dev/codepng.png" alt="" />
                         </div>
                         <div className="h-[65%] w-full ">
                             <span className="text-center text-2xl text-blue-900 font-semibold ">Major Languages Supported <br /></span>
@@ -19,7 +19,7 @@ function Keyfeatures(){
                 <div className=" h-1/4 md:h-full flex w-full md:w-1/6 justify-center items-center">
                     <div className="flex flex-wrap h-[80%] w-[85%] ">
                         <div className="h-[35%] w-full flex items-center justify-center">
-                            <img className="h-full" src="https://restless-credit-56f1.ddksddks.workers.dev/vscodepngcrop.png" alt="" />
+                            <img className="h-full" src="https://pub-6221107b49d0481188b00f3f3f1dcdda.r2.dev/vscodepngcrop.png" alt="" />
                         </div>
                         <div className="h-[65%] w-full ">
                         <span className="text-center text-2xl text-blue-900 font-semibold">VS Code Editor <br /></span>
@@ -30,7 +30,7 @@ function Keyfeatures(){
                 <div className=" h-1/4 md:h-full flex w-full md:w-1/6 justify-center items-center">
                     <div className="flex flex-wrap h-[80%] w-[85%]">
                         <div className="h-[35%] w-full flex items-center justify-center">
-                            <img className="h-full" src="https://restless-credit-56f1.ddksddks.workers.dev/set1.png" alt="" />
+                            <img className="h-full" src="https://pub-6221107b49d0481188b00f3f3f1dcdda.r2.dev/set1.png" alt="" />
                         </div>
                         <div className="h-[65%] w-full ">
                         <span className="text-center text-2xl text-blue-900 font-semibold ">Extensively Customized <br /></span>
@@ -41,7 +41,7 @@ function Keyfeatures(){
                 <div className=" h-1/4 md:h-full flex w-full md:w-1/6 justify-center items-center">
                     <div className="flex flex-wrap h-[80%] w-[85%]">
                         <div className="h-[35%] w-full flex items-center justify-center">
-                            <img  className="h-full" src="https://restless-credit-56f1.ddksddks.workers.dev/open11.png" alt="" />
+                            <img  className="h-full" src="https://pub-6221107b49d0481188b00f3f3f1dcdda.r2.dev/open11.png" alt="" />
                         </div>
                         <div className="h-[65%] w-full ">
                         <span className="text-center text-2xl text-blue-900 font-semibold ">Open Source <br /></span>

@@ -66,7 +66,7 @@ const NavBar = ({setlogin}) => {
             <div className="w-screen h-full items-center flex md:justify-center">
                 <div className="w-screen h-full items-center flex justify-between">
                     <Link to="/">
-                        <img className="w-64 h-14 pl-5" src="https://restless-credit-56f1.ddksddks.workers.dev/logo.png" alt="Logo" />
+                        <img className="w-64 h-14 pl-5" src="https://pub-6221107b49d0481188b00f3f3f1dcdda.r2.dev/logo.png" alt="Logo" />
                     </Link>
 
                     <div className="text-white h-14 items-center hidden sm:hidden md:flex cursor-pointer"><span>Practice</span></div>
