@@ -2,7 +2,7 @@ const teamMembers = [
   { 
     name: 'Manpreet', 
     role: 'Backend', 
-    image: 'https://pub-6221107b49d0481188b00f3f3f1dcdda.r2.dev/team-img1.png', 
+    image: 'https://cdn.jsdelivr.net/gh/dhs26206/cuddly-goggles@main/Copanda/team-img1.png', 
     instaLink: 'https://www.instagram.com/manpreet_singh.1040',
     gitLink: 'https://github.com/manpreet-singh1040',
     linkedinLink: 'https://www.linkedin.com/in/manpreet-singh-298910262'
@@ -10,7 +10,7 @@ const teamMembers = [
   { 
     name: 'Gaurav', 
     role: 'Traitor', 
-    image: 'https://pub-6221107b49d0481188b00f3f3f1dcdda.r2.dev/team-img2.png', 
+    image: 'https://cdn.jsdelivr.net/gh/dhs26206/cuddly-goggles@main/Copanda/team-img2.png', 
     instaLink: 'https://instagram.com/gaurav',
     gitLink: 'https://github.com/gaurav',
     linkedinLink: 'https://linkedin.com/in/gaurav'
@@ -18,7 +18,7 @@ const teamMembers = [
   { 
     name: 'Dhruv', 
     role: 'Frontend', 
-    image: 'https://pub-6221107b49d0481188b00f3f3f1dcdda.r2.dev/team-img3.png', 
+    image: 'https://cdn.jsdelivr.net/gh/dhs26206/cuddly-goggles@main/Copanda/team-img3.png', 
     instaLink: 'https://www.instagram.com/dhruv.kr.sharma',
     gitLink: 'https://github.com/dhs26206',
     linkedinLink: 'https://www.linkedin.com/in/dhruv-kumar-1ab142289'
@@ -26,7 +26,7 @@ const teamMembers = [
   { 
     name:'Ayush', 
     role:'Frontend', 
-    image:'https://pub-6221107b49d0481188b00f3f3f1dcdda.r2.dev/avatar-2.png',
+    image:'https://cdn.jsdelivr.net/gh/dhs26206/cuddly-goggles@main/Copanda/avatar-2.png',
     instaLink: 'https://www.instagram.com/iyus_pandey',
     gitLink: 'https://github.com/iyuspandey',
     linkedinLink: 'https://www.linkedin.com/in/ayush-pandey-308938278'
@@ -79,7 +79,7 @@ const Team = () => {
                   <div className="h-10 w-10 flex items-center justify-center rounded-full bg-white">
                     <img
                       className="h-6 w-6 cursor-pointer"
-                      src="https://pub-6221107b49d0481188b00f3f3f1dcdda.r2.dev/githublogov2.png"
+                      src="https://cdn.jsdelivr.net/gh/dhs26206/cuddly-goggles@main/Copanda/githublogov2.png"
                       alt="GitHub"
                       onClick={() => { window.location.href = member.gitLink; }}
                     />

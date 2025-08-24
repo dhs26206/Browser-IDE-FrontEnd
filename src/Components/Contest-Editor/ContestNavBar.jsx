@@ -23,7 +23,7 @@ const ContestNavBar=()=>{
                 
                 <div className="flex justify-center w-1/5 h-1/7">
                 <Link to="/">
-                <img src={'https://pub-6221107b49d0481188b00f3f3f1dcdda.r2.dev/logo.png'} alt="" className="w-full h-full " />
+                <img src={'https://cdn.jsdelivr.net/gh/dhs26206/cuddly-goggles@main/Copanda/logo.png'} alt="" className="w-full h-full " />
                 </Link>
                 </div>
                 
