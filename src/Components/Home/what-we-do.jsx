@@ -10,7 +10,7 @@ function Whatwedo(){
                  </div>
 
                 <div className="w-full md:w-1/2  text-pink-900 flex items-center justify-center">
-                <img className="w-[80%] h-[80%]" src="https://cdn.jsdelivr.net/gh/dhs26206/cuddly-goggles@main/Copanda/banda2.png"  alt="image" />
+                <img className="w-[80%] h-[80%]" src="https://cdn.jsdelivr.net/gh/dhs26206/cuddly-goggles@70f2603/Copanda/banda2.png"  alt="image" />
                 </div>
             </div>
         </div>

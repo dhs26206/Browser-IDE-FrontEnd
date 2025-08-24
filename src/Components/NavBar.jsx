@@ -66,7 +66,7 @@ const NavBar = ({setlogin}) => {
             <div className="w-screen h-full items-center flex md:justify-center">
                 <div className="w-screen h-full items-center flex justify-between">
                     <Link to="/">
-                        <img className="w-64 h-14 pl-5" src="https://cdn.jsdelivr.net/gh/dhs26206/cuddly-goggles@main/Copanda/logo.png" alt="Logo" />
+                        <img className="w-64 h-14 pl-5" src="https://cdn.jsdelivr.net/gh/dhs26206/cuddly-goggles@70f2603/Copanda/logo.png" alt="Logo" />
                     </Link>
 
                     <div className="text-white h-14 items-center hidden sm:hidden md:flex cursor-pointer"><span>Practice</span></div>

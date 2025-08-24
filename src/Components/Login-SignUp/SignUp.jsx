@@ -59,7 +59,7 @@ function Signup() {
             <div className="container max-w-sm mx-auto flex-1 flex flex-col items-center justify-center px-2">
                 <div className="bg-white bg-opacity-10 backdrop-blur-md px-6 py-8 rounded shadow-md text-white w-full">
                 <Link to="/">
-               <img className={`w-64 h-14 pl-5`} src="https://cdn.jsdelivr.net/gh/dhs26206/cuddly-goggles@main/Copanda/logo.png" alt="Logo" />
+               <img className={`w-64 h-14 pl-5`} src="https://cdn.jsdelivr.net/gh/dhs26206/cuddly-goggles@70f2603/Copanda/logo.png" alt="Logo" />
             </Link>
 
                     <h1 className="mb-8 text-3xl text-center">Sign up</h1>

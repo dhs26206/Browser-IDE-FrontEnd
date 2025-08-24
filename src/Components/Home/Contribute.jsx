@@ -18,7 +18,7 @@ function Contribute() {
                         <img 
                             onClick={repo} 
                             className="cursor-pointer w-48 h-48 rounded-full object-cover" 
-                            src="https://cdn.jsdelivr.net/gh/dhs26206/cuddly-goggles@main/Copanda/githublogov2.png"  
+                            src="https://cdn.jsdelivr.net/gh/dhs26206/cuddly-goggles@70f2603/Copanda/githublogov2.png"  
                             alt="Repo" 
                         />
                     </div>
