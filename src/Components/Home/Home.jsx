@@ -18,11 +18,11 @@ const Home = () => {
   let onetime=false;
   useEffect(() => {
     // Check if the user is already logged in
-    const tel=()=>{fetch("https://faas-blr1-8177d592.doserverless.co/api/v1/web/fn-760717bf-8d87-41e7-ad6d-783ae14d56f9/requests/Telemetry");
-      onetime=true;
-    }
-    if(!onetime) tel();
-    setLoading(true);
+    // const tel=()=>{fetch("https://faas-blr1-8177d592.doserverless.co/api/v1/web/fn-760717bf-8d87-41e7-ad6d-783ae14d56f9/requests/Telemetry");
+    //   onetime=true;
+    // }
+    // if(!onetime) tel();
+    // setLoading(true);
     fetch(`${url}/checklogin`, {
       method: 'GET',
       credentials: 'include',
