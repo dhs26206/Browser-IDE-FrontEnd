@@ -16,13 +16,14 @@ const teamMembers = [
     linkedinLink: 'https://linkedin.com/in/gaurav'
   },
   { 
-    name: 'Dhruv', 
-    role: 'Frontend', 
-    image: 'https://cdn.jsdelivr.net/gh/dhs26206/cuddly-goggles@70f2603/Copanda/team-img3.png', 
-    instaLink: 'https://www.instagram.com/dhruv.kr.sharma',
-    gitLink: 'https://github.com/dhs26206',
-    linkedinLink: 'https://www.linkedin.com/in/dhruv-kumar-1ab142289'
+    name:'Divyanshi', 
+    role:'Frontend', 
+    image:'https://cdn.jsdelivr.net/gh/dhs26206/cuddly-goggles@70f2603/Copanda/team-img3.png',
+    instaLink: 'https://example.com',
+    gitLink: 'https://github.com/divyanshinirwal',
+    linkedinLink: 'https://www.linkedin.com/in/divyanshi-nirwal-349186291'
   },
+
   { 
     name:'Ayush', 
     role:'Frontend', 
@@ -32,7 +33,14 @@ const teamMembers = [
     linkedinLink: 'https://www.linkedin.com/in/ayush-pandey-308938278'
   },
 ];
-
+  // { 
+  //   name: 'Dhruv', 
+  //   role: 'Frontend', 
+  //   image: 'https://cdn.jsdelivr.net/gh/dhs26206/cuddly-goggles@70f2603/Copanda/team-img3.png', 
+  //   instaLink: 'https://www.instagram.com/dhruv.kr.sharma',
+  //   gitLink: 'https://github.com/dhs26206',
+  //   linkedinLink: 'https://www.linkedin.com/in/dhruv-kumar-1ab142289'
+  // },
 const Team = () => {
   return (
     <div className="h-full w-full flex flex-wrap items-center justify-center">
