@@ -1,5 +1,5 @@
 import { useState } from "react"
-
+// git testing 2
 const Navigation=({choices,IsOpen})=>{
     const[open,setOpen]=useState(false);
     const handleOpen=()=>{
