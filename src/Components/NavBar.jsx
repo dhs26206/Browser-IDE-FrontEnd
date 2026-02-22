@@ -7,7 +7,7 @@ const NavBar = ({setlogin}) => {
     const navigate = useNavigate();
     const [click, setClick] = useState(false);
     const [isLoggedIn, setIsLoggedIn] = useState(false);
-
+    // making a git commit to check out
     useEffect(() => {
         // Check if the user is already logged in
         fetch(`${url}/checklogin`, {
